@@ -17,11 +17,11 @@ export default function HeroMission({ image }) {
     <>
     <div className="w-full h-[300vh] sticky top-0" ref={ref}>
       <div className="w-full h-screen flex flex-col pt-[90px] xl:pt-[99px] pb-[45px] xl:pb-[50px] overflow-hidden absolute inset-0">
-        <div className="w-full overflow-hidden relative z-[1]">
+        <div className="w-full overflow-hidden relative z-[0]">
           <m.h2 variants={reveal} className="text-[9vw] leading-none text-center">Great Spaces.</m.h2>
         </div>
 
-        <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center">
+        <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-10">
           <div className="relative">
             <m.div style={{ scale: scale  }} className={`w-[50vw] h-[45dvh] rounded-xl relative overflow-hidden mx-auto`}>
               <img style={{ scale: scale }} src={'/images/mission.jpg'} alt="Temp Home Image" className="will-change-transform w-full absolute inset-0 h-full object-cover object-center" />
@@ -29,7 +29,7 @@ export default function HeroMission({ image }) {
           </div>
         </div>
         
-        <div className="w-full mt-auto overflow-hidden relative">
+        <div className="w-full mt-auto overflow-hidden relative z-0">
           <m.h2 variants={reveal} className="text-[9vw] leading-none text-center">Designed For <em>Life</em>.</m.h2>
         </div>
       </div>
