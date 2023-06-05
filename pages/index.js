@@ -1,9 +1,8 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { fade } from '@/helpers/transitions'
-import { LazyMotion, domAnimation, m, useScroll, useTransform, useSpring } from 'framer-motion'
-
+import { fade, reveal, scale } from '@/helpers/transitions'
+import { LazyMotion, domAnimation, m, useScroll, useTransform} from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import LogoIcon from "@/icons/logo.svg";
 import BadgeIcon from "@/icons/badge.svg";
@@ -31,10 +30,14 @@ export default function Home() {
           animate="enter"
           exit="exit"
         >
-          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-24">           
+          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[90px] xl:pt-[99px]">           
             <m.article variants={fade}>
               <Container>
-                <LogoIcon className="w-full mb-5" />
+                <div className="w-full mb-6 overflow-hidden">
+                  <m.div variants={reveal}>
+                    <LogoIcon className="w-full" />
+                  </m.div>
+                </div>
 
                 <div className="flex flex-wrap items-end mb-[20vw] lg:mb-[12.5vw]" ref={ref}>
                   <div className="w-full lg:w-1/2 mb-3 lg:mb-0 relative">
@@ -42,7 +45,7 @@ export default function Home() {
                       <ImageScale image="/images/home.jpg" />
                     </div>
 
-                    <m.div style={{ rotateZ: rotate }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[30%] will-change-transform">
+                    <m.div variants={scale} style={{ rotateZ: rotate }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[30%] will-change-transform">
                       <BadgeIcon className="w-full" />
                     </m.div>
                   </div>
@@ -54,9 +57,12 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-wrap justify-center mb-[20vw] lg:mb-[12.5vw]">
-                  <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-8">Space needs life</span>
+                  <span className="block mb-8 overflow-hidden relative w-full text-center">
+                    <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Space needs life.</m.span>
+                  </span>
 
-                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">It&apos;s the <em>beautiful</em> alchemy of space and colliding that makes a space, a place. We make grand plans for them to come together, creating progressive, sustainable, life-affirming places. Great places designed for life.</span>
+                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">
+                    It&apos;s the <em>beautiful</em> alchemy of space and colliding that makes a space, a place. We make grand plans for them to come together, creating progressive, sustainable, life-affirming places. Great places designed for life.</span>
                 </div>
               </Container>
 

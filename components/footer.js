@@ -6,7 +6,7 @@ import FooterLockupIcon from "@/icons/footer-lockup.svg";
 export default function Footer() {
   return (
     <footer className="bg-yellow text-black pb-8 relative">
-      <div class="arrow-up absolute top-[-10vw] lg:top-[-5vw] left-0 right-0 w-full transform scale-x-[1000%]"></div>
+      <div className="arrow-up absolute top-[-10vw] lg:top-[-5vw] left-0 right-0 w-full transform scale-x-[1000%]"></div>
       <Container>
         <div className="flex flex-wrap items-end relative z-10">
           <div className="w-full lg:w-auto mr-auto order-3 lg:order-1 text-center lg:text-left text-base xl:text-xl xl:leading-none">
