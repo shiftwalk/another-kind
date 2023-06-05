@@ -75,7 +75,9 @@ export default function About() {
           </m.main>
         
           <m.div variants={fade}>
-            <Footer />
+            <div className="overflow-hidden pt-[20vw] lg:pt-[5vw]">
+              <Footer />
+            </div>
           </m.div>
         </m.div>
       </LazyMotion>

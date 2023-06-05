@@ -1,14 +1,26 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import FancyLink from '@/components/fancyLink'
 import { fade } from '@/helpers/transitions'
-import { LazyMotion, domAnimation, m } from 'framer-motion'
+import { LazyMotion, domAnimation, m, useScroll, useTransform, useSpring } from 'framer-motion'
+
 import { NextSeo } from 'next-seo'
 import LogoIcon from "@/icons/logo.svg";
 import BadgeIcon from "@/icons/badge.svg";
+import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
+import { useRef } from 'react'
+import ImageScale from '@/components/image-scale'
 
 export default function Home() {
+  const ref = useRef(null)
+  
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  })
+  
+  const rotate = useTransform(scrollYProgress,[0, 1],[-360, 360],{ clamp: true })
+  
   return (
     <Layout>
       <NextSeo title="Home" />
@@ -19,15 +31,20 @@ export default function Home() {
           animate="enter"
           exit="exit"
         >
-          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-24">
-            <Container>              
-              <m.article variants={fade}>
+          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-24">           
+            <m.article variants={fade}>
+              <Container>
                 <LogoIcon className="w-full mb-5" />
 
-                <div className="flex flex-wrap items-end mb-[10vw]">
+                <div className="flex flex-wrap items-end mb-[20vw] lg:mb-[12.5vw]" ref={ref}>
                   <div className="w-full lg:w-1/2 mb-3 lg:mb-0 relative">
-                    <img src="/images/home.jpg" alt="Temp Home Image" className="will-change-transform rounded-xl" />
-                    <BadgeIcon className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[30%] will-change-transform" />
+                    <div className="w-full relative overflow-hidden rounded-xl">
+                      <ImageScale image="/images/home.jpg" />
+                    </div>
+
+                    <m.div style={{ rotateZ: rotate }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[30%] will-change-transform">
+                      <BadgeIcon className="w-full" />
+                    </m.div>
                   </div>
                   <div className="w-full lg:w-1/2">
                     <div className="w-11/12 content text-lg leading-tight lg:text-xl xl:leading-tight lg:px-5">
@@ -36,61 +53,89 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center mb-[10vw]">
+                <div className="flex flex-wrap justify-center mb-[20vw] lg:mb-[12.5vw]">
                   <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-8">Space needs life</span>
 
-                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">It&apos;s the <em>beautiful</em> alchemy of space and colliding that makes a space, a place. We make grand plans for them to come together, creating progressive, sustainable, life-affirming places. Great places designed for life.</span>
+                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">It&apos;s the <em>beautiful</em> alchemy of space and colliding that makes a space, a place. We make grand plans for them to come together, creating progressive, sustainable, life-affirming places. Great places designed for life.</span>
+                </div>
+              </Container>
+
+
+              <div className="bg-orange text-off-white flex flex-wrap mb-[20vw] lg:mb-[12.5vw]">
+                <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
+                  <h1 className="text-[16vw] lg:text-[9vw] leading-[0.9] lg:leading-[0.9] text-yellow w-[90%] md:w-[80%] lg:w-[95%] mb-[25vw] lg:mb-0">Anotherkind Of Architect.</h1>
+
+                  <div className="w-full lg:w-9/12 content text-base xl:text-lg mt-auto">
+                    <p>We&apos;re certified Passivhaus architects and conservation specialists. Designing life-affirming, genuinely sustainable architecture is what makes us leap out of bed in the morning. Although sometimes it&apos;s the kids. Or the hurried knocking of the dead-eager Amazon guy.</p>
+                    
+                    <p>Our RIBA Chartered Practice is brimming with forward-thinking, award-winning architects, technologists and other alternatively, really talented folks. For us Anotherkind is more than a name, it&apos;s a mission. Curiosity, playfulness, openness and a can-do attitude aren&apos;t just values scrawled on a wall, but qualities we truly value. If we work together we&apos;re sure you&apos;ll see there&apos;s much more to our name than our name.</p>
+                  </div>
+                </div>
+                <div className="w-full lg:w-[48%] relative">
+                  <div className="w-full relative overflow-hidden">
+                    <div className="absolute inset-0 z-10 flex items-center justify-center">
+                      <div className="w-[33%] lg:w-[26%] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
+                        <div className="w-full text-center -mt-3 lg:-mt-5">
+                          <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
+                          <span className="block font-display text-[5.3vw] lg:text-[2.5vw] leading-none lg:leading-none">See Work!</span>
+                        </div>
+                      </div>
+                    </div>
+                    <ImageScale image="/images/home-01.jpg"/>
+                  </div>
+                </div>
+              </div>
+
+              <Container>
+                <div className="flex flex-wrap justify-center mb-[20vw] lg:mb-[12.5vw]">
+                  <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-8">Progress-powered.</span>
+
+                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">We care passionately about the health and happiness of our team, ensuring they have the <em>freedom</em> to focus on designing beautiful places for our clients.</span>
                 </div>
 
-                <h1 className="text-2xl md:text-3xl xl:text-4xl mb-4">Next x <em>Tailwind</em> x Motion.</h1>
-                <div className="content max-w-3xl mb-4">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+                <div className="flex flex-wrap mb-[20vw] lg:mb-[12.5vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
+                  <div className="w-full lg:flex-1 mb-12 lg:mb-0">
+                    <div className="w-full relative overflow-hidden rounded-xl mb-8">
+                      <ImageScale image="/images/home-02.jpg" />
+                    </div>
 
-                  <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">01</span>
+
+                    <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Mission</span>
+                  </div>
+
+                  <div className="w-full lg:flex-1 mb-12 lg:mb-0">
+                    <div className="w-full relative overflow-hidden rounded-xl mb-8">
+                      <ImageScale image="/images/home-03.jpg" />
+                    </div>
+
+                    <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">02</span>
+
+                    <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Team</span>
+                  </div>
+
+                  <div className="w-full lg:flex-1 mb-12 lg:mb-0">
+                    <div className="w-full relative overflow-hidden rounded-xl mb-8">
+                      <ImageScale image="/images/home-04.jpg" />
+                    </div>
+
+                    <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">03</span>
+
+                    <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Work</span>
+                  </div>
                 </div>
-
-                <h1 className="text-2xl md:text-3xl xl:text-4xl mb-4">Next x <em>Tailwind</em> x Motion.</h1>
-                <div className="content max-w-3xl mb-4">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-
-                  <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-
-                <h1 className="text-2xl md:text-3xl xl:text-4xl mb-4">Next x <em>Tailwind</em> x Motion.</h1>
-                <div className="content max-w-3xl mb-4">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-
-                  <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-
-                <h1 className="text-2xl md:text-3xl xl:text-4xl mb-4">Next x <em>Tailwind</em> x Motion.</h1>
-                <div className="content max-w-3xl mb-4">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-
-                  <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-
-                <h1 className="text-2xl md:text-3xl xl:text-4xl mb-4">Next x <em>Tailwind</em> x Motion.</h1>
-                <div className="content max-w-3xl mb-4">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-
-                  <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-
-                <h1 className="text-2xl md:text-3xl xl:text-4xl mb-4">Next x <em>Tailwind</em> x Motion.</h1>
-                <div className="content max-w-3xl mb-4">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-
-                  <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                
-                <FancyLink destination="/about" a11yText="Navigate to the about page" label="About Page" />
-              </m.article>
-            </Container>
+              </Container>
+            
+            </m.article>
           </m.main>
         
           <m.div variants={fade}>
-            <Footer />
+            <div className="overflow-hidden">
+              <div className="w-full relative overflow-hidden">
+                <ImageScale image="/images/footer-01.jpg" />
+              </div>
+              <Footer />
+            </div>
           </m.div>
         </m.div>
       </LazyMotion>

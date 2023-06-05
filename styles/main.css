@@ -36,3 +36,11 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
    pointer-events: none;
 } 
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  @apply border-b-[50vw] border-b-yellow;
+}

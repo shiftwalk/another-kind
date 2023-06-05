@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
 
         <Header sunny={router.asPath == '/'} />
 
-        <AnimatePresence mode="wait" initial={true}>
+        <AnimatePresence mode="wait" initial={false}>
           <Component {...pageProps} key={router.asPath} />
         </AnimatePresence>
       </div>
