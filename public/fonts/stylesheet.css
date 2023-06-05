@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'So:hne';
+    src: local('Sohne-Buch'),
+        url('Sohne-Buch.woff2') format('woff2'),
+        url('Sohne-Buch.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'VC Garamond Condensed Trial';
+    src: local('VC Garamond Condensed Medium'), local('VCGaramondCondensed-Medium'),
+        url('VCGaramondCondensed-Medium.woff2') format('woff2'),
+        url('VCGaramondCondensed-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Editorial New';
+    src: local('PP Editorial New Italic'), local('PPEditorialNew-Italic'),
+        url('PPEditorialNew-Italic.woff2') format('woff2'),
+        url('PPEditorialNew-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Verlag';
+    src: local('Verlag Black'), local('Verlag-Black'),
+        url('Verlag-Black.woff2') format('woff2'),
+        url('Verlag-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
