@@ -27,7 +27,7 @@ export const Verlag = localFont({
 export const VCGaramondCondensed = localFont({
   src: [
     {
-      path: '../public/fonts/VCGaramondCondensed-medium.woff2',
+      path: '../public/fonts/VCGaramondCondensed-Medium.woff2',
       weight: '600',
       style: 'normal',
     }
