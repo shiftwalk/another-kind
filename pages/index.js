@@ -31,7 +31,7 @@ export default function Home() {
                   </div>
                   <div className="w-full lg:w-1/2">
                     <div className="w-11/12 content text-lg leading-tight lg:text-xl xl:leading-tight lg:px-5">
-                      <p>Our RIBA Chartered Practice is brimming with forward-thinking, award-winning architects, technologists and other alternatively, really talented folks. For us Anotherkind is more than a name, it's a mission. Curiosity, playfulness, openness and a can-do attitude aren't just values scrawled on a wall, but qualities we truly value. If we work together we're sure you'll see there's much more to our name than our name.</p>
+                      <p>Our RIBA Chartered Practice is brimming with forward-thinking, award-winning architects, technologists and other alternatively, really talented folks. For us Anotherkind is more than a name, it&apos;s a mission. Curiosity, playfulness, openness and a can-do attitude aren&apos;t just values scrawled on a wall, but qualities we truly value. If we work together we&apos;re sure you&apos;ll see there&apos;s much more to our name than our name.</p>
                     </div>
                   </div>
                 </div>
@@ -39,7 +39,7 @@ export default function Home() {
                 <div className="flex flex-wrap justify-center mb-[10vw]">
                   <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-8">Space needs life</span>
 
-                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">It's the <em>beautiful</em> alchemy of space and colliding that makes a space, a place. We make grand plans for them to come together, creating progressive, sustainable, life-affirming places. Great places designed for life.</span>
+                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">It&apos;s the <em>beautiful</em> alchemy of space and colliding that makes a space, a place. We make grand plans for them to come together, creating progressive, sustainable, life-affirming places. Great places designed for life.</span>
                 </div>
 
                 <h1 className="text-2xl md:text-3xl xl:text-4xl mb-4">Next x <em>Tailwind</em> x Motion.</h1>
