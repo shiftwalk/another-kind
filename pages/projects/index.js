@@ -54,7 +54,7 @@ export default function Projects() {
                         <li className="col-span-2 lg:col-span-1" key={i}>
                           <Link href="/projects/slug" className="group">
                             <div className="relative overflow-hidden mb-8 rounded-2xl">
-                              <div className={`absolute pointer-events-none inset-0 z-10 rounded-2xl border-[0vw] group-hover:border-[1vw] transition-all ease-ak duration-[500ms] ${color} bg-transparent`}></div>
+                              <div className={`absolute pointer-events-none inset-0 z-10 rounded-2xl border-[0vw] group-hover:border-[1vw] transition-all ease-ak duration-[500ms] ${color}`} style={{ background: 'transparent'}}></div>
 
                               <div className="absolute inset-0 z-10 flex items-center justify-center">
                                 <div className={`w-[33%] lg:w-[26%] aspect-square rounded-full flex items-center justify-center ${color} scale-[0] group-hover:scale-[1] transition-transform ease-ak duration-[500ms]`}>
@@ -67,7 +67,7 @@ export default function Projects() {
 
                               <div className="relative overflow-hidden">
                                 <div className="group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
-                                  <ImageScale image={`/images/projects/project-${i+1}.jpg`} />
+                                  <ImageScale image={`/images/projects/project-${i+1}.jpg`} w={994} h={704} />
                                 </div>
                               </div>
                             </div>

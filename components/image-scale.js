@@ -1,8 +1,9 @@
 import { imageScale } from '@/helpers/transitions'
 import { m, useInView, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import Image from 'next/image'
 
-export default function ImageScale({ image }) {
+export default function ImageScale({ image, w, h, p }) {
   const ref = useRef(null)
 
   const { scrollYProgress } = useScroll({
@@ -14,7 +15,7 @@ export default function ImageScale({ image }) {
   
   return (
     <m.div style={{ scale: scale }} className="will-change-transform">
-      <img src={image} alt="Temp Home Image" className="w-full" ref={ref} />
+      <Image priority={p ? true : false} src={image} width={w ? w : 100} height={h ? h : 100} alt="Temp Home Image" className="w-full" ref={ref} />
     </m.div>
   )
 }

@@ -50,12 +50,12 @@ export default function ProjectSlug() {
                   <div className="grid grid-cols-2 w-full gap-5 mb-5">
                     <div className="col-span-1">
                       <div className="relative overflow-hidden rounded-2xl">
-                        <ImageScale image="/images/projects/slug-1.jpg"/>
+                        <ImageScale image="/images/projects/slug-1.jpg" w={1157} h={1734} />
                       </div>
                     </div>
                     <div className="col-span-1">
                       <div className="relative overflow-hidden rounded-2xl">
-                        <ImageScale image="/images/projects/slug-2.jpg"/>
+                        <ImageScale image="/images/projects/slug-2.jpg" w={1157} h={1734} />
                       </div>
                     </div>
                   </div>
@@ -63,7 +63,7 @@ export default function ProjectSlug() {
                   <div className="grid grid-cols-1 w-full gap-5 mb-5">
                     <div className="col-span-1">
                       <div className="relative overflow-hidden rounded-2xl">
-                        <ImageScale image="/images/projects/slug-3.jpg"/>
+                        <ImageScale image="/images/projects/slug-3.jpg" w={2343} h={1562} />
                       </div>
                     </div>
                   </div>
@@ -71,7 +71,7 @@ export default function ProjectSlug() {
                   <div className="grid grid-cols-2 w-full gap-5 mb-5">
                     <div className="col-span-2 lg:col-span-1">
                       <div className="relative overflow-hidden rounded-2xl">
-                        <ImageScale image="/images/projects/slug-4.jpg"/>
+                        <ImageScale image="/images/projects/slug-4.jpg" w={1157} h={1734} />
                       </div>
                     </div>
                     <div className="col-span-2 lg:col-span-1 flex items-center justify-center">
@@ -88,7 +88,7 @@ export default function ProjectSlug() {
                   <div className="grid grid-cols-1 w-full gap-5">
                     <div className="col-span-1">
                       <div className="relative overflow-hidden rounded-2xl">
-                        <ImageScale image="/images/projects/slug-5.jpg"/>
+                        <ImageScale image="/images/projects/slug-5.jpg" w={2343} h={1562} />
                       </div>
                     </div>
                   </div>

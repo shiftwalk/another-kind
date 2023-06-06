@@ -43,7 +43,7 @@ export default function Home() {
                 <div className="flex flex-wrap items-end mb-[20vw] lg:mb-[12.5vw]" ref={ref}>
                   <div className="w-full lg:w-1/2 mb-3 lg:mb-0 relative">
                     <div className="w-full relative overflow-hidden rounded-xl">
-                      <ImageScale image="/images/home.jpg" />
+                      <ImageScale image="/images/home.jpg" w={767} h={688} p />
                     </div>
             
                     <m.div style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[30%] will-change-transform">
@@ -88,7 +88,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <ImageScale image="/images/home-01.jpg"/>
+                    <ImageScale image="/images/home-01.jpg" w={736} h={1001} />
                   </div>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function Home() {
                 <div className="flex flex-wrap mb-[20vw] lg:mb-[12.5vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
                   <div className="w-full lg:flex-1 mb-12 lg:mb-0">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                      <ImageScale image="/images/home-02.jpg" />
+                      <ImageScale image="/images/home-02.jpg" w={736} h={1001} />
                     </div>
 
                     <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">01</span>
@@ -113,7 +113,7 @@ export default function Home() {
 
                   <div className="w-full lg:flex-1 mb-12 lg:mb-0">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                      <ImageScale image="/images/home-03.jpg" />
+                      <ImageScale image="/images/home-03.jpg" w={736} h={1001} />
                     </div>
 
                     <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">02</span>
@@ -123,7 +123,7 @@ export default function Home() {
 
                   <div className="w-full lg:flex-1 mb-12 lg:mb-0">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                      <ImageScale image="/images/home-04.jpg" />
+                      <ImageScale image="/images/home-04.jpg" w={736} h={1001} />
                     </div>
 
                     <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">03</span>
@@ -139,7 +139,7 @@ export default function Home() {
           <m.div variants={fade}>
             <div className="overflow-hidden">
               <div className="w-full relative overflow-hidden">
-                <ImageScale image="/images/footer-01.jpg" />
+                <ImageScale image="/images/footer-01.jpg" w={2400} h={1345} />
               </div>
               <Footer />
             </div>

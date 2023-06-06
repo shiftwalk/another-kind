@@ -2,6 +2,7 @@ import { m, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import SunnyIcon from "@/icons/sunny.svg";
 import { reveal } from '@/helpers/transitions';
+import Image from 'next/image';
 
 export default function HeroProject({ image }) {
   const ref = useRef(null)
@@ -15,9 +16,9 @@ export default function HeroProject({ image }) {
   
   return (
     <>
-      <div className="w-full h-[100dvh] fixed inset-0 z-[10] bg-orange" ref={ref}>
+      <div className="w-full h-[100dvh] fixed inset-0 z-[10] bg-off-white" ref={ref}>
         <m.div style={{ scale: scale  }} className={`w-full h-full absolute inset-0`}>
-          <img style={{ scale: scale }} src={'/images/project.jpg'} alt="Temp Project Image" className="will-change-transform w-full absolute inset-0 h-full object-cover object-center z-10" />
+          <Image priority fill style={{ scale: scale }} src={'/images/project.jpg'} alt="Temp Project Image" className="will-change-transform w-full absolute inset-0 h-full object-cover object-center z-10" />
         </m.div>
 
         <div className="absolute inset-0 w-full flex items-center justify-center z-10">

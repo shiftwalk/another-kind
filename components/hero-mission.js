@@ -2,6 +2,7 @@ import { m, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import ManifestoBadgeIcon from "@/icons/manifesto-badge.svg";
 import { reveal } from '@/helpers/transitions';
+import Image from 'next/image';
 
 export default function HeroMission({ image }) {
   const ref = useRef(null)
@@ -34,7 +35,7 @@ export default function HeroMission({ image }) {
           <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-10 pointer-events-none">
             <div className="relative max-w-[1200px]">
               <m.div style={{ scale: scale, borderRadius: radius  }} className={`w-[90dvw] lg:w-[52dvw] h-[52dvh] relative overflow-hidden mx-auto max-w-[1200px]`}>
-                <img style={{ scale: scale }} src={'/images/mission.jpg'} alt="Temp Home Image" className="will-change-transform w-full absolute inset-0 h-full object-cover object-center" />
+                <Image priority style={{ scale: scale }} fill src={'/images/mission.jpg'} alt="Temp Home Image" className="will-change-transform w-full absolute inset-0 h-full object-cover object-center" />
               </m.div>
             </div>
           </div>

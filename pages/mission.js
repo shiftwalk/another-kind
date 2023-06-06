@@ -67,7 +67,7 @@ export default function Mission() {
                           </div>
                         </div>
                       </div>
-                      <ImageScale image="/images/mission-02.jpg"/>
+                      <ImageScale image="/images/mission-02.jpg" w={900} h={1224} />
                     </div>
                   </div>
                 </div>
@@ -86,10 +86,10 @@ export default function Mission() {
                   <div className="flex flex-wrap mb-[20vw] lg:mb-[12.5vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
                     <Link href="/" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                       <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                        <div className="absolute inset-0 bg-orange text-yellow z-[10] p-8 flex items-center justify-center text-center translate-y-full group-hover:translate-y-0 transition-transform ease-ak duration-[600ms]">
+                        <div className="absolute inset-0 bg-orange text-yellow z-[10] p-8 flex items-center justify-center text-center translate-y-[101%] group-hover:translate-y-0 transition-transform ease-ak duration-[600ms]">
                           <span className="block font-display text-[5.2vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1]">Our Conservation Accreditations are the cornerstone of our practice, enabling us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings, looking for ways to recycle rather than demolish, or retrofit for the future.</span>
                         </div>
-                        <ImageScale image="/images/home-02.jpg" />
+                        <ImageScale image="/images/home-02.jpg" w={736} h={1001} />
                       </div>
                       
                       <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">01</span>
@@ -101,10 +101,10 @@ export default function Mission() {
 
                     <Link href="/" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                       <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                        <div className="absolute inset-0 bg-orange text-yellow z-[10] p-8 flex items-center justify-center text-center translate-y-full group-hover:translate-y-0 transition-transform ease-ak duration-[600ms]">
+                        <div className="absolute inset-0 bg-orange text-yellow z-[10] p-8 flex items-center justify-center text-center translate-y-[101%] group-hover:translate-y-0 transition-transform ease-ak duration-[600ms]">
                           <span className="block font-display text-[5.2vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1]">Our Conservation Accreditations are the cornerstone of our practice, enabling us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings, looking for ways to recycle rather than demolish, or retrofit for the future.</span>
                         </div>
-                        <ImageScale image="/images/home-03.jpg" />
+                        <ImageScale image="/images/home-03.jpg" w={736} h={1001} />
                       </div>
 
                       <span className="block text-lg leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center mb-2">02</span>
@@ -116,11 +116,11 @@ export default function Mission() {
 
                     <Link href="/" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                       <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                        <div className="absolute inset-0 bg-orange text-yellow z-[10] p-8 flex items-center justify-center text-center translate-y-full group-hover:translate-y-0 transition-transform ease-ak duration-[600ms]">
+                        <div className="absolute inset-0 bg-orange text-yellow z-[10] p-8 flex items-center justify-center text-center translate-y-[101%] group-hover:translate-y-0 transition-transform ease-ak duration-[600ms]">
                           <span className="block font-display text-[5.2vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1]">Our Conservation Accreditations are the cornerstone of our practice, enabling us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings, looking for ways to recycle rather than demolish, or retrofit for the future.</span>
                         </div>
 
-                        <ImageScale image="/images/home-04.jpg" />
+                        <ImageScale image="/images/home-04.jpg" w={736} h={1001} />
                       </div>
 
                       <span className="block text-lg leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center mb-2">03</span>
@@ -133,15 +133,6 @@ export default function Mission() {
                 </Container>
 
                 <div className="bg-yellow text-black flex flex-wrap mb-[20vw] lg:mb-[12.5vw]">
-                  <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
-                    <h1 className="text-[16vw] lg:text-[9vw] leading-[0.9] lg:leading-[0.9] text-orange w-[85%] md:w-[75%] lg:w-[85%] mb-[25vw] lg:mb-0">Sustainable as standard.</h1>
-
-                    <div className="w-full lg:w-9/12 content text-base xl:text-lg mt-auto">
-                      <p>We create for positive, enduring impact. Making sustainability a first thought is a no brainer. The future depends on it. Sustainability for main, not as an optional dessert. We look at how everything we do preserves, impacts, interacts with and inspires life. Commercially realistic. Future focused. Sustainable as standard.</p>
-                      
-                      <p>We have a passionate bunch of accredited Passive House Designers at Anotherkind, with more of the team on track to complete the qualification. Also bolstering our team is a retrofit specialist, who brings a wealth of sustainability consultant experience and knowledge to all of our projects.</p>
-                    </div>
-                  </div>
                   <div className="w-full lg:w-[48%] relative">
                     <div className="w-full relative overflow-hidden">
                       <div className="absolute inset-0 z-10 flex items-center justify-center">
@@ -152,7 +143,16 @@ export default function Mission() {
                           </div>
                         </div>
                       </div>
-                      <ImageScale image="/images/mission-02.jpg"/>
+                      <ImageScale image="/images/mission-04.jpg" w={1104} h={1501} />
+                    </div>
+                  </div>
+                  <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
+                    <h1 className="text-[16vw] lg:text-[9vw] leading-[0.9] lg:leading-[0.9] text-orange w-[85%] md:w-[75%] lg:w-[85%] mb-[25vw] lg:mb-0">Conserve and protect.</h1>
+
+                    <div className="w-full lg:w-9/12 content text-base xl:text-lg mt-auto">
+                      <p>We create for positive, enduring impact. Making sustainability a first thought is a no brainer. The future depends on it. Sustainability for main, not as an optional dessert. We look at how everything we do preserves, impacts, interacts with and inspires life. Commercially realistic. Future focused. Sustainable as standard.</p>
+                      
+                      <p>We have a passionate bunch of accredited Passive House Designers at Anotherkind, with more of the team on track to complete the qualification. Also bolstering our team is a retrofit specialist, who brings a wealth of sustainability consultant experience and knowledge to all of our projects.</p>
                     </div>
                   </div>
                 </div>
@@ -172,7 +172,7 @@ export default function Mission() {
                     <div className="flex flex-wrap items-start">
                       <div className="w-full lg:w-[55%] mb-16 lg:mb-0 relative" ref={badgeRef}>
                         <div className="overflow-hidden rounded-xl relative">
-                          <ImageScale image="/images/mission-03.jpg" />
+                          <ImageScale image="/images/mission-03.jpg" w={1224} h={779} />
                         </div>
                         <m.div style={{ rotate: rotateBadge }} className="absolute bottom-[-60px] xl:bottom-[-100px] left-[5%] xl:left-[25%] w-[120px] xl:w-[200px]">
                           <BadgeLightningIcon className="w-full" />
@@ -207,7 +207,7 @@ export default function Mission() {
           <m.div variants={fade}>
             <div className="overflow-hidden bg-off-white z-[10] relative">
               <div className="w-full relative overflow-hidden">
-                <ImageScale image="/images/footer-02.jpg" />
+                <ImageScale image="/images/footer-02.jpg" w={2400} h={1345} />
               </div>
               <Footer />
             </div>
