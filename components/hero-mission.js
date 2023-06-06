@@ -12,8 +12,8 @@ export default function HeroMission({ image }) {
   const { scrollY } = useScroll()
   const scale = useTransform(scrollYProgress,[0, 1],[1, 2.5],{ clamp: true })
   const radius = useTransform(scrollYProgress,[0, 1],[20, 0],{ clamp: true })
-  const moveX = useTransform(scrollYProgress,[0, 1],['-17.75dvw', '0dvw'],{ clamp: true })
-  const moveY = useTransform(scrollYProgress,[0, 1],['-50dvh', '0dvh'],{ clamp: true })
+  const moveX = useTransform(scrollYProgress,[0, 0.6],['-17.75dvw', '0dvw'],{ clamp: true })
+  const moveY = useTransform(scrollYProgress,[0, 0.6],['-50dvh', '0dvh'],{ clamp: true })
   const moveTextTop = useTransform(scrollYProgress,[0, 1],['0', '-300%'],{ clamp: true })
   const moveTextBottom = useTransform(scrollYProgress,[0, 1],['0', '300%'],{ clamp: true })
   const rotateTextBottom = useTransform(scrollYProgress,[0, 1],[0, -360],{ clamp: true })
@@ -26,7 +26,7 @@ export default function HeroMission({ image }) {
           <div className="w-full overflow-hidden relative z-[1]">
             <div className="relative overflow-hidden">
               <m.div style={{ y: moveTextTop }}>
-                <m.h2 variants={reveal} className="text-[12.5vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[150px] leading-[0.85] lg:leading-[0.85] xl:leading-[0.85] 2xl:leading-[0.85] text-center mt-[-1%]">Great Spaces.</m.h2>
+                <m.h2 variants={reveal} className="text-[12.5vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[150px] leading-[0.85] lg:leading-[0.85] xl:leading-[0.85] 2xl:leading-[0.85] text-center mt-[-1%]">Great spaces.</m.h2>
               </m.div>
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function HeroMission({ image }) {
           <div className="w-full mt-auto overflow-hidden relative z-[1]">
             <div className="relative overflow-hidden">
               <m.div style={{ y: moveTextBottom }}>
-                <m.h2 variants={reveal} className="text-[12.5vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[150px] leading-[0.85] lg:leading-[0.85] xl:leading-[0.85] 2xl:leading-[0.85] text-center">Designed For <em>Life</em>.</m.h2>
+                <m.h2 variants={reveal} className="text-[12.5vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[150px] leading-[0.85] lg:leading-[0.85] xl:leading-[0.85] 2xl:leading-[0.85] text-center">Designed for <em>life</em>.</m.h2>
               </m.div>
             </div>
           </div>
