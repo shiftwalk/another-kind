@@ -29,7 +29,7 @@ export default function ProjectSlug() {
                       <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Overview</m.span>
                     </span>
 
-                    <span className="font-display block w-full md:w-[95%] lg:w-[95%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">Behold the stunning <em>transformation</em> of this 1960's split level bungalow. Externally the property now has a combination of stunning standing seam metal, and robust timber cladding. A <em>dramatic</em> change to a deserving property.</span>
+                    <span className="font-display block w-full md:w-[95%] lg:w-[95%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">Behold the stunning <em>transformation</em> of this 1960&rsquo;s split level bungalow. Externally the property now has a combination of stunning standing seam metal, and robust timber cladding. A <em>dramatic</em> change to a deserving property.</span>
                   </div>
 
                   <div className="w-full mb-5 flex space-x-[4vw]">
@@ -98,13 +98,13 @@ export default function ProjectSlug() {
                       <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Need a hand?</m.span>
                     </span>
 
-                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">Need help transforming a residential property into a beautiful, <em>lasting</em> home? We’d love to talk!</span>
+                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">Need help transforming a residential property into a beautiful, <em>lasting</em> home? We&rsquo;d love to talk!</span>
 
                     <div className="w-full flex justify-center">
                       <div className="w-[30%] lg:w-[15%] 2xl:w-[12%] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
                         <div className="w-full text-center -mt-3 lg:-mt-5">
                           <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
-                          <span className="block font-display text-[5.3vw] lg:text-[2.5vw] leading-none lg:leading-none">Let’s Talk!</span>
+                          <span className="block font-display text-[5.3vw] lg:text-[2.5vw] leading-none lg:leading-none">Let&rsquo;s Talk!</span>
                         </div>
                       </div>
                     </div>
