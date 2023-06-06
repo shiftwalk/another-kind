@@ -19,20 +19,21 @@ export default function Header({ sunny }) {
           <nav className="mr-auto hidden space-x-2 xl:space-x-3 w-full text-lg xl:text-xl xl:leading-none md:w-auto mt-[-2px] lg:flex">
             <FancyLink destination="/" active={router.asPath == '/'} a11yText="Navigate to the home page" label="Home" />
             <SunIcon className="w-5 mt-[2px]" />
-            <FancyLink destination="/about" active={router.asPath == '/about'} a11yText="Navigate to the projects page" label="Projects" />
+            <FancyLink destination="/projects" active={router.asPath.includes('/projects')} a11yText="Navigate to the projects page" label="Projects" />
             <SunIcon className="w-5 mt-[2px]" />
             <FancyLink destination="/mission" a11yText="Navigate to the mission page" label="Mission" active={router.asPath == '/mission'} />
             <SunIcon className="w-5 mt-[2px]" />
             <FancyLink destination="/about" a11yText="Navigate to the team page" label="Team" />
           </nav>
-
+          
+          <div className="lg:translate-x-[-30px] mx-auto">
             <m.div style={{ rotate: rotate }} className="mx-auto">
               <Link href="/" aria-label="Navigate to the home page" className={`block mx-auto relative`}>
                 <SunnyIcon className={` inset-0 w-[40px] h-[40px] xl:w-[48px] xl:h-[48px] text-orange opacity-100`} />
               </Link>
             </m.div>
-          
-
+          </div>
+        
           <nav className="ml-auto hidden lg:flex space-x-2 xl:space-x-3 w-full text-lg xl:text-xl xl:leading-none md:w-auto -mt-1">
             <FancyLink destination="/about" a11yText="Navigate to the journal page" label="Journal" />
             <SunIcon className="w-5 mt-[2px]" />

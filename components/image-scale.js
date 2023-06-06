@@ -10,11 +10,11 @@ export default function ImageScale({ image }) {
     offset: ["start end", "end start"]
   })
   
-  const scale = useTransform(scrollYProgress,[0, 1],[1.175, 1],{ clamp: true })
+  const scale = useTransform(scrollYProgress,[0, 1],[1.175, 1],{ clamp: false })
   
   return (
-    <m.div variants={imageScale}>
-      <m.img style={{ scale: scale }} src={image} alt="Temp Home Image" className="will-change-transform w-full" ref={ref} />
+    <m.div style={{ scale: scale }} className="will-change-transform">
+      <img src={image} alt="Temp Home Image" className="w-full" ref={ref} />
     </m.div>
   )
 }

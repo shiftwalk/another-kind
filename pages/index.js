@@ -45,8 +45,8 @@ export default function Home() {
                     <div className="w-full relative overflow-hidden rounded-xl">
                       <ImageScale image="/images/home.jpg" />
                     </div>
-
-                    <m.div variants={scale} style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[30%] will-change-transform">
+            
+                    <m.div style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[30%] will-change-transform">
                       <BadgeIcon className="w-full" />
                     </m.div>
                   </div>

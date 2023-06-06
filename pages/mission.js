@@ -47,8 +47,6 @@ export default function Mission() {
                   </div>
                 </Container>
 
-
-
                 <div className="bg-green text-off-white flex flex-wrap mb-[20vw] lg:mb-[12.5vw]">
                   <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
                     <h1 className="text-[16vw] lg:text-[9vw] leading-[0.9] lg:leading-[0.9] text-yellow w-[85%] md:w-[75%] lg:w-[85%] mb-[25vw] lg:mb-0">Sustainable as standard.</h1>

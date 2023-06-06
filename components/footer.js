@@ -13,7 +13,7 @@ export default function Footer() {
             <span className="block">© 2023 Anotherkind Architects Limited, C/N - 2345623</span>
           </div>
 
-          <FooterLockupIcon className="w-[200px] lg:w-[180px] xl:w-[250px] mx-auto order-1 lg:order-2 mb-12 lg:mb-0" />
+          <FooterLockupIcon className="w-[200px] lg:w-[180px] xl:w-[250px] mx-auto order-1 lg:order-2 mb-12 lg:mb-0 translate-x-[4px] lg:translate-x-[-19px] xl:translate-x-[-23px]" />
 
           <nav className="ml-auto flex space-x-2 xl:space-x-3 w-full text-base xl:text-xl xl:leading-none lg:w-auto order-2 lg:order-3 justify-center lg:justify-end mb-2 lg:mb-0">
             <FancyLink destination="/about" a11yText="Navigate to the privacy page" label="Privacy" />

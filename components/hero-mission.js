@@ -32,8 +32,8 @@ export default function HeroMission({ image }) {
           </div>
 
           <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-10 pointer-events-none">
-            <div className="relative">
-              <m.div style={{ scale: scale, borderRadius: radius  }} className={`w-[90dvw] lg:w-[52dvw] h-[52dvh] relative overflow-hidden mx-auto`}>
+            <div className="relative max-w-[1200px]">
+              <m.div style={{ scale: scale, borderRadius: radius  }} className={`w-[90dvw] lg:w-[52dvw] h-[52dvh] relative overflow-hidden mx-auto max-w-[1200px]`}>
                 <img style={{ scale: scale }} src={'/images/mission.jpg'} alt="Temp Home Image" className="will-change-transform w-full absolute inset-0 h-full object-cover object-center" />
               </m.div>
             </div>
@@ -49,7 +49,7 @@ export default function HeroMission({ image }) {
         </div>
       </div>
 
-      <m.div style={{ x: moveX, y: moveY, rotate: rotate  }} className="fixed w-[30%] lg:w-[15vw] xl:w-[13vw] 2xl:w-[10vw] bottom-5 right-5 z-[100] hidden lg:block">
+      <m.div style={{ x: moveX, y: moveY, rotate: rotate  }} className="fixed w-[30%] lg:w-[10vw] max-w-[180px] bottom-5 right-5 z-[100] hidden lg:block 2xl:mr-[3.33vw]">
         <ManifestoBadgeIcon className="w-full" />
       </m.div>
     </>
