@@ -44,3 +44,7 @@ html.lenis {
   border-right: 50vw solid transparent;
   @apply border-b-[50vw] border-b-yellow;
 }
+
+.ease-ak {
+  @apply ease-[cubic-bezier([0.83,0,0.17,1])] 
+}

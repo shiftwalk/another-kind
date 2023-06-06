@@ -18,7 +18,8 @@ export default function Home() {
     offset: ["start end", "end start"]
   })
   
-  const rotate = useTransform(scrollYProgress,[0, 1],[-360, 360],{ clamp: true })
+  const rotateBadge = useTransform(scrollYProgress,[0, 1],[-360, 360],{ clamp: true })
+  const lerpBadge = useTransform(scrollYProgress,[0, 1],[150, -150],{ clamp: true })
   
   return (
     <Layout>
@@ -45,7 +46,7 @@ export default function Home() {
                       <ImageScale image="/images/home.jpg" />
                     </div>
 
-                    <m.div variants={scale} style={{ rotateZ: rotate }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[30%] will-change-transform">
+                    <m.div variants={scale} style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[30%] will-change-transform">
                       <BadgeIcon className="w-full" />
                     </m.div>
                   </div>
