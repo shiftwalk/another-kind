@@ -21,6 +21,6 @@ export default function App({ Component, pageProps }) {
           <Component {...pageProps} key={router.asPath} />
         </AnimatePresence>
       </div>
-    // </ReactLenis>
+    </ReactLenis>
   )
 }
