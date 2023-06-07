@@ -1,6 +1,5 @@
 import { m, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import ManifestoBadgeIcon from "@/icons/manifesto-badge.svg";
 import { reveal } from '@/helpers/transitions';
 import Image from 'next/image';
 
@@ -17,7 +16,6 @@ export default function HeroMission({ image }) {
   const moveY = useTransform(scrollYProgress,[0, 0.6],['-50dvh', '0dvh'],{ clamp: true })
   const moveTextTop = useTransform(scrollYProgress,[0, 1],['0', '-300%'],{ clamp: true })
   const moveTextBottom = useTransform(scrollYProgress,[0, 1],['0', '300%'],{ clamp: true })
-  const rotateTextBottom = useTransform(scrollYProgress,[0, 1],[0, -360],{ clamp: true })
   const rotate = useTransform(scrollY, [0, 15], [0, 1], { clamp: false })
   
   return (
@@ -49,10 +47,6 @@ export default function HeroMission({ image }) {
           </div>
         </div>
       </div>
-
-      <m.div style={{ x: moveX, y: moveY, rotate: rotate  }} className="fixed w-[30%] lg:w-[10vw] max-w-[180px] bottom-5 right-5 z-[100] hidden lg:block 2xl:mr-[3.33vw]">
-        <ManifestoBadgeIcon className="w-full" />
-      </m.div>
     </>
   )
 }

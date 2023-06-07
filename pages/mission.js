@@ -2,22 +2,35 @@ import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
 import { fade, reveal, scale } from '@/helpers/transitions'
-import { LazyMotion, domAnimation, m, useScroll, useTransform} from 'framer-motion'
+import { LazyMotion, domAnimation, m, useScroll, useTransform, AnimatePresence} from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
 import BadgeLightningIcon from "@/icons/badge-lightning.svg"
+import ManifestoBadgeIcon from "@/icons/manifesto-badge.svg";
 import ImageScale from '@/components/image-scale'
 import HeroMission from '@/components/hero-mission'
 import Link from 'next/link'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 export default function Mission() {
   const badgeRef = useRef(null)
-  
+  const [manifestoOpen, setManifestoOpen] = useState(false);
+
+  // const { scrollYProgress } = useScroll({
+  //   target: badgeRef,
+  //   offset: ["start end", "end start"]
+  // })
+
+  const ref = useRef(null)
   const { scrollYProgress } = useScroll({
-    target: badgeRef,
-    offset: ["start end", "end start"]
+    target: ref,
+    offset: ["0%", "100%"]
   })
+
+  const { scrollY } = useScroll()
+  const moveX = useTransform(scrollYProgress,[0, 0.6],['-17.75dvw', '0dvw'],{ clamp: true })
+  const moveY = useTransform(scrollYProgress,[0, 0.6],['-50dvh', '0dvh'],{ clamp: true })
+  const rotate = useTransform(scrollY, [0, 15], [0, 1], { clamp: false })
   
   const rotateBadge = useTransform(scrollYProgress,[0, 4],[-360, 360],{ clamp: true })  
   
@@ -33,6 +46,81 @@ export default function Mission() {
         >
           <m.main className="">
             <m.article variants={fade}>
+              <AnimatePresence>
+                {manifestoOpen && (
+                  <>
+                    <m.button
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 0.7 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.6, ease: [0.83, 0, 0.17, 1]}}
+                      className="fixed inset-0 bg-black  z-[1000] outline-none border-none"
+                      key="manifestobg"
+                      onClick={() => setManifestoOpen(manifestoOpen ? false : true)}
+                    >
+                    </m.button>
+                    <m.div
+                      initial={{ y: '100%' }}
+                      animate={{ y: 0 }}
+                      exit={{ y: '100%' }}
+                      transition={{ duration: 0.6, ease: [0.83, 0, 0.17, 1]}}
+                      className="fixed bottom-0 left-0 right-0 bg-off-white z-[1000] p-5"
+                      key="manifesto"
+                    >
+                      <span className="font-display block w-full text-[12.5vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-[8vw]">What we believe in.</span>
+                      
+                      <div className="flex space-x-5">
+                        <div className="w-1/2 lg:w-1/3 bg-orange text-yellow rounded-xl p-5">
+                          <span className="font-display block w-full text-[10.2vw] md:text-[7.5vw] lg:text-[8vw] xl:text-[10vw] 2xl:text-[170px] leading-[0] md:leading-[0] lg:leading-[0] xl:leading-[0] mb-[20vw] lg:mb-[15vw] xl:mb-[200px] translate-x-[2%] translate-y-[20%]"><em>1</em></span>
+
+                          <div className="mt-auto">
+                            <span className="font-display block w-[90%] lg:w-[75%] text-[6.5vw] md:text-[5vw] lg:text-[3.5vw] xl:text-[4.5vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] mb-8">Putting people first.</span>
+
+                            <div className="w-full content text-sm md:text-base xl:text-lg">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere sollicitudin mauris, at scelerisque lorem pulvinar et. Mauris iaculis auctor imperdiet.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="w-1/2 lg:w-1/3 bg-blue text-green rounded-xl p-5">
+                          <span className="font-display block w-full text-[10.2vw] md:text-[7.5vw] lg:text-[8vw] xl:text-[10vw] 2xl:text-[170px] leading-[0] md:leading-[0] lg:leading-[0] xl:leading-[0] mb-[20vw] lg:mb-[15vw] xl:mb-[200px] translate-x-[2%] translate-y-[20%]"><em>2</em></span>
+
+                          <div className="mt-auto">
+                            <span className="font-display block w-[90%] lg:w-[75%] text-[6.5vw] md:text-[5vw] lg:text-[3.5vw] xl:text-[4.5vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] mb-8">Making a difference.</span>
+
+                            <div className="w-full content text-sm md:text-base xl:text-lg">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere sollicitudin mauris, at scelerisque lorem pulvinar et. Mauris iaculis auctor imperdiet.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="w-1/2 lg:w-1/3 bg-green text-blue rounded-xl p-5">
+                          <span className="font-display block w-full text-[10.2vw] md:text-[7.5vw] lg:text-[8vw] xl:text-[10vw] 2xl:text-[170px] leading-[0] md:leading-[0] lg:leading-[0] xl:leading-[0] mb-[20vw] lg:mb-[15vw] xl:mb-[200px] translate-x-[2%] translate-y-[20%]"><em>3</em></span>
+
+                          <div className="mt-auto">
+                            <span className="font-display block w-[90%] lg:w-[75%] text-[6.5vw] md:text-[5vw] lg:text-[3.5vw] xl:text-[4.5vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] mb-8">Great client experiences.</span>
+
+                            <div className="w-full content text-sm md:text-base xl:text-lg">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere sollicitudin mauris, at scelerisque lorem pulvinar et. Mauris iaculis auctor imperdiet.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </m.div>
+                  </>
+                )}
+              </AnimatePresence>
+
+              <m.button
+                whileHover={{ scale: 1.15, transition:{ duration: 0.6, ease: [0.83, 0, 0.17, 1]} }}
+                onClick={() => setManifestoOpen(manifestoOpen ? false : true)}
+                style={{ x: moveX, y: moveY, rotate: rotate  }}
+                className="fixed w-[30%] lg:w-[10vw] max-w-[180px] bottom-5 right-5 z-[100] hidden lg:block outline-none border-none"
+              >
+                <ManifestoBadgeIcon className="w-full" />
+              </m.button>
+              
+              {/* Fake */}
+              <div className="top-0 left-0 w-full h-[300dvh] fixed inset-0 z-[10] bg-none pointer-events-none" ref={ref}></div>
+
               <HeroMission />
 
               <div className="relative bg-off-white mt-[300dvh] z-[10]">
