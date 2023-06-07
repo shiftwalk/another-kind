@@ -10,7 +10,6 @@ export default function HeroProject({ image }) {
     target: ref,
     offset: ["0%", "100%"]
   })
-  const { scrollY } = useScroll()
   const scale = useTransform(scrollYProgress,[0, 1],[1, 1.25],{ clamp: true })
   const move = useTransform(scrollYProgress,[0, 1],['0', '100%'],{ clamp: true })
   

@@ -14,7 +14,9 @@
 
 /* Simple defaults */
 body {
-  @apply font-sans antialiased text-black bg-off-white selection:bg-black selection:text-off-white;
+  @apply font-sans antialiased text-black bg-off-white selection:bg-black selection:text-off-white ;
+  overscroll-behavior: none!important;
+
 }
 
 html.lenis {

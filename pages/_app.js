@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <ReactLenis root>
-      <div className={`${Sohne.variable} ${PPEditorialNewItalic.variable} ${Verlag.variable} ${VCGaramondCondensed.variable} font-sans`}>
+      <div id="app" className={`${Sohne.variable} ${PPEditorialNewItalic.variable} ${Verlag.variable} ${VCGaramondCondensed.variable} font-sans`}>
         <DefaultSeo {...SEO} /> 
 
         <Header sunny={router.asPath == '/'} />
