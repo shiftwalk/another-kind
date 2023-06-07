@@ -131,8 +131,7 @@ export default function Home() {
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Work</span>
                   </div>
                 </div>
-              </Container>
-            
+              </Container>            
             </m.article>
           </m.main>
         

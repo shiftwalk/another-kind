@@ -23,7 +23,7 @@ export default function Header({ sunny }) {
             <SunIcon className="w-5 mt-[2px]" />
             <FancyLink destination="/mission" a11yText="Navigate to the mission page" label="Mission" active={router.asPath == '/mission'} />
             <SunIcon className="w-5 mt-[2px]" />
-            <FancyLink destination="/about" a11yText="Navigate to the team page" label="Team" />
+            <FancyLink destination="/team" a11yText="Navigate to the team page" label="Team" active={router.asPath == '/team'} />
           </nav>
           <div className={`h-[40px] xl:h-[48px] lg:translate-x-[-30px] mx-auto relative overflow-hidden flex items-center`}>
             <AnimatePresence mode="wait" initial={false}>
