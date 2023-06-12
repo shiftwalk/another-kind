@@ -63,7 +63,7 @@ export default function Header({ sunny }) {
           </div>
         
           <nav className="ml-auto hidden lg:flex space-x-2 xl:space-x-3 w-full text-lg xl:text-xl xl:leading-none md:w-auto -mt-1">
-            <FancyLink destination="/about" a11yText="Navigate to the journal page" label="Journal" />
+            <FancyLink destination="/journal" a11yText="Navigate to the journal page" label="Journal" active={router.asPath.includes('/journal')} />
             <SunIcon className="w-5 mt-[2px]" />
             <FancyLink destination="/about" a11yText="Navigate to the instagram page" label="Instagram" />
             <SunIcon className="w-5 mt-[2px]" />
