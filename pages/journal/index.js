@@ -27,7 +27,7 @@ export default function Journal() {
               <div className="relative bg-off-white">
                 <Container>
                   <div className="flex flex-wrap justify-center pt-[25vw] pb-[20vw] lg:py-[12.5vw]">
-                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[50px] mb-3">
+                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[50px] mb-4">
                       <svg className="w-full" viewBox="0 0 500 140">
                         <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                         <text>
@@ -38,8 +38,8 @@ export default function Journal() {
                       </svg>
                     </span>
 
-                    <div className="relative overflow-hidden w-full mb-10 lg:mb-12">
-                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[150px] leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] 2xl:leading-[0.9] text-center mb-0 pb-0"><em>Life</em> in full flow.</m.h1>
+                    <div className="relative overflow-hidden w-full mb-8 lg:mb-10">
+                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[150px] leading-[1] lg:leading-[1] xl:leading-[1] 2xl:leading-[1] text-center mb-0 pb-0"><span className="block translate-y-[-11%]"><em>Life</em> in full flow.</span></m.h1>
                     </div>
 
                     <div className="w-[95%] lg:w-[60%] content text-lg xl:text-xl text-center mx-auto max-w-[800px]">
