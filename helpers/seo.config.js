@@ -7,6 +7,14 @@ export default {
     locale: 'en_GB',
     url: 'https://another-kind.vercel.app/',
     site_name: 'AnotherKind Architects',
+    images: [
+      {
+        url: 'https://another-kind.vercel.app/images/social.jpg',
+        width: 1200,
+        height: 630,
+        alt: `Another Kind Logo`,
+      },
+    ],
   },
   twitter: {
     handle: '@samuelgoddard',

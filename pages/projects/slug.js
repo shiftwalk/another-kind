@@ -26,7 +26,7 @@ export default function ProjectSlug() {
               <HeroProject />
               <div className="relative bg-off-white mt-[100dvh] z-10">
                 <Container>
-                  <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[12.5vw] mb-[20vw] lg:mb-[12.5vw]">
+                  <div className="flex flex-wrap justify-center pt-[17vw] lg:pt-[10.5vw] mb-[20vw] lg:mb-[10.5vw]">
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
                       <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Overview</m.span>
                     </span>
