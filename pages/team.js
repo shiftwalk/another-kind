@@ -7,11 +7,23 @@ import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
 import SunnyIcon from "@/icons/sunny.svg";
 import SquiggleTeamIcon from "@/icons/squiggle-team.svg";
+import ArrowIcon from "@/icons/arrow.svg";
 import ImageScale from '@/components/image-scale'
 import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
+import { useState } from 'react'
 
 export default function Team() {
+  const [currentImage, setCurrentImage] = useState(0);
+  
+  function nextImage() {
+    setCurrentImage(currentImage == 2 ? 0 : currentImage + 1)
+  }
+
+  function prevImage() {
+    setCurrentImage(currentImage == 0 ? 2 : currentImage - 1)
+  }
+  
   return (
     <Layout>
       <NextSeo title="Team" />
@@ -107,15 +119,61 @@ export default function Team() {
             <div className="bg-green text-off-white flex flex-wrap mb-[20vw] lg:mb-[10vw]">
               <div className="w-full lg:w-[48%] relative">
                 <div className="w-full relative overflow-hidden">
-                  <ImageScale image="/images/team-2.jpg" w={1105} h={1501} />
+                  <div className={`w-full relative overflow-hidden aspect-[10/13]`}>
+                    <div className="opacity-0">
+                      <ImageScale image="/images/team-cara-1.jpg" w={1105} h={1501} />
+                    </div>
+                  </div>
+
+                  <div className={`w-full absolute inset-0 z-[10] transition-transform ease-ak duration-[650ms] ${ currentImage == 0 && 'translate-y-[0%]'} ${ currentImage == 1 && 'translate-y-[-100%]'} ${ currentImage == 2 && 'translate-y-[-200%]'} ${ currentImage == 3 && 'translate-y-[-300%]'} `}>
+                    <div className="w-full relative overflow-hidden aspect-[10/13]">
+                      <div className={`transition-transform ease-ak duration-[650ms] ${currentImage == 0 ? 'scale-1' : 'scale-[1.3]' }`}>
+                        <ImageScale image="/images/team-cara-2.jpg" w={1105} h={1501} />
+                      </div>
+                    </div>
+                    <div className="w-full relative overflow-hidden aspect-[10/13]">
+                      <div className={`transition-transform ease-ak duration-[650ms] ${currentImage == 1 ? 'scale-1' : 'scale-[1.3]' }`}>
+                        <ImageScale image="/images/team-cara-3.jpg" w={1105} h={1501} />
+                      </div>
+                    </div>
+                    <div className="w-full relative overflow-hidden aspect-[10/13]">
+                      <div className={`transition-transform ease-ak duration-[650ms] ${currentImage == 2 ? 'scale-1' : 'scale-[1.3]' }`}>
+                        <ImageScale image="/images/team-cara-4.jpg" w={1105} h={1501} />
+                      </div>
+                    </div>
+                    {/* <div className="w-full relative overflow-hidden aspect-[10/13]">
+                      <div className={`transition-transform ease-ak duration-[800ms] ${currentImage == 3 ? 'scale-1' : 'scale-[1.3]' }`}>
+                        <ImageScale image="/images/team-cara-4.jpg" w={1105} h={1501} />
+                      </div>
+                    </div> */}
+                  </div>
                 </div>
               </div>
               <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
                 <h1 className="text-[16vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[85%] md:w-[85%] lg:w-[100%] mb-[25vw] lg:mb-0">Life-led.<br/> social at heart.</h1>
 
-                <div className="w-full lg:w-10/12 content text-base/[1.28] xl:text-lg/[1.28] mt-auto max-w-[800px]">
-                  <p>Conservation is a passion. Our aim is to always preserve life in the places we shape where it&rsquo;s possible, and valuable. Stories. Memories. History. Breathing new life into old places is central to our approach.</p>
-                  <p>Finding the unusual and remarkable in the places we conserve, then elevating and re-purposing the form and fabric that gave that place life to begin with. No life left behind. We have two RIBA Conservation & AABC accredited architects, with more of the team completing accreditations as we type.</p>
+                <div className="w-full lg:w-10/12 mt-auto max-w-[800px]">
+                  <div className="content text-base/[1.28] xl:text-lg/[1.28] mb-5">
+                    <p>Conservation is a passion. Our aim is to always preserve life in the places we shape where it&rsquo;s possible, and valuable. Stories. Memories. History. Breathing new life into old places is central to our approach.</p>
+                    <p>Finding the unusual and remarkable in the places we conserve, then elevating and re-purposing the form and fabric that gave that place life to begin with. No life left behind. We have two RIBA Conservation & AABC accredited architects, with more of the team completing accreditations as we type.</p>
+                  </div>
+
+                  <div className="flex space-x-3">
+                    <button onClick={prevImage} className={`w-[50px] xl:w-[60px] h-[50px] xl:h-[60px] transition-colors ease-ak duration-[350ms] text-blue p-[10px] flex items-center justify-center rounded-full border border-blue relative overflow-hidden outline-none hover:outline-none focus:outline-none group`}>
+                      <div className="absolute z-[10] inset-0 transition-transform ease-ak duration-[400ms] bg-yellow text-green translate-x-[100%] group-hover:translate-x-0 flex items-center justify-center p-[10px]">
+                        <ArrowIcon className="w-full rotate-180" />
+                      </div>
+                      <ArrowIcon className="w-full rotate-180 transition-translate ease-ak duration-[400ms] group-hover:translate-x-[-150%]" />
+                    </button>
+
+                    <button onClick={nextImage} className={`w-[50px] xl:w-[60px] h-[50px] xl:h-[60px] transition-colors ease-ak duration-[350ms] text-blue p-[10px] flex items-center justify-center rounded-full border border-blue relative overflow-hidden outline-none hover:outline-none focus:outline-none group`}>
+                      <div className="absolute z-[10] inset-0 transition-transform ease-ak duration-[400ms] bg-yellow text-green translate-x-[-100%] group-hover:translate-x-0 flex items-center justify-center p-[10px]">
+                        <ArrowIcon className="w-full" />
+                      </div>
+
+                      <ArrowIcon className="w-full transition-translate ease-ak duration-[400ms] group-hover:translate-x-[150%]" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

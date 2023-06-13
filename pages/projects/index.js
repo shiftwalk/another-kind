@@ -5,6 +5,7 @@ import { fade, reveal } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
+import SunnyIcon from "@/icons/sunny.svg";
 import ImageScale from '@/components/image-scale'
 import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
@@ -39,15 +40,18 @@ export default function Projects() {
                     </span>
 
                     <div className="relative overflow-hidden w-full mb-10 lg:mb-12">
-                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] 2xl:leading-[0.9] text-center mb-0 pb-0">Places we’ve <em>shaped</em>.</m.h1>
+                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] 2xl:leading-[0.9] text-center mb-0 pb-0">Places we&rsquo;ve <em>shaped</em>.</m.h1>
                     </div>
 
                     <div className="w-[95%] lg:w-[60%] content text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px]">
-                      <p>We’re passionate about architecture that is appropriate and accessible, woven comfortably into their setting, respecting local character and celebrating community.</p>
+                      <p>We&rsquo;re passionate about architecture that is appropriate and accessible, woven comfortably into their setting, respecting local character and celebrating community.</p>
                     </div>
                   </div>
 
-                  <ul className="grid grid-cols-2 px-[3vw] lg:px-[6vw] gap-[6vw] lg:gap-[5vw] mb-[10vw] lg:mb-[6.25vw]">
+                  <ul className="grid grid-cols-2 px-[3vw] lg:px-[6vw] gap-[6vw] lg:gap-[5vw] mb-[10vw] lg:mb-[6.25vw] relative">
+                    <div className="absolute top-[-50px] lg:top-[-70px] left-[8%] lg:left-[9%] w-[120px] xl:w-[170px] p-3 z-[20] bg-orange text-yellow rounded-full">
+                      <SunnyIcon className="w-full aspect-square" />
+                    </div>
                     {Array.from(Array(10), (e, i) => {
                       let color = colors[colors.length * Math.random() | 0]
 
