@@ -36,7 +36,7 @@ export default function Menu() {
                   </nav>
                 </div>
 
-                <div className="w-full relative z-10 translate-y-[-5.5vw] lg:translate-y-0">
+                <div className="w-full relative z-10 translate-y-[-6.75vw] lg:translate-y-0">
                   <Container>
                     <ul className="font-display text-[12vw] leading-none md:text-6xl md:leading-none">
                       <li className="w-full block">
