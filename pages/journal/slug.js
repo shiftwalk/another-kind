@@ -22,8 +22,9 @@ export default function JournalSlug() {
           initial="initial"
           animate="enter"
           exit="exit"
+          className="flex flex-wrap"
         >
-          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[100px] lg:pt-[110px] xl:pt-[120px]">
+          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[100px] lg:pt-[110px] xl:pt-[120px] w-full">
             <m.article variants={fade}>
               <Container>
                 <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none mb-3 lg:mb-5 bg-orange text-off-white`}>Project News</span>
@@ -95,7 +96,7 @@ export default function JournalSlug() {
             </m.article>
           </m.main>
         
-          <m.div variants={fade}>
+          <m.div variants={fade} className="w-full">
             <div className="overflow-hidden bg-off-white z-[10] relative pt-[10vw] lg:pt-[5vw]">
               <Footer />
             </div>

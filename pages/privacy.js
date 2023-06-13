@@ -20,34 +20,63 @@ export default function Privacy() {
           initial="initial"
           animate="enter"
           exit="exit"
+          className="flex flex-wrap"
         >
-          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[100px] lg:pt-[110px] xl:pt-[120px]">
+          <m.main className="w-full pb-12 md:pb-16 xl:pb-24 pt-[100px] lg:pt-[110px] xl:pt-[120px]">
             <m.article variants={fade}>
               <Container>
-                <h1 className="text-[13.5vw] md:text-[9vw] lg:text-[8.5vw] leading-[0.8] md:leading-[0.8] lg:leading-[0.8] pb-0 w-[95%] mb-8 lg:mb-16 xl:mb-20">Privacy Policy</h1>
+                <h1 className="text-[13.5vw] md:text-[9vw] lg:text-[8.5vw] leading-[0.8] md:leading-[0.8] lg:leading-[0.8] pb-0 w-[95%] mb-12 md:mb-16 lg:mb-20">Privacy Policy</h1>
 
-                <div className="grid grid-cols-2 mb-[18vw] lg:mb-[10vw]">
-                  <div className="col-span-2 lg:col-span-1 mb-5 lg:mb-0">
-                    <div className="relative overflow-hidden rounded-2xl">
-                      <ImageScale image="/images/journal/journal-inner.jpg" w={1297} h={930} />
-                    </div>
-                  </div>
-                  <div className="col-span-2 lg:col-span-1">
-                    <div className="content w-[90%] lg:w-[65%] lg:max-w-[520px] lg:mx-auto text-lg/[1.28] lg:text-xl/[1.28] break-words">
-                      <p>30.09.2022</p>
-                      <p>The Greyfriar&rsquo;s project is a labour of love for PRB&rsquo;s conservation specialists Lucy Wilson, Joe Player and Joris Vreeswijk Working with Heritage Lincolnshire, City of Lincoln Council and the entire design team, planning and scheduled monument consent have been secured for this beautiful 13th century friary in Lincoln.</p>
-                      
-                      <p>It&rsquo;s been amazing, as always, working with Sarah Sorrell BSc (Hons) C.Build.E MCABE to ensure that inclusivity and accessibility were absolutely fundamental to the design; promoting accessible heritage for all.</p>
-                      
-                      <p>We loved contributing to the latest edition of Context - issued by the . Read more about the approach here: <a href="https://ihbconline.co.uk/context/173/index.html" className="underline" target="_blank" rel="noopener noreferrer">https://ihbconline.co.uk/context/173/index.html</a></p>
-                    </div>
+                <div className="mb-[18vw] lg:mb-[10vw] w-full">
+                  <div className="content w-[90%] lg:w-[72%] lg:max-w-[1250px] text-base/[1.28] lg:text-lg/[1.28] break-words">
+                    <h2>Introduction</h2>
+                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
+                    
+                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
+                    
+                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
+
+                    <h2>Important Information</h2>
+                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
+                    
+                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
+                    
+                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
+
+                    <h2>How else we use your data</h2>
+                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
+                    
+                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
+                    
+                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
+
+                    <h2>Introduction</h2>
+                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
+                    
+                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
+                    
+                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
+
+                    <h2>Important Information</h2>
+                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
+                    
+                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
+                    
+                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
+
+                    <h2>How else we use your data</h2>
+                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
+                    
+                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
+                    
+                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
                   </div>
                 </div>
               </Container>
             </m.article>
           </m.main>
         
-          <m.div variants={fade}>
+          <m.div variants={fade} className="w-full">
             <div className="overflow-hidden bg-off-white z-[10] relative pt-[10vw] lg:pt-[5vw]">
               <Footer />
             </div>

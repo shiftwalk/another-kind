@@ -2,7 +2,7 @@ import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
 import { fade, reveal } from '@/helpers/transitions'
-import { LazyMotion, domAnimation, m } from 'framer-motion'
+import { LazyMotion, domMax, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
 import SunnyIcon from "@/icons/sunny.svg";
@@ -16,7 +16,7 @@ export default function Team() {
     <Layout>
       <NextSeo title="Team" />
 
-      <LazyMotion features={domAnimation}>
+      <LazyMotion features={domMax}>
         <m.div
           initial="initial"
           animate="enter"

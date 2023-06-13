@@ -40,8 +40,8 @@ export default function Header({ sunny }) {
                         className="w-full"
                       >
                         <m.div style={{ rotate: rotate }} className="mx-auto">
-                          <Link href="/" aria-label="Navigate to the home page" className={`block mx-auto relative`}>
-                            <SunnyIcon className={`w-[36px] xl:w-[48px] inset-0 text-orange opacity-100`} />
+                          <Link href="/" aria-label="Navigate to the home page" className={`mx-auto relative group`}>
+                            <SunnyIcon className={`w-[36px] xl:w-[48px] inset-0 text-orange opacity-100 transition-transform ease-ak duration-[600ms] group-hover:rotate-[360deg]`} />
                           </Link>
                         </m.div>
                       </m.div>
@@ -56,8 +56,12 @@ export default function Header({ sunny }) {
                         key="nosunny"
                       >
                         <div className="mx-auto">
-                          <Link href="/" aria-label="Navigate to the home page" className={`block mx-auto relative`}>
-                            <LogoIcon className={`w-[200px] lg:w-[210px] xl:w-[270px] 2xl:w-[300px] inset-0 text-orange opacity-100`} />
+                          <Link href="/" aria-label="Navigate to the home page" className={`block mx-auto relative group`}>
+                            <LogoIcon className={`w-[200px] lg:w-[210px] xl:w-[270px] 2xl:w-[300px] inset-0 text-orange opacity-100 transition-transform ease-ak duration-[600ms] group-hover:translate-y-[150%]`} />
+
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <SunnyIcon className={`w-[36px] xl:w-[48px] inset-0 text-orange opacity-100 transition-transform ease-ak duration-[600ms] group-hover:rotate-[360deg] translate-y-full group-hover:translate-y-0`} />
+                            </div>
                           </Link>
                         </div>
                       </m.div>

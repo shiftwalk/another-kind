@@ -72,3 +72,12 @@ html.lenis {
     min-height: 100dvh;
   }
 }
+
+
+.squiggle {
+  path {
+    
+    stroke: black;
+    stroke-width: 10px;
+  }
+}
