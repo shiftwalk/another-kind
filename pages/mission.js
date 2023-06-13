@@ -13,6 +13,7 @@ import Link from 'next/link'
 import { useRef, useState } from 'react'
 import MissionManifesto from '@/components/mission-manifesto'
 import { useLenis } from '@studio-freight/react-lenis'
+import { MouseParallax } from 'react-just-parallax'
 
 export default function Mission() {
   const badgeRef = useRef(null)
@@ -92,14 +93,17 @@ export default function Mission() {
                   </div>
                   <div className="w-full lg:w-[48%] relative">
                     <div className="w-full relative overflow-hidden">
-                      <div className="absolute inset-0 z-10 flex items-center justify-center">
-                        <div className="w-[140px] xl:w-[180px] aspect-square bg-yellow text-green rounded-full flex items-center justify-center">
-                          <div className="w-full text-center -mt-3 lg:-mt-5">
-                            <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
-                            <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">See Work!</span>
-                          </div>
+                      <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false} isAbsolutelyPositioned={true} zIndex={10} >
+                        <div className="absolute inset-0 z-10 flex items-center justify-center">
+                          <Link href="/projects" className="w-[140px] xl:w-[180px] aspect-square bg-yellow text-green rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
+                            <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
+                            <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
+                              <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
+                              <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">See Work!</span>
+                            </div>
+                          </Link>
                         </div>
-                      </div>
+                      </MouseParallax>
                       <ImageScale image="/images/mission-02.jpg" w={900} h={1224} />
                     </div>
                   </div>
@@ -168,14 +172,17 @@ export default function Mission() {
                 <div className="bg-yellow text-black flex flex-wrap mb-[20vw] lg:mb-[10vw]">
                   <div className="w-full lg:w-[48%] relative">
                     <div className="w-full relative overflow-hidden">
-                      <div className="absolute inset-0 z-10 flex items-center justify-center">
-                        <div className="w-[140px] xl:w-[180px] aspect-square bg-yellow text-orange rounded-full flex items-center justify-center">
-                          <div className="w-full text-center -mt-3 lg:-mt-5">
-                            <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
-                            <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">See Work!</span>
-                          </div>
+                      <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false} isAbsolutelyPositioned={true} zIndex={10}>
+                        <div className="absolute inset-0 z-10 flex items-center justify-center">
+                          <Link href="/projects" className="w-[140px] xl:w-[180px] aspect-square bg-yellow text-green rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
+                            <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
+                            <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
+                              <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
+                              <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">See Work!</span>
+                            </div>
+                          </Link>
                         </div>
-                      </div>
+                      </MouseParallax>
                       <ImageScale image="/images/mission-04.jpg" w={1104} h={1501} />
                     </div>
                   </div>

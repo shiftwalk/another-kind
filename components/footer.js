@@ -16,13 +16,13 @@ export default function Footer() {
           <FooterLockupIcon className="w-[200px] lg:w-[180px] xl:w-[250px] mx-auto order-1 lg:order-2 mb-12 lg:mb-0 translate-x-[4px] lg:translate-x-[-19px] xl:translate-x-[-23px]" />
 
           <nav className="ml-auto flex space-x-2 xl:space-x-3 w-full text-base xl:text-xl xl:leading-none lg:w-auto order-2 lg:order-3 justify-center lg:justify-end mb-2 lg:mb-0">
-            <FancyLink destination="/about" a11yText="Navigate to the privacy page" label="Privacy" />
+            <FancyLink destination="/privacy" a11yText="Navigate to the privacy page" label="Privacy" />
             <SunIcon className="w-5 mt-[2px]" />
-            <FancyLink destination="/about" a11yText="Navigate to the journal page" label="Journal" />
+            <FancyLink destination="/journal" a11yText="Navigate to the journal page" label="Journal" />
             <SunIcon className="w-5 mt-[2px]" />
-            <FancyLink destination="/about" a11yText="Navigate to the instagram page" label="Instagram" />
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer">Instagram</a>
             <SunIcon className="w-5 mt-[2px]" />
-            <FancyLink destination="/about" a11yText="Navigate to the contact page" label="Contact" />
+            <FancyLink destination="/contact" a11yText="Navigate to the contact page" label="Contact" />
           </nav>
         </div>
       </Container>
