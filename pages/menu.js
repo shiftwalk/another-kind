@@ -22,13 +22,13 @@ export default function Menu() {
           <m.main className="">
             <m.article variants={fade}>
               <div className="w-[100vw] relative bg-orange text-off-white h-screen flex items-center justify-center overflow-hidden">
-                <div className={`absolute bottom-5 right-5`}>
+                <div className={`absolute bottom-2 right-5`}>
                   <m.div variants={scale} className="w-[100%] max-w-[125px]">
                     <SunnyIcon className="w-full text-yellow aspect-square" />
                   </m.div>
                 </div>
 
-                <div className={`absolute left-5 bottom-5`}>
+                <div className={`absolute left-5 bottom-2`}>
                   <nav className="ml-auto flex space-x-2 xl:space-x-3 w-full text-base xl:text-xl xl:leading-none lg:w-auto order-2 lg:order-3 justify-center lg:justify-end mb-2 lg:mb-0">
                     <a href="https://example.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     <SunIcon className="w-5 mt-[2px]" />
