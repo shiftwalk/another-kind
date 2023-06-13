@@ -60,7 +60,7 @@ export default function Journal() {
                           </div>
                           <div className="flex-1 relative z-10 mt-5">
                             <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none mb-2 bg-blue text-off-white`}>Project News</span>
-                            <h2 className="text-2xl md:text-2xl lg:text-3xl leading-none md:leading-none lg:leading-none mb-3 pb-0">We survive the tough mudder challenge, just about!</h2>
+                            <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none xl:leading-none mb-3 pb-0">We survive the tough mudder challenge, just about!</h2>
                             <span className="text-sm md:text-base lg:text-lg leading-none md:leading-none lg:leading-none block">14 March, 2013 - 2 Min Read</span>
                           </div>
                         </Link>
@@ -79,7 +79,7 @@ export default function Journal() {
                           </div>
                           <div className="flex-1 relative z-10 mt-5">
                             <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none mb-2 bg-orange text-off-white`}>Project News</span>
-                            <h2 className="text-2xl md:text-2xl lg:text-3xl leading-none md:leading-none lg:leading-none mb-3 pb-0">We survive the tough mudder challenge, just about!</h2>
+                            <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none xl:leading-none mb-3 pb-0">We survive the tough mudder challenge, just about!</h2>
                             <span className="text-sm md:text-base lg:text-lg leading-none md:leading-none lg:leading-none block">14 March, 2013 - 2 Min Read</span>
                           </div>
                         </Link>
@@ -113,7 +113,7 @@ export default function Journal() {
                           </div>
                           <div className="flex-1 pl-5 relative z-10 lg:group-hover:text-off-white">
                             <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none ${color} mb-2 transition-colors ease-ak duration-[350ms] lg:group-hover:bg-yellow lg:group-hover:text-green`}>Project News</span>
-                            <h2 className="text-2xl md:text-[4vw] lg:text-[3vw] leading-none md:leading-none lg:leading-none mb-3 pb-0 lg:w-10/12">We survive the tough mudder challenge, just about!</h2>
+                            <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none lg:leading-none mb-3 pb-0 lg:w-10/12">We survive the tough mudder challenge, just about!</h2>
                             <span className="text-sm md:text-base lg:text-lg leading-none md:leading-none lg:leading-none block">14 March, 2013 - 2 Min Read</span>
                             <div className={`w-[4vw] h-[4vw] max-w-[60px] max-h-[60px] hidden lg:flex absolute bottom-0 right-0 transition-colors ease-ak duration-[350ms] lg:group-hover:bg-yellow lg:group-hover:text-green ${color} p-[10px] flex items-center justify-center rounded-full`}>
                               <ArrowIcon className="w-full" />
