@@ -54,7 +54,7 @@ export default function Home() {
                     </m.div>
                   </div>
                   <div className="w-full lg:w-1/2">
-                    <div className="w-11/12 content text-lg/[1.28] lg:text-xl/[1.28] lg:px-5">
+                    <div className="w-11/12 content text-lg/[1.28] 2xl:text-xl/[1.28] lg:px-5">
                       <p>Our RIBA Chartered Practice is brimming with forward-thinking, award-winning architects, technologists and other alternatively, really talented folks. For us Anotherkind is more than a name, it&apos;s a mission. Curiosity, playfulness, openness and a can-do attitude aren&apos;t just values scrawled on a wall, but qualities we truly value. If we work together we&apos;re sure you&apos;ll see there&apos;s much more to our name than our name.</p>
                     </div>
                   </div>
@@ -73,7 +73,7 @@ export default function Home() {
 
               <div className="bg-orange text-white flex flex-wrap mb-[20vw] lg:mb-[10.5vw]">
                 <div className="w-full lg:w-[50%] mb-3 lg:mb-0 relative p-5 flex flex-col">
-                  <h1 className="text-[16vw] lg:text-[9vw] leading-[0.9] lg:leading-[0.9] text-yellow w-[90%] md:w-[80%] lg:w-[95%] mb-[25vw] lg:mb-0">Anotherkind Of Architect.</h1>
+                  <h1 className="text-[16vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[90%] md:w-[80%] lg:w-[95%] mb-[25vw] lg:mb-0">Anotherkind Of Architect.</h1>
 
                   <div className="w-full lg:w-10/12 content text-base/[1.28] xl:text-lg/[1.28] mt-auto max-w-[800px]">
                     <p>We&apos;re certified Passivhaus architects and conservation specialists. Designing life-affirming, genuinely sustainable architecture is what makes us leap out of bed in the morning. Although sometimes it&apos;s the kids. Or the hurried knocking of the dead-eager Amazon guy.</p>
@@ -106,36 +106,42 @@ export default function Home() {
                   <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">We care passionately about the health and happiness of our team, ensuring they have the <em>freedom</em> to focus on designing beautiful places for our clients.</span>
                 </div>
 
-                <div className="flex flex-wrap mb-[20vw] lg:mb-[10vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
-                  <div className="w-full lg:flex-1 mb-12 lg:mb-0">
+                <div className="flex flex-wrap mb-[10vw] lg:mb-[7.5vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
+                  <Link href="/mission" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                      <ImageScale image="/images/home-02.jpg" w={736} h={1001} />
+                      <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
+                        <ImageScale image="/images/home-02.jpg" w={736} h={1001} />
+                      </div>
                     </div>
 
                     <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">01</span>
 
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Mission</span>
-                  </div>
+                  </Link>
 
-                  <div className="w-full lg:flex-1 mb-12 lg:mb-0">
+                  <Link href="/team" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                      <ImageScale image="/images/home-03.jpg" w={736} h={1001} />
+                      <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
+                        <ImageScale image="/images/home-03.jpg" w={736} h={1001} />
+                      </div>
                     </div>
 
                     <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">02</span>
 
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Team</span>
-                  </div>
+                  </Link>
 
-                  <div className="w-full lg:flex-1 mb-12 lg:mb-0">
+                  <Link href="/projects" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                      <ImageScale image="/images/home-04.jpg" w={736} h={1001} />
+                      <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
+                        <ImageScale image="/images/home-04.jpg" w={736} h={1001} />
+                      </div>
                     </div>
 
                     <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">03</span>
 
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Work</span>
-                  </div>
+                  </Link>
                 </div>
               </Container>            
             </m.article>

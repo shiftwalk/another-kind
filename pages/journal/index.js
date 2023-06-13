@@ -47,14 +47,33 @@ export default function Journal() {
                     </div>
                   </div>
 
-                  <div className="w-full flex flex-wrap max-w-[1920px] mx-auto">
-                    <div className="w-full lg:w-1/2">
+                  <div className="w-full grid grid-cols-2 gap-5 max-w-[1920px] mx-auto mb-[18vw] lg:mb-[9.2vw]">
+                    <div className="col-span-2 lg:col-span-1">
                       <div className="w-full block relative">
                         <Link href="/journal/slug" className={`group w-full block border-b border-black lg:border-none pb-6 lg:pb-0 mb-6`}>
                           <div className="w-full relative z-10">
                             <div className="relative overflow-hidden rounded-xl">
                               <div className="group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
-                                <ImageScale image={`/images/journal/journal-1.jpg`} w={1196} h={841} />
+                                <ImageScale image={`/images/journal/journal-11.jpg`} w={1196} h={841} />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex-1 relative z-10 mt-5">
+                            <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none mb-2 bg-blue text-off-white`}>Project News</span>
+                            <h2 className="text-2xl md:text-2xl lg:text-3xl leading-none md:leading-none lg:leading-none mb-3 pb-0">We survive the tough mudder challenge, just about!</h2>
+                            <span className="text-sm md:text-base lg:text-lg leading-none md:leading-none lg:leading-none block">14 March, 2013 - 2 Min Read</span>
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
+                    
+                    <div className="col-span-2 lg:col-span-1">
+                      <div className="w-full block relative">
+                        <Link href="/journal/slug" className={`group w-full block border-b border-black lg:border-none pb-6 lg:pb-0 mb-6`}>
+                          <div className="w-full relative z-10">
+                            <div className="relative overflow-hidden rounded-xl">
+                              <div className="group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
+                                <ImageScale image={`/images/journal/journal-22.jpg`} w={1196} h={841} />
                               </div>
                             </div>
                           </div>
@@ -66,36 +85,10 @@ export default function Journal() {
                         </Link>
                       </div>
                     </div>
-                    
-                    <div className="w-full lg:w-1/2">
-                      <ul className="mb-[20vw] lg:mb-[10vw] w-full lg:mx-0">
-                        {Array.from(Array(3), (e, i) => {
-                          let color = colors[colors.length * Math.random() | 0]
-                          return (
-                            <li className="w-full block lg:px-4 relative" key={i}>
-                              <Link href="/journal/slug" className={`group w-full flex flex-wrap pb-5 md:items-end`}>
-                                <div className="w-[35%] lg:w-1/2 relative z-10">
-                                  <div className="relative overflow-hidden rounded-xl">
-                                    <div className="group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
-                                      <ImageScale image={`/images/journal/journal-${i+2}.jpg`} w={520} h={320} />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="flex-1 pl-5 relative z-10">
-                                  <span className={`inline-block px-[9px] xl:px-[13px] pt-[7px] xl:pt-[9px] pb-[5px] xl:pb-[7px] rounded-full font-mono uppercase text-[8px] xl:text-[10px] leading-none ${color} mb-2`}>Project News</span>
-                                  <h2 className="text-2xl md:text-[2vw] lg:text-[2vw] 2xl:text-3xl leading-none md:leading-none lg:leading-none xl:leading-none mb-3 pb-0">We survive the tough mudder challenge, just about!</h2>
-                                  <span className="text-sm md:text-sm lg:text-base 2xl:text-lg leading-none md:leading-none lg:leading-none 2xl:leading-none block">14 March, 2013 - 2 Min Read</span>
-                                </div>
-                              </Link>
-                            </li>
-                          )
-                        })}
-                      </ul>
-                    </div>
                   </div>
 
                  
-                  <div className="flex flex-wrap justify-center pt-[6vw] lg:pt-[5vw] mb-[20vw] lg:mb-[10vw]">
+                  <div className="flex flex-wrap justify-center mb-[20vw] lg:mb-[8.5vw]">
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
                       <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">A life-led company</m.span>
                     </span>
@@ -134,12 +127,13 @@ export default function Journal() {
 
                 <Container>
                   <div className="w-full flex justify-center mb-[20vw] lg:mb-[10vw]">
-                    <div className="w-[145px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
-                      <div className="w-full text-center -mt-3 lg:-mt-5">
-                        <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
-                        <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">Load More!</span>
+                    <button className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group outline-none border-none">
+                      <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
+                      <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
+                        <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
+                        <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">Load More</span>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </Container>
 

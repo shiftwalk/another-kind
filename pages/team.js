@@ -8,6 +8,7 @@ import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
 import SunnyIcon from "@/icons/sunny.svg";
 import SquiggleTeamIcon from "@/icons/squiggle-team.svg";
 import ImageScale from '@/components/image-scale'
+import Link from 'next/link'
 
 export default function Team() {
   return (
@@ -72,7 +73,7 @@ export default function Team() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[14.5vw] 2xl:pt-[10vw] pb-[10vw] lg:pb-[6.25vw]">
+                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[7.8vw] pb-[10vw] lg:pb-[6.25vw]">
                   <span className="block mb-8 overflow-hidden relative w-full text-center">
                     <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">A life-led company</m.span>
                   </span>
@@ -109,7 +110,7 @@ export default function Team() {
                 </div>
               </div>
               <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
-                <h1 className="text-[16vw] lg:text-[9vw] leading-[0.9] lg:leading-[0.9] text-yellow w-[85%] md:w-[85%] lg:w-[100%] mb-[25vw] lg:mb-0">Life-led.<br/> social at heart.</h1>
+                <h1 className="text-[16vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[85%] md:w-[85%] lg:w-[100%] mb-[25vw] lg:mb-0">Life-led.<br/> social at heart.</h1>
 
                 <div className="w-full lg:w-10/12 content text-base/[1.28] xl:text-lg/[1.28] mt-auto max-w-[800px]">
                   <p>Conservation is a passion. Our aim is to always preserve life in the places we shape where it&rsquo;s possible, and valuable. Stories. Memories. History. Breathing new life into old places is central to our approach.</p>
@@ -127,12 +128,13 @@ export default function Team() {
                 <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">We&rsquo;re always on the lookout for <em>amazing</em> talent with a <em>passion</em> for building spaces with meaning.</span>
 
                 <div className="w-full flex justify-center">
-                  <div className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
-                    <div className="w-full text-center -mt-3 lg:-mt-5">
-                      <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
+                  <Link href="/contact" className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
+                    <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
+                      <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
                       <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">Let&rsquo;s Talk!</span>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </Container>
