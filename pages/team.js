@@ -23,7 +23,7 @@ export default function Team() {
           <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[90px] xl:pt-[103px]">
             <Container>
               <m.article variants={fade}>
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap max-w-[1920px] mx-auto">
                   <div className="w-full lg:w-1/2 order-2 lg:order-1 relative mb-[30vw] lg:mb-0">
                     <div className="flex flex-wrap lg:justify-center lg:pt-[7.5vw] h-full lg:px-5">
                       <div className="lg:w-[80%] lg:max-w-[720px] lg:translate-x-[-5%] xl:translate-x-[-10%] relative z-10">
@@ -53,7 +53,7 @@ export default function Team() {
                           </h1>
                         </div>
 
-                        <div className="w-[95%] lg:w-[90%] content text-lg xl:text-xl max-w-[800px]">
+                        <div className="w-[95%] lg:w-[90%] content text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px]">
                           <p>Our collaborative studio culture is centred around flexibility and wellbeing: putting people at the heart of everything that we do.</p>
                         </div>
                       </div>
@@ -63,7 +63,7 @@ export default function Team() {
                   </div>
 
                   <div className="w-full lg:w-1/2 mb-5 lg:mb-0 relative order-1 lg:order-2">
-                    <div className="w-[23%] max-w-[180px] rotate-12 aspect-square absolute bottom-5 left-5 lg:bottom-auto lg:top-[10%] lg:left-[-10%] z-10 rounded-full bg-yellow text-green p-3">
+                    <div className="w-[140px] xl:w-[180px] rotate-12 aspect-square absolute bottom-5 left-5 lg:bottom-auto lg:top-[10%] lg:left-[-10%] z-10 rounded-full bg-yellow text-green p-3">
                       <SunnyIcon className="w-[100%] aspect-square" />
                     </div>
                     <div className="w-full relative overflow-hidden rounded-xl">
@@ -72,7 +72,7 @@ export default function Team() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[14.5vw] 2xl:pt-[12.5vw] pb-[10vw] lg:pb-[6.25vw]">
+                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[14.5vw] 2xl:pt-[10vw] pb-[10vw] lg:pb-[6.25vw]">
                   <span className="block mb-8 overflow-hidden relative w-full text-center">
                     <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">A life-led company</m.span>
                   </span>
@@ -81,7 +81,7 @@ export default function Team() {
                 </div>
 
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-[20vw] lg:mb-[12.5vw] px-[10vw] lg:px-[8vw] gap-[6vw] lg:gap-[5vw]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-[20vw] lg:mb-[10vw] px-[10vw] lg:px-[8vw] gap-[6vw] lg:gap-[5vw]">
                   {Array.from(Array(9), (e, i) => {
                     return (
                       <div className="w-full lg:col-span-1 group" key={i}>
@@ -102,7 +102,7 @@ export default function Team() {
               </m.article>
             </Container>
 
-            <div className="bg-green text-off-white flex flex-wrap mb-[20vw] lg:mb-[12.5vw]">
+            <div className="bg-green text-off-white flex flex-wrap mb-[20vw] lg:mb-[10vw]">
               <div className="w-full lg:w-[48%] relative">
                 <div className="w-full relative overflow-hidden">
                   <ImageScale image="/images/team-2.jpg" w={1105} h={1501} />
@@ -111,7 +111,7 @@ export default function Team() {
               <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
                 <h1 className="text-[16vw] lg:text-[9vw] leading-[0.9] lg:leading-[0.9] text-yellow w-[85%] md:w-[85%] lg:w-[100%] mb-[25vw] lg:mb-0">Life-led.<br/> social at heart.</h1>
 
-                <div className="w-full lg:w-9/12 content text-base xl:text-lg mt-auto">
+                <div className="w-full lg:w-10/12 content text-base/[1.28] xl:text-lg/[1.28] mt-auto max-w-[800px]">
                   <p>Conservation is a passion. Our aim is to always preserve life in the places we shape where it&rsquo;s possible, and valuable. Stories. Memories. History. Breathing new life into old places is central to our approach.</p>
                   <p>Finding the unusual and remarkable in the places we conserve, then elevating and re-purposing the form and fabric that gave that place life to begin with. No life left behind. We have two RIBA Conservation & AABC accredited architects, with more of the team completing accreditations as we type.</p>
                 </div>
@@ -127,10 +127,10 @@ export default function Team() {
                 <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">We&rsquo;re always on the lookout for <em>amazing</em> talent with a <em>passion</em> for building spaces with meaning.</span>
 
                 <div className="w-full flex justify-center">
-                  <div className="w-[30%] lg:w-[15%] 2xl:w-[12%] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
+                  <div className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
                     <div className="w-full text-center -mt-3 lg:-mt-5">
                       <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
-                      <span className="block font-display text-[5.3vw] lg:text-[2.5vw] leading-none lg:leading-none">Let&rsquo;s Talk!</span>
+                      <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">Let&rsquo;s Talk!</span>
                     </div>
                   </div>
                 </div>

@@ -22,9 +22,9 @@ export default function Contact() {
           <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[90px] xl:pt-[103px]">
             <Container>
               <m.article variants={fade}>
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap max-w-[1920px] mx-auto">
                   <div className="w-full lg:w-1/2 mb-5 lg:mb-0 relative">
-                    <div className="w-[25%] absolute bottom-5 left-5 lg:bottom-auto lg:left-auto lg:top-[10%] lg:right-[-10%] z-10 rounded-full bg-yellow text-green p-3">
+                    <div className="w-[140px] xl:w-[180px] absolute bottom-5 left-5 lg:bottom-auto lg:left-auto lg:top-[10%] lg:right-[-10%] z-10 rounded-full bg-yellow text-green p-3 rotate-12">
                       <SunnyIcon className="w-[100%]" />
                     </div>
                     <div className="w-full relative overflow-hidden rounded-xl">
@@ -52,7 +52,7 @@ export default function Contact() {
                           </m.h1>
                         </div>
 
-                        <div className="w-[95%] lg:w-[90%] content text-lg xl:text-xl max-w-[800px] mb-12">
+                        <div className="w-[95%] lg:w-[90%] content text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px] mb-12">
                           <p>We&rsquo;re social, so if you&rsquo;d like to talk about an upcoming project, join our team, or just say hi — please get in touch through any of the methods below!</p>
                         </div>
 
@@ -69,7 +69,7 @@ export default function Contact() {
                             <span className="block text-lg leading-none lg:text-xl lg:leading-none">Call</span>
                           </div>
 
-                          <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">+44 0123 4567</span>
+                        <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">+44 0123 4567</span>
                         </div>
                         
                         <div className="mb-0">
@@ -84,7 +84,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[12.5vw] pb-[10vw] lg:pb-[6.25vw]">
+                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[10vw] pb-[10vw] lg:pb-[6.25vw]">
                   <span className="block mb-8 overflow-hidden relative w-full text-center">
                     <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Want to join the team?</m.span>
                   </span>
@@ -92,10 +92,10 @@ export default function Contact() {
                   <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">We&rsquo;re always on the lookout for <em>amazing</em> talent with a <em>passion</em> for building spaces with meaning.</span>
 
                   <div className="w-full flex justify-center">
-                    <div className="w-[30%] lg:w-[15%] 2xl:w-[12%] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
+                    <div className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
                       <div className="w-full text-center -mt-3 lg:-mt-5">
                         <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
-                        <span className="block font-display text-[5.3vw] lg:text-[2.5vw] leading-none lg:leading-none">Let&rsquo;s Talk!</span>
+                        <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">Let&rsquo;s Talk!</span>
                       </div>
                     </div>
                   </div>

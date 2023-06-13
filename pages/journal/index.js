@@ -26,7 +26,7 @@ export default function Journal() {
             <m.article variants={fade}>
               <div className="relative bg-off-white">
                 <Container>
-                  <div className="flex flex-wrap justify-center pt-[25vw] pb-[20vw] lg:py-[12.5vw]">
+                  <div className="flex flex-wrap justify-center pt-[25vw] pb-[20vw] lg:py-[10vw]">
                     <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[50px] mb-4">
                       <svg className="w-full" viewBox="0 0 500 140">
                         <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
@@ -39,15 +39,15 @@ export default function Journal() {
                     </span>
 
                     <div className="relative overflow-hidden w-full mb-8 lg:mb-10">
-                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[150px] leading-[1] lg:leading-[1] xl:leading-[1] 2xl:leading-[1] text-center mb-0 pb-0"><span className="block translate-y-[-11%]"><em>Life</em> in full flow.</span></m.h1>
+                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[1] lg:leading-[1] xl:leading-[1] 2xl:leading-[1] text-center mb-0 pb-0"><span className="block translate-y-[-11%]"><em>Life</em> in full flow.</span></m.h1>
                     </div>
 
-                    <div className="w-[95%] lg:w-[60%] content text-lg xl:text-xl text-center mx-auto max-w-[800px]">
+                    <div className="w-[95%] lg:w-[60%] content text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px]">
                       <p>Welcome, friends! Here you&rsquo;ll find all things Anotherkind — project updates, new team members, social initiatives, and more!</p>
                     </div>
                   </div>
 
-                  <div className="w-full flex flex-wrap max-w-[1800px] mx-auto">
+                  <div className="w-full flex flex-wrap max-w-[1920px] mx-auto">
                     <div className="w-full lg:w-1/2">
                       <div className="w-full block relative">
                         <Link href="/journal/slug" className={`group w-full block border-b border-black lg:border-none pb-6 lg:pb-0 mb-6`}>
@@ -68,7 +68,7 @@ export default function Journal() {
                     </div>
                     
                     <div className="w-full lg:w-1/2">
-                      <ul className="mb-[20vw] lg:mb-[12.5vw] w-full lg:mx-0">
+                      <ul className="mb-[20vw] lg:mb-[10vw] w-full lg:mx-0">
                         {Array.from(Array(3), (e, i) => {
                           let color = colors[colors.length * Math.random() | 0]
                           return (
@@ -95,7 +95,7 @@ export default function Journal() {
                   </div>
 
                  
-                  <div className="flex flex-wrap justify-center pt-[6vw] lg:pt-[5vw] mb-[20vw] lg:mb-[12.5vw]">
+                  <div className="flex flex-wrap justify-center pt-[6vw] lg:pt-[5vw] mb-[20vw] lg:mb-[10vw]">
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
                       <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">A life-led company</m.span>
                     </span>
@@ -104,7 +104,7 @@ export default function Journal() {
                   </div>
                 </Container>
 
-                <ul className="mb-[20vw] lg:mb-[12.5vw] w-full">
+                <ul className="mb-[20vw] lg:mb-[10vw] w-full">
                   {Array.from(Array(5), (e, i) => {
                     let color = colors[colors.length * Math.random() | 0]
                     return (
@@ -133,11 +133,11 @@ export default function Journal() {
                 </ul>
 
                 <Container>
-                  <div className="w-full flex justify-center mb-[20vw] lg:mb-[12.5vw]">
-                    <div className="w-[30%] lg:w-[15%] 2xl:w-[12%] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
+                  <div className="w-full flex justify-center mb-[20vw] lg:mb-[10vw]">
+                    <div className="w-[145px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
                       <div className="w-full text-center -mt-3 lg:-mt-5">
                         <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
-                        <span className="block font-display text-[5.3vw] lg:text-[2.5vw] leading-none lg:leading-none">Load More!</span>
+                        <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">Load More!</span>
                       </div>
                     </div>
                   </div>

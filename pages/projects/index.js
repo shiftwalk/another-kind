@@ -25,7 +25,7 @@ export default function Projects() {
             <m.article variants={fade}>
               <div className="relative bg-off-white">
                 <Container>
-                  <div className="flex flex-wrap justify-center pt-[25vw] pb-[20vw] lg:py-[12.5vw]">
+                  <div className="flex flex-wrap justify-center pt-[25vw] pb-[20vw] lg:py-[10vw]">
                     <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[47px] mb-3">
                       <svg className="w-full" viewBox="0 0 500 140">
                         <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
@@ -38,10 +38,10 @@ export default function Projects() {
                     </span>
 
                     <div className="relative overflow-hidden w-full mb-10 lg:mb-12">
-                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[150px] leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] 2xl:leading-[0.9] text-center mb-0 pb-0">Places we’ve <em>shaped</em>.</m.h1>
+                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] 2xl:leading-[0.9] text-center mb-0 pb-0">Places we’ve <em>shaped</em>.</m.h1>
                     </div>
 
-                    <div className="w-[95%] lg:w-[60%] content text-lg xl:text-xl text-center mx-auto max-w-[800px]">
+                    <div className="w-[95%] lg:w-[60%] content text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px]">
                       <p>We’re passionate about architecture that is appropriate and accessible, woven comfortably into their setting, respecting local character and celebrating community.</p>
                     </div>
                   </div>
@@ -57,10 +57,10 @@ export default function Projects() {
                               <div className={`absolute pointer-events-none inset-0 z-10 rounded-2xl border-[0vw] group-hover:border-[1vw] transition-all ease-ak duration-[500ms] ${color}`} style={{ background: 'transparent'}}></div>
 
                               <div className="absolute inset-0 z-10 flex items-center justify-center">
-                                <div className={`w-[33%] lg:w-[26%] aspect-square rounded-full flex items-center justify-center ${color} scale-[0] group-hover:scale-[1] transition-transform ease-ak duration-[500ms]`}>
+                                <div className={`w-[140px] xl:w-[180px] aspect-square rounded-full flex items-center justify-center ${color} scale-[0] group-hover:scale-[1] transition-transform ease-ak duration-[500ms]`}>
                                   <div className={`w-full text-center -mt-3 lg:-mt-5`}>
                                     <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
-                                    <span className="block font-display text-[5.3vw] lg:text-[2.5vw] leading-none lg:leading-none">See More!</span>
+                                    <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">See More!</span>
                                   </div>
                                 </div>
                               </div>
@@ -85,7 +85,7 @@ export default function Projects() {
                     })}
                   </ul>
 
-                  <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[12.5vw] mb-[20vw] lg:mb-[12.5vw]">
+                  <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[10vw] mb-[20vw] lg:mb-[10vw]">
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
                       <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Need a hand?</m.span>
                     </span>
@@ -93,10 +93,10 @@ export default function Projects() {
                     <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">Need help transforming a residential property into a beautiful, <em>lasting</em> home? We’d love to talk!</span>
 
                     <div className="w-full flex justify-center">
-                      <div className="w-[30%] lg:w-[15%] 2xl:w-[12%] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
+                      <div className="w-[140px] md:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center">
                         <div className="w-full text-center -mt-3 lg:-mt-5">
                           <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
-                          <span className="block font-display text-[5.3vw] lg:text-[2.5vw] leading-none lg:leading-none">Let’s Talk!</span>
+                          <span className="block font-display text-3xl md:text-4xl leading-none lg:leading-none">Let’s Talk!</span>
                         </div>
                       </div>
                     </div>

@@ -12,8 +12,7 @@ export default function HeroMission({ image }) {
   const { scrollY } = useScroll()
   const scale = useTransform(scrollYProgress,[0, 1],[1, 2.5],{ clamp: true })
   const radius = useTransform(scrollYProgress,[0, 1],[20, 0],{ clamp: true })
-  const moveX = useTransform(scrollYProgress,[0, 0.6],['-17.75dvw', '0dvw'],{ clamp: true })
-  const moveY = useTransform(scrollYProgress,[0, 0.6],['-50dvh', '0dvh'],{ clamp: true })
+  const moveY = useTransform(scrollYProgress,[0, 0.55],['40px', '0px'],{ clamp: false })
   const moveTextTop = useTransform(scrollYProgress,[0, 1],['0', '-300%'],{ clamp: true })
   const moveTextBottom = useTransform(scrollYProgress,[0, 1],['0', '300%'],{ clamp: true })
   const rotate = useTransform(scrollY, [0, 15], [0, 1], { clamp: false })
@@ -21,7 +20,7 @@ export default function HeroMission({ image }) {
   return (
     <>
       <div className="w-full h-[300dvh] fixed inset-0 z-[10] bg-off-white" ref={ref}>
-        <div className="w-full h-screen flex flex-col pt-[90px] lg:pt-[9.2dvh] pb-[25px] lg:pb-[5.8dvh] overflow-hidden absolute inset-0">
+        <div className="w-full h-screen flex flex-col pt-[90px] lg:pt-[13.5dvh] pb-[25px] lg:pb-[5.8dvh] overflow-hidden absolute inset-0">
           <div className="w-full overflow-hidden relative z-[1]">
             <div className="relative overflow-hidden">
               <m.div style={{ y: moveTextTop }}>
@@ -31,11 +30,11 @@ export default function HeroMission({ image }) {
           </div>
 
           <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-10 pointer-events-none">
-            <div className="relative max-w-[1200px]">
+            <m.div className="relative max-w-[1200px]" style={{ y: moveY }}>
               <m.div style={{ scale: scale, borderRadius: radius  }} className={`w-[90dvw] lg:w-[52dvw] h-[52dvh] relative overflow-hidden mx-auto max-w-[1200px]`}>
                 <Image priority style={{ scale: scale }} fill src={'/images/mission.jpg'} alt="Temp Home Image" className="will-change-transform w-full absolute inset-0 h-full object-cover object-center" />
               </m.div>
-            </div>
+            </m.div>
           </div>
           
           <div className="w-full mt-auto overflow-hidden relative z-[1]">
