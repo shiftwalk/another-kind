@@ -97,10 +97,23 @@ export default function Team() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-[20vw] lg:mb-[10vw] px-[10vw] lg:px-[8vw] gap-[6vw] lg:gap-[5vw]">
                   {Array.from(Array(9), (e, i) => {
+                    let rotation = 'group-hover:rotate-[-1.5deg]'
+                    let bgRotation = 'group-hover:rotate-[1.5deg]'
+                    
+                    if (i % 1 == 0) {
+                      rotation = 'group-hover:rotate-[-1.5deg]'
+                      bgRotation = 'group-hover:rotate-[1.5deg]'
+                    }
+                    if (i % 2 == 0) {
+                      rotation = 'group-hover:rotate-[1.5deg]'
+                      bgRotation = 'group-hover:rotate-[-1.5deg]'
+                    }
                     return (
-                      <div className="w-full lg:col-span-1 group" key={i}>
-                        <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                          <div className="absolute inset-0 bg-orange z-[9] translate-y-[150%] group-hover:translate-y-0 transition-transition ease-ak duration-[750ms] rounded-full scale-[1.8] group-hover:rotate-45 delay-[100ms] group-hover:delay-[0ms]"></div>
+                      <div className="w-full lg:col-span-1 group relative" key={i}>
+                        <div className={`absolute inset-0 bg-yellow z-[8] h-[77%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] group-hover:delay-[0ms] ${bgRotation}`}></div>
+
+                        <div className={`w-full relative overflow-hidden rounded-xl mb-8 transition-transform ease-ak duration-[750ms] z-[9] ${rotation}`}>
+                          <div className="absolute inset-0 bg-orange z-[9] translate-y-[150%] group-hover:translate-y-0 transition-transition ease-ak duration-[750ms] rounded-full scale-[1.8] delay-[100ms] group-hover:rotate-45 group-hover:delay-[0ms]"></div>
 
                           <div className="absolute inset-0 text-yellow z-[10] p-8 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity ease-ak duration-[600ms] rounded-full">
 
@@ -116,7 +129,7 @@ export default function Team() {
                               </span>
                             </div>
                           </div>
-                          <div className="scale-[1] group-hover:scale-[1.25] transition-all ease-ak duration-[1000ms]">
+                          <div className="scale-[1] group-hover:scale-[1.18] transition-all ease-ak duration-[850ms]">
                             <ImageScale image={`/images/team/team-${i+1}.jpg`} w={388} h={510} />
                           </div>
                         </div>
