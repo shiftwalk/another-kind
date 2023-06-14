@@ -81,3 +81,32 @@ html.lenis {
     stroke-width: 10px;
   }
 }
+
+.flip-card {
+  @apply w-full relative transition-transform ease-in-out duration-[750ms];
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  @apply relative w-full h-full transition-transform ease-in-out duration-[750ms] aspect-[10/12];
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card:hover {
+  @apply scale-[1.075]
+}
+
+.flip-card-front, .flip-card-back {
+  @apply absolute w-full h-full inset-0 overflow-hidden rounded-2xl;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  @apply bg-orange text-yellow flex items-center justify-center text-center;
+  transform: rotateY(180deg);
+}

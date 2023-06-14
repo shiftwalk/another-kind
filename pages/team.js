@@ -12,6 +12,7 @@ import ImageScale from '@/components/image-scale'
 import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
 import { useState } from 'react'
+import FlipCard from '@/components/flip-card'
 
 export default function Team() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -94,21 +95,17 @@ export default function Team() {
                   <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">We&rsquo;re a friendly, forward-thinking collective — an approachable <em>team</em> with a can-do attitude.</span>
                 </div>
 
-
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-[20vw] lg:mb-[10vw] px-[10vw] lg:px-[8vw] gap-[6vw] lg:gap-[5vw]">
                   {Array.from(Array(9), (e, i) => {
                     return (
-                      <div className="w-full lg:col-span-1 group" key={i}>
-                        <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                          <div className="absolute inset-0 bg-orange text-yellow z-[10] p-8 flex items-center justify-center text-center translate-y-[101%] group-hover:translate-y-0 transition-transform ease-ak duration-[600ms]">
-                            <span className="block font-display text-[5.2vw] md:text-[3vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1]">“Passionate about creating positive environments, Nilesh takes a methodical and caring approach to design and detail.”</span>
-                          </div>
-                          <ImageScale image={`/images/team/team-${i+1}.jpg`} w={388} h={510} />
+                      <div className="w-full lg:col-span-1" key={i}>
+                        <FlipCard image={`/images/team/team-${i+1}.jpg`} />
+
+                        <div className="mt-8">
+                          <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">Job Role</span>
+
+                          <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Member Name</span>
                         </div>
-
-                        <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">Job Role</span>
-
-                        <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Member Name</span>
                       </div>
                     )
                   })}
@@ -125,19 +122,19 @@ export default function Team() {
                     </div>
                   </div>
 
-                  <div className={`w-full absolute inset-0 z-[10] transition-transform ease-ak duration-[650ms] ${ currentImage == 0 && 'translate-y-[0%]'} ${ currentImage == 1 && 'translate-y-[-100%]'} ${ currentImage == 2 && 'translate-y-[-200%]'} ${ currentImage == 3 && 'translate-y-[-300%]'} `}>
+                  <div className={`w-full absolute inset-0 z-[10] transition-transform ease-ak duration-[600ms] ${ currentImage == 0 && 'translate-y-[0%]'} ${ currentImage == 1 && 'translate-y-[-100%]'} ${ currentImage == 2 && 'translate-y-[-200%]'} ${ currentImage == 3 && 'translate-y-[-300%]'} `}>
                     <div className="w-full relative overflow-hidden aspect-[10/13]">
-                      <div className={`transition-transform ease-ak duration-[650ms] ${currentImage == 0 ? 'scale-1' : 'scale-[1.3]' }`}>
+                      <div className={`transition-transform ease-ak duration-[800ms] ${currentImage == 0 ? 'scale-1' : 'scale-[1.3]' }`}>
                         <ImageScale image="/images/team-cara-2.jpg" w={1105} h={1501} />
                       </div>
                     </div>
                     <div className="w-full relative overflow-hidden aspect-[10/13]">
-                      <div className={`transition-transform ease-ak duration-[650ms] ${currentImage == 1 ? 'scale-1' : 'scale-[1.3]' }`}>
+                      <div className={`transition-transform ease-ak duration-[800ms] ${currentImage == 1 ? 'scale-1' : 'scale-[1.3]' }`}>
                         <ImageScale image="/images/team-cara-3.jpg" w={1105} h={1501} />
                       </div>
                     </div>
                     <div className="w-full relative overflow-hidden aspect-[10/13]">
-                      <div className={`transition-transform ease-ak duration-[650ms] ${currentImage == 2 ? 'scale-1' : 'scale-[1.3]' }`}>
+                      <div className={`transition-transform ease-ak duration-[800ms] ${currentImage == 2 ? 'scale-1' : 'scale-[1.3]' }`}>
                         <ImageScale image="/images/team-cara-4.jpg" w={1105} h={1501} />
                       </div>
                     </div>
