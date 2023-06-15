@@ -58,23 +58,31 @@ export default function Contact() {
                           <p>We&rsquo;re social, so if you&rsquo;d like to talk about an upcoming project, join our team, or just say hi — please get in touch through any of the methods below!</p>
                         </div>
 
-                        <div className="mb-6 lg:mb-10">
-                          <div className="mb-3">
-                            <span className="block text-lg leading-none lg:text-xl lg:leading-none">Email</span>
-                          </div>
+                        <a href="mailto:hello@anotherkind.studio" className="py-5 relative group block transition-colors ease-ak duration-[600ms] hover:text-yellow">
+                          <div className="bg-orange w-full h-full inset-0 absolute z-0 scale-x-[1.065] rounded-xl hidden lg:block transition-opacity ease-ak duration-[600ms] opacity-0 group-hover:opacity-100"></div>
 
-                          <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">hello@anotherkind.studio</span>
-                        </div>
-                        
-                        <div className="mb-6 lg:mb-10">
-                          <div className="mb-3">
-                            <span className="block text-lg leading-none lg:text-xl lg:leading-none">Call</span>
-                          </div>
+                          <div className="relative z-[1]">
+                            <div className="mb-3">
+                              <span className="block text-lg leading-none lg:text-xl lg:leading-none">Email</span>
+                            </div>
 
-                        <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">+44 0123 4567</span>
-                        </div>
+                            <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">hello@anotherkind.studio</span>
+                          </div>
+                        </a>
+
+                        <a href="tel:+4401234567" className="py-5 relative group block transition-colors ease-ak duration-[600ms] hover:text-yellow">
+                          <div className="bg-orange w-full h-full inset-0 absolute z-0 scale-x-[1.065] rounded-xl hidden lg:block transition-opacity ease-ak duration-[600ms] opacity-0 group-hover:opacity-100"></div>
+
+                          <div className="relative z-[1]">
+                            <div className="mb-3">
+                              <span className="block text-lg leading-none lg:text-xl lg:leading-none">Call</span>
+                            </div>
+
+                            <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">44 0123 4567</span>
+                          </div>
+                        </a>
                         
-                        <div className="mb-0">
+                        <div className="py-5">
                           <div className="mb-3">
                             <span className="block text-lg leading-none lg:text-xl lg:leading-none">Socials</span>
                           </div>

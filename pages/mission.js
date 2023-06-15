@@ -14,6 +14,7 @@ import { useRef, useState } from 'react'
 import MissionManifesto from '@/components/mission-manifesto'
 import { useLenis } from '@studio-freight/react-lenis'
 import { MouseParallax } from 'react-just-parallax'
+import { SplitTextHover } from '@/components/splitTextHover'
 
 export default function Mission() {
   const badgeRef = useRef(null)
@@ -67,16 +68,44 @@ export default function Mission() {
               
               {/* Fake */}
               <div className="top-0 left-0 w-full h-[300dvh] fixed inset-0 z-[10] bg-none pointer-events-none" ref={ref}></div>
-              <HeroMission />
 
-              <div className="relative bg-off-white mt-[300dvh] z-[10]">
+              <div className="hidden lg:block">
+                <HeroMission />
+              </div>
+              
+              <div className="block lg:hidden">
                 <Container>
-                  <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[10vw] mb-[20vw] lg:mb-[10vw]">
+                  <div className="pt-[110px] mb-16 text-center">
+                    <h1 className="text-[13vw] mb-0 pb-0 leading-[0.9]">Great Spaces Designed for <em>life</em>.</h1>
+                  </div>
+                </Container>
+
+                <div className="relative">
+                  <m.button
+                    onClick={openManifesto}
+                    className="absolute w-[140px] xl:w-[180px] -bottom-16 right-5 z-[100] block lg:hidden outline-none border-none"
+                  >
+                    <ManifestoBadgeIcon className="w-full" />
+                  </m.button>
+
+                  <div className="overflow-hidden relative">
+                    <ImageScale
+                      image={'/images/mission.jpg'}
+                      w={1452}
+                      h={973}
+                      className="will-change-transform w-full absolute inset-0 h-full object-cover object-center" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative bg-off-white lg:mt-[300dvh] z-[10]">
+                <Container>
+                  <div className="flex flex-wrap justify-center pt-[16vw] lg:pt-[10vw] mb-[18vw] lg:mb-[10vw]">
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
                       <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Our Mission.</m.span>
                     </span>
 
-                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">
+                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[7vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">
                       It&apos;s the <em>beautiful</em> alchemy of space and colliding that makes a space, a place. We make grand plans for them to come together, creating progressive, sustainable, life-affirming places. Great places designed for life.</span>
                   </div>
                 </Container>
@@ -121,12 +150,25 @@ export default function Mission() {
                   </div>
 
                   <div className="flex flex-wrap mb-[20vw] lg:mb-[10vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
-                    <Link href="/" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                      <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                        <div className="absolute inset-0 bg-orange text-yellow z-[10] p-8 flex items-center justify-center text-center translate-y-[101%] group-hover:translate-y-0 transition-transform ease-ak duration-[600ms]">
-                          <span className="block font-display text-[5.2vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1]">Our Conservation Accreditations are the cornerstone of our practice, enabling us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings, looking for ways to recycle rather than demolish, or retrofit for the future.</span>
+                    <div className="w-full lg:flex-1 mb-12 lg:mb-0 group relative">
+                      <div className={`absolute inset-0 bg-yellow z-[8] h-[68%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] group-hover:delay-[0ms] group-hover:rotate-[-1.5deg]`}></div>
+
+                      <div className={`w-full relative overflow-hidden rounded-xl mb-8 transition-transform ease-ak duration-[750ms] z-[9] group-hover:rotate-[1.5deg]`}>
+                        <div className="absolute inset-0 bg-orange z-[9] translate-y-[150%] group-hover:translate-y-0 transition-transition ease-ak duration-[750ms] rounded-full scale-[1.8] delay-[100ms] group-hover:rotate-45 group-hover:delay-[0ms]"></div>
+
+                        <div className="absolute inset-0 text-yellow z-[10] p-8 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity ease-ak duration-[600ms] rounded-full">
+
+                          <div className="w-full">                          
+                            <span className="font-display text-[5.2vw] md:text-[3vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1] flex flex-wrap overflow-hidden justify-center">
+                              <SplitTextHover>
+                              Our Conservation Accreditations are the cornerstone of our practice, enabling us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings, looking for ways to recycle rather than demolish, or retrofit for the future.
+                              </SplitTextHover>
+                            </span>
+                          </div>
                         </div>
-                        <ImageScale image="/images/home-02.jpg" w={736} h={1001} />
+                        <div className="scale-[1] group-hover:scale-[1.18] transition-all ease-ak duration-[850ms]">
+                          <ImageScale image={`/images/home-02.jpg`} w={736} h={1001} />
+                        </div>
                       </div>
                       
                       <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">01</span>
@@ -134,38 +176,63 @@ export default function Mission() {
                       <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] mb-3">Conservation</span>
 
                       <span className="block text-lg leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center">Finding beauty in the imperfect</span>
-                    </Link>
+                    </div>
 
-                    <Link href="/" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                      <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                        <div className="absolute inset-0 bg-orange text-yellow z-[10] p-8 flex items-center justify-center text-center translate-y-[101%] group-hover:translate-y-0 transition-transform ease-ak duration-[600ms]">
-                          <span className="block font-display text-[5.2vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1]">Our Conservation Accreditations are the cornerstone of our practice, enabling us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings, looking for ways to recycle rather than demolish, or retrofit for the future.</span>
+                    <div className="w-full lg:flex-1 mb-12 lg:mb-0 group relative">
+                      <div className={`absolute inset-0 bg-yellow z-[8] h-[68%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] group-hover:delay-[0ms] group-hover:rotate-[-1.5deg]`}></div>
+
+                        <div className={`w-full relative overflow-hidden rounded-xl mb-8 transition-transform ease-ak duration-[750ms] z-[9] group-hover:rotate-[1.5deg]`}>
+                          <div className="absolute inset-0 bg-orange z-[9] translate-y-[150%] group-hover:translate-y-0 transition-transition ease-ak duration-[750ms] rounded-full scale-[1.8] delay-[100ms] group-hover:rotate-45 group-hover:delay-[0ms]"></div>
+
+                          <div className="absolute inset-0 text-yellow z-[10] p-8 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity ease-ak duration-[600ms] rounded-full">
+
+                            <div className="w-full">                          
+                              <span className="font-display text-[5.2vw] md:text-[3vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1] flex flex-wrap overflow-hidden justify-center">
+                                <SplitTextHover>
+                                Our Conservation Accreditations are the cornerstone of our practice, enabling us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings, looking for ways to recycle rather than demolish, or retrofit for the future.
+                                </SplitTextHover>
+                              </span>
+                            </div>
+                          </div>
+                          <div className="scale-[1] group-hover:scale-[1.18] transition-all ease-ak duration-[850ms]">
+                            <ImageScale image={`/images/home-03.jpg`} w={736} h={1001} />
+                          </div>
                         </div>
-                        <ImageScale image="/images/home-03.jpg" w={736} h={1001} />
-                      </div>
 
                       <span className="block text-lg leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center mb-2">02</span>
 
                       <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] mb-3">Commercial</span>
 
                       <span className="block text-lg leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center">Finding beauty in the imperfect</span>
-                    </Link>
+                    </div>
 
-                    <Link href="/" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                      <div className="w-full relative overflow-hidden rounded-xl mb-8">
-                        <div className="absolute inset-0 bg-orange text-yellow z-[10] p-8 flex items-center justify-center text-center translate-y-[101%] group-hover:translate-y-0 transition-transform ease-ak duration-[600ms]">
-                          <span className="block font-display text-[5.2vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1]">Our Conservation Accreditations are the cornerstone of our practice, enabling us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings, looking for ways to recycle rather than demolish, or retrofit for the future.</span>
+                    <div href="/" className="w-full lg:flex-1 mb-12 lg:mb-0 group relative">
+                      <div className={`absolute inset-0 bg-yellow z-[8] h-[68%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] group-hover:delay-[0ms] group-hover:rotate-[-1.5deg]`}></div>
+
+                        <div className={`w-full relative overflow-hidden rounded-xl mb-8 transition-transform ease-ak duration-[750ms] z-[9] group-hover:rotate-[1.5deg]`}>
+                          <div className="absolute inset-0 bg-orange z-[9] translate-y-[150%] group-hover:translate-y-0 transition-transition ease-ak duration-[750ms] rounded-full scale-[1.8] delay-[100ms] group-hover:rotate-45 group-hover:delay-[0ms]"></div>
+
+                          <div className="absolute inset-0 text-yellow z-[10] p-8 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity ease-ak duration-[600ms] rounded-full">
+
+                            <div className="w-full">                          
+                              <span className="font-display text-[5.2vw] md:text-[3vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1] flex flex-wrap overflow-hidden justify-center">
+                                <SplitTextHover>
+                                Our Conservation Accreditations are the cornerstone of our practice, enabling us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings, looking for ways to recycle rather than demolish, or retrofit for the future.
+                                </SplitTextHover>
+                              </span>
+                            </div>
+                          </div>
+                          <div className="scale-[1] group-hover:scale-[1.18] transition-all ease-ak duration-[850ms]">
+                            <ImageScale image={`/images/home-04.jpg`} w={736} h={1001} />
+                          </div>
                         </div>
-
-                        <ImageScale image="/images/home-04.jpg" w={736} h={1001} />
-                      </div>
 
                       <span className="block text-lg leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center mb-2">03</span>
 
                       <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] mb-3">Residential</span>
 
                       <span className="block text-lg leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center">Finding beauty in the imperfect</span>
-                    </Link>
+                    </div>
                   </div>
                 </Container>
 
