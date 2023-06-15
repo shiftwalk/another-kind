@@ -2,7 +2,7 @@ import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
 import { fade, reveal } from '@/helpers/transitions'
-import { LazyMotion, domMax, m } from 'framer-motion'
+import { LazyMotion, domMax, m, useScroll, useTransform } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
 import SunnyIcon from "@/icons/sunny.svg";
@@ -11,19 +11,25 @@ import ArrowIcon from "@/icons/arrow.svg";
 import ImageScale from '@/components/image-scale'
 import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { SplitTextHover } from '@/components/splitTextHover'
 
 export default function Team() {
-  const [currentImage, setCurrentImage] = useState(0);
+  // const [currentImage, setCurrentImage] = useState(0);
+  const scrollerRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: scrollerRef,
+    offset: ["-100%", "100%"]
+  })
+  const moveY = useTransform(scrollYProgress,[0, 1],['0%', '-200%'],{ clamp: true })
   
-  function nextImage() {
-    setCurrentImage(currentImage == 2 ? 0 : currentImage + 1)
-  }
+  // function nextImage() {
+  //   setCurrentImage(currentImage == 2 ? 0 : currentImage + 1)
+  // }
 
-  function prevImage() {
-    setCurrentImage(currentImage == 0 ? 2 : currentImage - 1)
-  }
+  // function prevImage() {
+  //   setCurrentImage(currentImage == 0 ? 2 : currentImage - 1)
+  // }
   
   return (
     <Layout>
@@ -144,7 +150,7 @@ export default function Team() {
               </m.article>
             </Container>
 
-            <div className="bg-green text-off-white flex flex-wrap mb-[20vw] lg:mb-[10vw]">
+            <div className="bg-green text-off-white flex flex-wrap mb-[20vw] lg:mb-[10vw]" ref={scrollerRef}>
               <div className="w-full lg:w-[48%] relative">
                 <div className="w-full relative overflow-hidden">
                   <div className={`w-full relative overflow-hidden aspect-[10/13]`}>
@@ -153,19 +159,19 @@ export default function Team() {
                     </div>
                   </div>
 
-                  <div className={`w-full absolute inset-0 z-[10] transition-transform ease-ak duration-[600ms] ${ currentImage == 0 && 'translate-y-[0%]'} ${ currentImage == 1 && 'translate-y-[-100%]'} ${ currentImage == 2 && 'translate-y-[-200%]'} ${ currentImage == 3 && 'translate-y-[-300%]'} `}>
+                  <m.div className={`w-full absolute inset-0 z-[10]`} style={{y: moveY }}>
                     <div className="w-full relative overflow-hidden aspect-[10/13]">
-                      <div className={`transition-transform ease-ak duration-[800ms] ${currentImage == 0 ? 'scale-1' : 'scale-[1.3]' }`}>
+                      <div className={`transition-transform ease-ak duration-[800ms]`}>
                         <ImageScale image="/images/team-cara-2.jpg" w={1105} h={1501} />
                       </div>
                     </div>
                     <div className="w-full relative overflow-hidden aspect-[10/13]">
-                      <div className={`transition-transform ease-ak duration-[800ms] ${currentImage == 1 ? 'scale-1' : 'scale-[1.3]' }`}>
+                      <div className={`transition-transform ease-ak duration-[800ms]`}>
                         <ImageScale image="/images/team-cara-3.jpg" w={1105} h={1501} />
                       </div>
                     </div>
                     <div className="w-full relative overflow-hidden aspect-[10/13]">
-                      <div className={`transition-transform ease-ak duration-[800ms] ${currentImage == 2 ? 'scale-1' : 'scale-[1.3]' }`}>
+                      <div className={`transition-transform ease-ak duration-[800ms]`}>
                         <ImageScale image="/images/team-cara-4.jpg" w={1105} h={1501} />
                       </div>
                     </div>
@@ -174,7 +180,7 @@ export default function Team() {
                         <ImageScale image="/images/team-cara-4.jpg" w={1105} h={1501} />
                       </div>
                     </div> */}
-                  </div>
+                  </m.div>
                 </div>
               </div>
               <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
@@ -186,7 +192,7 @@ export default function Team() {
                     <p>Finding the unusual and remarkable in the places we conserve, then elevating and re-purposing the form and fabric that gave that place life to begin with. No life left behind. We have two RIBA Conservation & AABC accredited architects, with more of the team completing accreditations as we type.</p>
                   </div>
 
-                  <div className="flex space-x-3">
+                  {/* <div className="flex space-x-3">
                     <button onClick={prevImage} className={`w-[50px] xl:w-[60px] h-[50px] xl:h-[60px] transition-colors ease-ak duration-[350ms] text-blue p-[10px] flex items-center justify-center rounded-full border border-blue relative overflow-hidden outline-none hover:outline-none focus:outline-none group`}>
                       <div className="absolute z-[10] inset-0 transition-transform ease-ak duration-[400ms] bg-yellow text-green translate-x-[100%] group-hover:translate-x-0 flex items-center justify-center p-[10px]">
                         <ArrowIcon className="w-full rotate-180" />
@@ -201,7 +207,7 @@ export default function Team() {
 
                       <ArrowIcon className="w-full transition-translate ease-ak duration-[400ms] group-hover:translate-x-[150%]" />
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
