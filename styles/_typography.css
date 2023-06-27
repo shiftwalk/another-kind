@@ -38,3 +38,7 @@ h1, .h1, h2, .h2, h3, .h3 {
     @apply font-displayItalic font-light text-[92%] leading-[75%];
   }
 }
+
+.hero--projects::last-word {
+  @apply italic bg-red-500;
+}

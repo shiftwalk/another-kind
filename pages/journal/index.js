@@ -9,13 +9,19 @@ import ArrowIcon from "@/icons/arrow.svg";
 import ImageScale from '@/components/image-scale'
 import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
+import { journalLandingQuery } from '@/helpers/queries'
+import SanityPageService from '@/services/sanityPageService'
+import PortableText from "react-portable-text"
 
-export default function Journal() {
+const pageService = new SanityPageService(journalLandingQuery)
+
+export default function Journal(initialData) {
+  const { data: { journalLanding }  } = pageService.getPreviewHook(initialData)()
   let colors = ['bg-orange text-off-white', 'bg-blue text-off-white', 'bg-green text-off-white']
 
   return (
     <Layout>
-      <NextSeo title="Journal" />
+      <NextSeo title={journalLanding.title} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -39,12 +45,12 @@ export default function Journal() {
                       </svg>
                     </span>
 
-                    <div className="relative overflow-hidden w-full mb-8 lg:mb-10">
-                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[1] lg:leading-[1] xl:leading-[1] 2xl:leading-[1] text-center mb-0 pb-0"><span className="block translate-y-[-11%]"><em>Life</em> in full flow.</span></m.h1>
+                    <div className="relative overflow-hidden w-full mb-6 lg:mb-8">
+                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[1] lg:leading-[1] xl:leading-[1] 2xl:leading-[1] text-center mb-0 pb-0"><span className="block translate-y-[-11%]"><PortableText content={journalLanding.heroHeading} /></span></m.h1>
                     </div>
 
                     <div className="w-[95%] lg:w-[60%] content text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px]">
-                      <p>Welcome, friends! Here you&rsquo;ll find all things Anotherkind — project updates, new team members, social initiatives, and more!</p>
+                      <p>{journalLanding.heroText}</p>
                     </div>
                   </div>
 
@@ -90,11 +96,14 @@ export default function Journal() {
 
                  
                   <div className="flex flex-wrap justify-center mb-[20vw] lg:mb-[8.5vw]">
-                    <span className="block mb-8 overflow-hidden relative w-full text-center">
-                      <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">A life-led company</m.span>
-                    </span>
-
-                    <span className="font-display block w-full md:w-[80%] lg:w-[75%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">There&rsquo;s <em>always</em> something going on at Anotherkind — new projects, new members of the team, social events, and more!</span>
+                    {journalLanding.quoteTitle && (
+                      <span className="block mb-8 overflow-hidden relative w-full text-center">
+                        <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">{journalLanding.quoteTitle}</m.span>
+                      </span>
+                    )}
+                    {journalLanding.quoteText && (
+                      <span className="font-display block w-full md:w-[80%] lg:w-[75%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16"><PortableText content={journalLanding.quoteText} /></span>
+                    )}
                   </div>
                 </Container>
 
@@ -156,4 +165,11 @@ export default function Journal() {
       </LazyMotion>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const props = await pageService.fetchQuery(context)
+  return { 
+    props: props
+  };
 }

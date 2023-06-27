@@ -32,16 +32,17 @@
     "body-scroll-lock": "^4.0.0-beta.0",
     "eslint-config-next": "^13.2.4",
     "framer-motion": "^10.3.0",
-    "locomotive-scroll": "^5.0.0-beta.8",
-    "next": "^13.4.4",
+    "next": "^13.2.4",
+    "next-sanity": "^1.1.0",
+    "next-sanity-image": "^6.0.0",
     "next-seo": "^4.26.0",
     "postcss-import": "^14.0.0",
     "postcss-nested": "^5.0.5",
     "postcss-preset-env": "^6.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-fps-stats": "^0.3.1",
-    "react-just-parallax": "^3.1.16"
+    "react-just-parallax": "^3.1.16",
+    "react-portable-text": "^0.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

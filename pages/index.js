@@ -10,9 +10,16 @@ import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
 import { useRef } from 'react'
 import ImageScale from '@/components/image-scale'
 import { MouseParallax } from 'react-just-parallax'
+import { homeQuery } from '@/helpers/queries'
+import SanityPageService from '@/services/sanityPageService'
+import PortableText from "react-portable-text"
 import Link from 'next/link'
 
-export default function Home() {
+const pageService = new SanityPageService(homeQuery)
+
+export default function Home(initialData) {
+  const { data: { home }  } = pageService.getPreviewHook(initialData)()
+
   const ref = useRef(null)
   const parallaxRef = useRef(null)
   
@@ -26,7 +33,7 @@ export default function Home() {
   
   return (
     <Layout>
-      <NextSeo title="Home" />
+      <NextSeo title={home.title} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -43,7 +50,7 @@ export default function Home() {
                   </m.div>
                 </div>
 
-                <div className="flex flex-wrap items-end mb-[20vw] lg:mb-[10.5vw] max-w-[1920px] " ref={ref}>
+                <div className="flex flex-wrap items-end mb-[20vw] lg:mb-[10.5vw] max-w-[1920px]" ref={ref}>
                   <div className="w-full lg:w-1/2 mb-3 lg:mb-0 relative">
                     <div className="w-full relative overflow-hidden rounded-xl">
                       <ImageScale image="/images/home.jpg" w={767} h={688} p />
@@ -53,32 +60,36 @@ export default function Home() {
                       <BadgeIcon className="w-full" />
                     </m.div>
                   </div>
-                  <div className="w-full lg:w-1/2">
-                    <div className="w-11/12 content text-lg/[1.28] 2xl:text-xl/[1.28] lg:px-5">
-                      <p>Our RIBA Chartered Practice is brimming with forward-thinking, award-winning architects, technologists and other alternatively, really talented folks. For us Anotherkind is more than a name, it&apos;s a mission. Curiosity, playfulness, openness and a can-do attitude aren&apos;t just values scrawled on a wall, but qualities we truly value. If we work together we&apos;re sure you&apos;ll see there&apos;s much more to our name than our name.</p>
+                  {home.heroText && (
+                    <div className="w-full lg:w-1/2">
+                      <div className="w-11/12 content text-lg/[1.28] 2xl:text-xl/[1.28] lg:px-5">
+                        <p>{home.heroText}</p>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 <div className="flex flex-wrap justify-center mb-[20vw] lg:mb-[10.5vw]">
-                  <span className="block mb-8 overflow-hidden relative w-full text-center">
-                    <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Space needs life.</m.span>
-                  </span>
-
+                  {home.quoteTitle && (
+                    <span className="block mb-8 overflow-hidden relative w-full text-center">
+                      <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">{home.quoteTitle}</m.span>
+                    </span>
+                  )}
+                  {home.quoteText && (
                   <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">
-                    It&apos;s the <em>beautiful</em> alchemy of space and colliding that makes a space, a place. We make grand plans for them to come together, creating progressive, sustainable, life-affirming places. Great places designed for life.</span>
+                    <PortableText content={home.quoteText} />
+                  </span>
+                  )}
                 </div>
               </Container>
 
 
               <div className="bg-orange text-white flex flex-wrap mb-[20vw] lg:mb-[10.5vw]">
                 <div className="w-full lg:w-[50%] mb-3 lg:mb-0 relative p-5 flex flex-col">
-                  <h1 className="text-[16vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[90%] md:w-[80%] lg:w-[95%] mb-[25vw] lg:mb-0">Anotherkind Of Architect.</h1>
+                  <h1 className="text-[16vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[90%] md:w-[80%] lg:w-[95%] mb-[25vw] lg:mb-0">{home.pulloutSectionHeading}</h1>
 
-                  <div className="w-full lg:w-10/12 content text-base/[1.28] xl:text-lg/[1.28] mt-auto max-w-[800px]">
-                    <p>We&apos;re certified Passivhaus architects and conservation specialists. Designing life-affirming, genuinely sustainable architecture is what makes us leap out of bed in the morning. Although sometimes it&apos;s the kids. Or the hurried knocking of the dead-eager Amazon guy.</p>
-                    
-                    <p>Our RIBA Chartered Practice is brimming with forward-thinking, award-winning architects, technologists and other alternatively, really talented folks. For us Anotherkind is more than a name, it&apos;s a mission. Curiosity, playfulness, openness and a can-do attitude aren&apos;t just values scrawled on a wall, but qualities we truly value. If we work together we&apos;re sure you&apos;ll see there&apos;s much more to our name than our name.</p>
+                  <div className="w-full lg:w-10/12 text-base/[1.28] xl:text-lg/[1.28] mt-auto max-w-[800px]">
+                    <PortableText className="content" content={home.pulloutSectionText} />
                   </div>
                 </div>
                 <div className="w-full lg:w-[50%] relative">
@@ -101,9 +112,16 @@ export default function Home() {
 
               <Container>
                 <div className="flex flex-wrap justify-center mb-[20vw] lg:mb-[10.5vw]">
-                  <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-8">Progress-powered.</span>
-
-                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">We care passionately about the health and happiness of our team, ensuring they have the <em>freedom</em> to focus on designing beautiful places for our clients.</span>
+                  {home.quote2Title && (
+                    <span className="block mb-8 overflow-hidden relative w-full text-center">
+                      <m.span variants={reveal} className="block text-lg leading-[1.2] lg:text-xl lg:leading-[1.2]">{home.quote2Title}</m.span>
+                    </span>
+                  )}
+                  {home.quote2Text && (
+                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">
+                    <PortableText content={home.quote2Text} />
+                  </span>
+                  )}
                 </div>
 
                 <div className="flex flex-wrap mb-[10vw] lg:mb-[7.5vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
@@ -159,4 +177,11 @@ export default function Home() {
       </LazyMotion>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const props = await pageService.fetchQuery(context)
+  return { 
+    props: props
+  };
 }

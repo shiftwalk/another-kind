@@ -9,13 +9,19 @@ import SunnyIcon from "@/icons/sunny.svg";
 import ImageScale from '@/components/image-scale'
 import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
+import { projectsLandingQuery } from '@/helpers/queries'
+import SanityPageService from '@/services/sanityPageService'
+import PortableText from "react-portable-text"
 
-export default function Projects() {
+const pageService = new SanityPageService(projectsLandingQuery)
+
+export default function Projects(initialData) {
+  const { data: { projectsLanding }  } = pageService.getPreviewHook(initialData)()
   let colors = ['border-orange bg-orange text-yellow', 'border-yellow bg-yellow text-orange', 'border-blue bg-blue text-green', 'border-green bg-green text-blue']
 
   return (
     <Layout>
-      <NextSeo title="Projects" />
+      <NextSeo title={projectsLanding.title} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -39,12 +45,16 @@ export default function Projects() {
                       </svg>
                     </span>
 
-                    <div className="relative overflow-hidden w-full mb-10 lg:mb-12">
-                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] 2xl:leading-[0.9] text-center mb-0 pb-0">Places we&rsquo;ve <em>shaped</em>.</m.h1>
+                    <div className="relative overflow-hidden w-full mb-6 lg:mb-8">
+                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[1] lg:leading-[1.1] xl:leading-[1.1] 2xl:leading-[1.1] text-center mb-0 pb-0 hero--projects">
+                        <div className="translate-y-[-5%]">
+                          <PortableText content={projectsLanding.heroHeading} />
+                        </div>
+                      </m.h1>
                     </div>
 
                     <div className="w-[95%] lg:w-[60%] content text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px]">
-                      <p>We&rsquo;re passionate about architecture that is appropriate and accessible, woven comfortably into their setting, respecting local character and celebrating community.</p>
+                      <p>{projectsLanding.heroText}</p>
                     </div>
                   </div>
 
@@ -91,11 +101,18 @@ export default function Projects() {
                   </ul>
 
                   <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[10vw] mb-[20vw] lg:mb-[10vw]">
-                    <span className="block mb-8 overflow-hidden relative w-full text-center">
-                      <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Need a hand?</m.span>
-                    </span>
+                    {projectsLanding.footerCtaTitle && (
+                      <span className="block mb-8 overflow-hidden relative w-full text-center">
+                        <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">{projectsLanding.footerCtaTitle}</m.span>
+                      </span>
+                    )}
 
-                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">Need help transforming a residential property into a beautiful, <em>lasting</em> home? We’d love to talk!</span>
+                    {projectsLanding.footerCtaText && (
+                      <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">
+                        <PortableText content={projectsLanding.footerCtaText} />
+                      </span>
+                    )}
+                    
                     <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false}>
                       <div className="w-full flex justify-center">
                         <Link href="/contact" className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
@@ -123,4 +140,11 @@ export default function Projects() {
       </LazyMotion>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const props = await pageService.fetchQuery(context)
+  return { 
+    props: props
+  };
 }

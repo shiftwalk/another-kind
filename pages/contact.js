@@ -9,11 +9,17 @@ import SunnyIcon from "@/icons/sunny.svg";
 import ImageScale from '@/components/image-scale'
 import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
+import { contactQuery } from '@/helpers/queries'
+import SanityPageService from '@/services/sanityPageService'
+import PortableText from "react-portable-text"
 
-export default function Contact() {
+const pageService = new SanityPageService(contactQuery)
+export default function Contact(initialData) {
+  const { data: { contact }  } = pageService.getPreviewHook(initialData)()
+
   return (
     <Layout>
-      <NextSeo title="Contact" />
+      <NextSeo title={contact.title} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -50,44 +56,56 @@ export default function Contact() {
 
                         <div className="relative overflow-hidden w-auto mb-6 lg:mb-8">
                           <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[150px] leading-[1] lg:leading-[1] xl:leading-[1] 2xl:leading-[1] mb-0 pb-0 block">
-                            <span className="block translate-y-[-10%]">Say <em>hello</em>.</span>
+                            <span className="block translate-y-[-10%]">
+                              <PortableText content={contact.heroHeading} />
+                            </span>
                           </m.h1>
                         </div>
 
                         <div className="w-[95%] lg:w-[90%] content text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px] mb-12">
-                          <p>We&rsquo;re social, so if you&rsquo;d like to talk about an upcoming project, join our team, or just say hi — please get in touch through any of the methods below!</p>
+                          <p>{contact.heroText}</p>
                         </div>
 
-                        <a href="mailto:hello@anotherkind.studio" className="py-5 relative group block transition-colors ease-ak duration-[600ms] hover:text-yellow">
-                          <div className="bg-orange w-full h-full inset-0 absolute z-0 scale-x-[1.065] rounded-xl hidden lg:block transition-opacity ease-ak duration-[600ms] opacity-0 group-hover:opacity-100"></div>
+                        {contact.emailAddress && (
+                          <a href={`mailto:${contact.emailAddress}`} className="py-5 relative group block transition-colors ease-ak duration-[600ms] hover:text-yellow">
+                            <div className="bg-orange w-full h-full inset-0 absolute z-0 scale-x-[1.065] rounded-xl hidden lg:block transition-opacity ease-ak duration-[600ms] opacity-0 group-hover:opacity-100"></div>
 
-                          <div className="relative z-[1]">
-                            <div className="mb-3">
-                              <span className="block text-lg leading-none lg:text-xl lg:leading-none">Email</span>
+                            <div className="relative z-[1]">
+                              <div className="mb-3">
+                                <span className="block text-lg leading-none lg:text-xl lg:leading-none">Email</span>
+                              </div>
+
+                              <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">{contact.emailAddress}</span>
                             </div>
+                          </a>
+                        )}
+                      
+                        {contact.telephone && (
+                          <a href={`tel:${contact.telephone}`} className="py-5 relative group block transition-colors ease-ak duration-[600ms] hover:text-yellow">
+                            <div className="bg-orange w-full h-full inset-0 absolute z-0 scale-x-[1.065] rounded-xl hidden lg:block transition-opacity ease-ak duration-[600ms] opacity-0 group-hover:opacity-100"></div>
 
-                            <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">hello@anotherkind.studio</span>
-                          </div>
-                        </a>
+                            <div className="relative z-[1]">
+                              <div className="mb-3">
+                                <span className="block text-lg leading-none lg:text-xl lg:leading-none">Call</span>
+                              </div>
 
-                        <a href="tel:+4401234567" className="py-5 relative group block transition-colors ease-ak duration-[600ms] hover:text-yellow">
-                          <div className="bg-orange w-full h-full inset-0 absolute z-0 scale-x-[1.065] rounded-xl hidden lg:block transition-opacity ease-ak duration-[600ms] opacity-0 group-hover:opacity-100"></div>
-
-                          <div className="relative z-[1]">
-                            <div className="mb-3">
-                              <span className="block text-lg leading-none lg:text-xl lg:leading-none">Call</span>
+                              <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">{contact.telephone}</span>
                             </div>
-
-                            <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">44 0123 4567</span>
-                          </div>
-                        </a>
+                          </a>
+                        )}
                         
                         <div className="py-5">
                           <div className="mb-3">
                             <span className="block text-lg leading-none lg:text-xl lg:leading-none">Socials</span>
                           </div>
 
-                          <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">Instagram, LinkedIn, Twitter</span>
+                          <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">
+                            {contact.socials.map((e,i) => {
+                              return (
+                                <a key={i} target="_blank" rel="noopener noreferrer" href={e.url}>{e.name}{(i !== contact.socials.length - 1) && ', '}</a>
+                              )
+                            })}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -95,11 +113,15 @@ export default function Contact() {
                 </div>
 
                 <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[10vw] pb-[10vw] lg:pb-[6.25vw]">
-                  <span className="block mb-8 overflow-hidden relative w-full text-center">
-                    <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Want to join the team?</m.span>
-                  </span>
+                  {contact.footerCtaTitle && (
+                    <span className="block mb-8 overflow-hidden relative w-full text-center">
+                      <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">{contact.footerCtaTitle}</m.span>
+                    </span>
+                  )}
 
-                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">We&rsquo;re always on the lookout for <em>amazing</em> talent with a <em>passion</em> for building spaces with meaning.</span>
+                  {contact.footerCtaText && (
+                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16"><PortableText content={contact.footerCtaText} /></span>
+                  )}
 
                   <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false}>
                     <div className="w-full flex justify-center">
@@ -126,4 +148,11 @@ export default function Contact() {
       </LazyMotion>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const props = await pageService.fetchQuery(context)
+  return { 
+    props: props
+  };
 }
