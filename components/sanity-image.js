@@ -28,9 +28,11 @@ export default function SanityImage({ image, className, alt, priority, widthOver
   if (priority) { attributes.priority = true } else { attributes.priority = false }
 
 	return(
-    <figure className={`image bg-off-white ${className} cover-image absolute inset-0 w-full h-full object-cover object-center`}>
-
-      <div className={`absolute inset-0 z-10 bg-orange transition-all ease-ak scale-x-[200%] duration-[1200ms] ${imageIsLoaded ? 'translate-y-[100%] rounded-t-[20%]' : 'rounded-t-[100%]' }`}></div>
+    <figure className={`image bg-black/20 ${className} cover-image absolute inset-0 w-full h-full object-cover object-center`}>
+      
+      {!priority && (
+        <div className={`absolute inset-0 z-10 bg-orange transition-all ease-ak scale-x-[200%] duration-[1200ms] ${imageIsLoaded ? 'translate-y-[100%] rounded-t-[20%]' : 'rounded-t-[100%]' }`}></div>
+      )}
 
 		  <Image
         src={imageProps.src}
