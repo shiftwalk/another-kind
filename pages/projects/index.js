@@ -12,6 +12,7 @@ import { MouseParallax } from 'react-just-parallax'
 import { projectsLandingQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
 import PortableText from "react-portable-text"
+import SanityImageScale from '@/components/sanity-image-scale'
 
 const pageService = new SanityPageService(projectsLandingQuery)
 
@@ -62,12 +63,12 @@ export default function Projects(initialData) {
                     <div className="absolute top-[-50px] lg:top-[-70px] left-[8%] lg:left-[9%] w-[120px] xl:w-[170px] p-3 z-[20] bg-orange text-yellow rounded-full">
                       <SunnyIcon className="w-full aspect-square" />
                     </div>
-                    {Array.from(Array(10), (e, i) => {
+                    {projectsLanding.projects.map((e, i) => {
                       let color = colors[colors.length * Math.random() | 0]
 
                       return (
                         <li className="col-span-2 lg:col-span-1" key={i}>
-                          <Link href="/projects/slug" className="group">
+                          <Link href={`/projects/${e.slug.current}`} className="group">
                             <div className="relative overflow-hidden mb-8 rounded-2xl">
                               <div className={`absolute pointer-events-none inset-0 z-10 rounded-2xl border-[0vw] group-hover:border-[1vw] transition-all ease-ak duration-[500ms] ${color}`} style={{ background: 'transparent'}}></div>
 
@@ -82,17 +83,25 @@ export default function Projects(initialData) {
 
                               <div className="relative overflow-hidden">
                                 <div className="group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
-                                  <ImageScale image={`/images/projects/project-${i+1}.jpg`} w={994} h={704} />
+                                  <div className="aspect-[15/10]">
+                                    { e.heroImage ? (
+                                      <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 55vw" image={e.heroImage} />
+                                    ) : (
+                                      <div className="w-full h-full absolute inset-0 bg-green"></div>
+                                    )}
+                                  </div>
                                 </div>
                               </div>
                             </div>
 
-                            <span className="block relative overflow-hidden mb-1">
-                              <m.span variants={reveal} className="block text-lg leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center">Keyworth, Nottingham</m.span>
-                            </span>
+                            {e.location && (
+                              <span className="block relative overflow-hidden mb-1">
+                                <m.span variants={reveal} className="block text-lg leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center">{e.location}</m.span>
+                              </span>
+                            )}
 
                             <span className="block relative overflow-hidden mb-2">
-                              <m.span variants={reveal} className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[1.2] md:leading-[1.2] lg:leading-[1.2] xl:leading-[1.2]">Project Name</m.span>
+                              <m.span variants={reveal} className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[1.2] md:leading-[1.2] lg:leading-[1.2] xl:leading-[1.2]">{e.title}</m.span>
                             </span>
                           </Link>
                         </li>

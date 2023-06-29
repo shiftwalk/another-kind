@@ -12,6 +12,7 @@ import { MouseParallax } from 'react-just-parallax'
 import { contactQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
 import PortableText from "react-portable-text"
+import SanityImageScale from '@/components/sanity-image-scale'
 
 const pageService = new SanityPageService(contactQuery)
 export default function Contact(initialData) {
@@ -36,7 +37,9 @@ export default function Contact(initialData) {
                       <SunnyIcon className="w-[100%] aspect-square" />
                     </div>
                     <div className="w-full relative overflow-hidden rounded-xl">
-                      <ImageScale image="/images/contact.jpg" w={1196} h={1321} p />
+                      <div className="aspect-[10/11]">
+                        <SanityImageScale p fill sizes="(max-width: 1024px) 100vw, 55vw" image={contact.heroImage} />
+                      </div>
                     </div>
                   </div>
 
@@ -102,7 +105,10 @@ export default function Contact(initialData) {
                           <span className="font-display block w-full text-3xl md:text-3xl lg:text-3xl leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">
                             {contact.socials.map((e,i) => {
                               return (
-                                <a key={i} target="_blank" rel="noopener noreferrer" href={e.url}>{e.name}{(i !== contact.socials.length - 1) && ', '}</a>
+                                <a key={i} target="_blank" rel="noopener noreferrer" href={e.url} className="relative group">
+                                  <span className="relative z-10">{e.name}{(i !== contact.socials.length - 1) && ', '}</span>
+                                  <span className={`w-0 group-hover:w-full opacity-100 rotate-0 transition-ak ease-in-out duration-[350ms] z-[0] h-[10px] bg-orange absolute bottom-[-2px] left-0 right-0`}></span>
+                                </a>
                               )
                             })}
                           </span>
@@ -115,7 +121,7 @@ export default function Contact(initialData) {
                 <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[10vw] pb-[10vw] lg:pb-[6.25vw]">
                   {contact.footerCtaTitle && (
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
-                      <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">{contact.footerCtaTitle}</m.span>
+                      <m.span variants={reveal} className="block text-lg leading-[1.25] lg:text-xl lg:leading-[1.25]">{contact.footerCtaTitle}</m.span>
                     </span>
                   )}
 

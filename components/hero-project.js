@@ -3,8 +3,9 @@ import { useRef } from 'react'
 import SunnyIcon from "@/icons/sunny.svg";
 import { reveal } from '@/helpers/transitions';
 import Image from 'next/image';
+import SanityImageScale from './sanity-image-scale';
 
-export default function HeroProject({ image }) {
+export default function HeroProject({ image, heading }) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -17,12 +18,16 @@ export default function HeroProject({ image }) {
     <>
       <div className="w-full h-[100dvh] fixed inset-0 z-[10] bg-off-white" ref={ref}>
         <m.div style={{ scale: scale  }} className={`w-full h-full absolute inset-0`}>
-          <Image priority fill style={{ scale: scale }} src={'/images/project.jpg'} alt="Temp Project Image" className="will-change-transform w-full absolute inset-0 h-full object-cover object-center z-10" />
+          { image ? (
+          <SanityImageScale p fill sizes="(max-width: 1024px) 100vw, 100vw"   image={image} />
+          ) : (
+            <div className="absolute w-full h-full inset-0 bg-green"></div>
+          )}
         </m.div>
 
-        <div className="absolute inset-0 w-full flex items-center justify-center z-10">
+        <div className="absolute inset-0 w-full flex items-center justify-center z-10 text-center">
           <div className="relative overflow-hidden mt-[-3vw]">
-            <m.h1 style={{ y: move }} className="block font-display text-[23.5vw] lg:text-[20vw] text-yellow leading-[0.85] mb-0 pb-0">The Croft</m.h1>
+            <m.h1 style={{ y: move }} className="block font-display text-[20vw] lg:text-[20vw] 2xl:text-[320px] text-yellow leading-[0.85] mb-0 pb-0">{heading}</m.h1>
           </div>
         </div>
 

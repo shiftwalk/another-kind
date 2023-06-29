@@ -12,6 +12,7 @@ import { MouseParallax } from 'react-just-parallax'
 import { journalLandingQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
 import PortableText from "react-portable-text"
+import SanityImageScale from '@/components/sanity-image-scale'
 
 const pageService = new SanityPageService(journalLandingQuery)
 
@@ -155,8 +156,8 @@ export default function Journal(initialData) {
         
           <m.div variants={fade}>
             <div className="overflow-hidden">
-              <div className="w-full relative overflow-hidden">
-                <ImageScale image="/images/journal-footer.jpg" w={2400} h={1345} />
+              <div className="w-full relative overflow-hidden aspect-[17/10]">
+                <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 90vw" image={journalLanding.footerImage} />
               </div>
               <Footer />
             </div>

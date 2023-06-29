@@ -20,7 +20,12 @@ export default function Footer() {
             <SunIcon className="w-5 mt-[2px]" />
             <FancyLink destination="/journal" a11yText="Navigate to the journal page" label="Journal" />
             <SunIcon className="w-5 mt-[2px]" />
-            <a href="https://example.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="relative group">
+              <span className="block relative z-10">
+                Instagram
+              </span>
+              <span className={`w-0 group-hover:w-full opacity-100 rotate-0 transition-ak ease-in-out duration-[350ms] z-[0] h-[10px] bg-white absolute bottom-[-2px] left-0 right-0`}></span>
+            </a>
             <SunIcon className="w-5 mt-[2px]" />
             <FancyLink destination="/contact" a11yText="Navigate to the contact page" label="Contact" />
           </nav>

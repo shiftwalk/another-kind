@@ -13,13 +13,21 @@ import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
 import { useRef, useState } from 'react'
 import { SplitTextHover } from '@/components/splitTextHover'
+import SanityPageService from '@/services/sanityPageService'
+import { teamQuery } from '@/helpers/queries'
+import PortableText from "react-portable-text"
+import SanityImageScale from '@/components/sanity-image-scale'
 
-export default function Team() {
+const pageService = new SanityPageService(teamQuery)
+
+export default function Team(initialData) {
+  const { data: { team }  } = pageService.getPreviewHook(initialData)()
+
   // const [currentImage, setCurrentImage] = useState(0);
   const scrollerRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: scrollerRef,
-    offset: ["-100%", "100%"]
+    offset: ["-120%", "50%"]
   })
   const moveY = useTransform(scrollYProgress,[0, 1],['0%', '-200%'],{ clamp: true })
   
@@ -33,7 +41,7 @@ export default function Team() {
   
   return (
     <Layout>
-      <NextSeo title="Team" />
+      <NextSeo title={team.title} />
 
       <LazyMotion features={domMax}>
         <m.div
@@ -60,23 +68,22 @@ export default function Team() {
                         </span>
 
                         <div className="relative w-auto mb-8 lg:mb-10">
-                          <h1 className="text-[15vw] lg:text-[9.8vw] xl:text-[9vw] 2xl:text-[150px] leading-[0.85] lg:leading-[0.85] xl:leading-[0.85] 2xl:leading-[0.85] mb-0 pb-0 block">
+                          <h1 className="text-[15vw] lg:text-[9.8vw] xl:text-[9vw] 2xl:text-[150px] leading-[1] lg:leading-[0.85] xl:leading-[0.85] 2xl:leading-[0.85] mb-0 pb-0 block">
                             <span className="block relative overflow-hidden">
                               <m.span variants={reveal} className="block">
-                                <span className="block translate-y-[-20%]">It&rsquo;s a team</span>
-                              </m.span>
-                            </span>
-                            <span className="block relative overflow-hidden">
-                              <m.span variants={reveal} className="block">
-                                <span className="block translate-y-[-30%]">game.</span>
+                                <span className="block translate-y-[-10%]">
+                                  <PortableText content={team.heroHeading} />
+                                </span>
                               </m.span>
                             </span>
                           </h1>
                         </div>
 
-                        <div className="w-[95%] lg:w-[90%] content text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px]">
-                          <p>Our collaborative studio culture is centred around flexibility and wellbeing: putting people at the heart of everything that we do.</p>
-                        </div>
+                        {team.heroText && (
+                          <div className="w-[95%] lg:w-[90%] content text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px]">
+                            <p>{team.heroText}</p>
+                          </div>
+                        )}
                       </div>
 
                       <SquiggleTeamIcon className="w-[70%] absolute left-0 bottom-[-35vw] lg:bottom-[-10vw] xl:bottom-[-5vw] 2xl:bottom-[0] -translate-x-5" />
@@ -88,21 +95,26 @@ export default function Team() {
                       <SunnyIcon className="w-[100%] aspect-square" />
                     </div>
                     <div className="w-full relative overflow-hidden rounded-xl">
-                      <ImageScale image="/images/team.jpg" w={1196} h={1321} p />
+                      <div className="aspect-[10/11]">
+                        <SanityImageScale p fill sizes="(max-width: 1024px) 100vw, 65vw" image={team.heroImage} />
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[7.8vw] pb-[10vw] lg:pb-[6.25vw]">
-                  <span className="block mb-8 overflow-hidden relative w-full text-center">
-                    <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">A life-led company</m.span>
-                  </span>
-
-                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">We&rsquo;re a friendly, forward-thinking collective — an approachable <em>team</em> with a can-do attitude.</span>
+                  {team.quoteTitle && (
+                    <span className="block mb-8 overflow-hidden relative w-full text-center">
+                      <m.span variants={reveal} className="block text-lg leading-[1.25] lg:text-xl lg:leading-[1.25]">{team.quoteTitle}</m.span>
+                    </span>
+                  )}
+                  {team.quoteText && (
+                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">We&rsquo;re a friendly, forward-thinking collective — an approachable <em>team</em> with a can-do attitude.</span>
+                  )}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-[20vw] lg:mb-[10vw] px-[10vw] lg:px-[8vw] gap-[6vw] lg:gap-[5vw]">
-                  {Array.from(Array(9), (e, i) => {
+                  {team.teamMembers.map((e, i) => {
                     let rotation = 'group-hover:rotate-[-1.5deg]'
                     let bgRotation = 'group-hover:rotate-[1.5deg]'
                     
@@ -117,7 +129,7 @@ export default function Team() {
                     return (
                       <div className="w-full lg:col-span-1 group relative" key={i}>
                         <div className={`absolute inset-0 bg-yellow z-[8] h-[77%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] group-hover:delay-[0ms] ${bgRotation}`}></div>
-
+                        
                         <div className={`w-full relative overflow-hidden rounded-xl mb-8 transition-transform ease-ak duration-[750ms] z-[9] ${rotation}`}>
                           <div className="absolute inset-0 bg-orange z-[9] translate-y-[150%] group-hover:translate-y-0 transition-transition ease-ak duration-[750ms] rounded-full scale-[1.8] delay-[100ms] group-hover:rotate-45 group-hover:delay-[0ms]"></div>
 
@@ -127,22 +139,36 @@ export default function Team() {
                               <div className="w-[42px] mb-4 mx-auto">
                                 <SunnyNoRaysIcon className="w-full aspect-square mb-2 transition-transform ease-ak duration-[650ms] scale-0 group-hover:scale-[1] group-hover:rotate-[360deg]" />
                               </div>
-                            
-                              <span className="font-display text-[5.2vw] md:text-[3vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1] flex flex-wrap overflow-hidden justify-center">
-                                <SplitTextHover>
-                                  “Passionate about creating positive environments, Nilesh takes a methodical and caring approach to design and detail.”
-                                </SplitTextHover>
-                              </span>
+
+                              {e.bio && (
+                                <span className="font-display text-[5.2vw] md:text-[3vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1] flex flex-wrap overflow-hidden justify-center">
+                                  “
+                                  <SplitTextHover>
+                                    {e.bio}
+                                  </SplitTextHover>
+                                  ”
+                                </span>
+                              )}
                             </div>
                           </div>
                           <div className="scale-[1] group-hover:scale-[1.18] transition-all ease-ak duration-[850ms]">
-                            <ImageScale image={`/images/team/team-${i+1}.jpg`} w={388} h={510} />
+                            <div className="aspect-[10/14]">
+                              {e.image ? (
+                              <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 33vw" image={e.image} />
+                              ) : (
+                                <div className="w-full h-full inset-0 absolute bg-green"></div>
+                              )}
+                            </div>
                           </div>
                         </div>
+                        
+                        {e.role && (
+                          <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">{e.role}</span>
+                        )}
 
-                        <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">Job Role</span>
-
-                        <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Member Name</span>
+                        {e.name && (
+                          <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">{e.name}</span>
+                        )}
                       </div>
                     )
                   })}
@@ -184,12 +210,13 @@ export default function Team() {
                 </div>
               </div>
               <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
-                <h1 className="text-[16vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[85%] md:w-[85%] lg:w-[100%] mb-[25vw] lg:mb-0">Life-led.<br/> social at heart.</h1>
+                {team.pulloutSectionHeading && (
+                  <h1 className="text-[16vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[85%] md:w-[85%] lg:w-[90%] mb-[25vw] lg:mb-0">{team.pulloutSectionHeading}</h1>
+                )}
 
                 <div className="w-full lg:w-10/12 mt-auto max-w-[800px]">
                   <div className="content text-base/[1.28] xl:text-lg/[1.28] mb-5">
-                    <p>Conservation is a passion. Our aim is to always preserve life in the places we shape where it&rsquo;s possible, and valuable. Stories. Memories. History. Breathing new life into old places is central to our approach.</p>
-                    <p>Finding the unusual and remarkable in the places we conserve, then elevating and re-purposing the form and fabric that gave that place life to begin with. No life left behind. We have two RIBA Conservation & AABC accredited architects, with more of the team completing accreditations as we type.</p>
+                    <PortableText className="content" content={team.pulloutSectionText} />
                   </div>
 
                   {/* <div className="flex space-x-3">
@@ -214,11 +241,15 @@ export default function Team() {
 
             <Container>
               <div className="flex flex-wrap justify-center pb-[10vw] lg:pb-[6.25vw]">
-                <span className="block mb-8 overflow-hidden relative w-full text-center">
-                  <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Want to join the team?</m.span>
-                </span>
+                {team.footerCtaTitle && (
+                  <span className="block mb-8 overflow-hidden relative w-full text-center">
+                    <m.span variants={reveal} className="block text-lg leading-[1.25] lg:text-xl lg:leading-[1.25]">{team.footerCtaTitle}</m.span>
+                  </span>
+                )}
 
-                <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">We&rsquo;re always on the lookout for <em>amazing</em> talent with a <em>passion</em> for building spaces with meaning.</span>
+                {team.footerCtaText && (
+                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16"><PortableText content={team.footerCtaText} /></span>
+                  )}
 
                 <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false}>
                   <div className="w-full flex justify-center">
@@ -244,4 +275,11 @@ export default function Team() {
       </LazyMotion>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const props = await pageService.fetchQuery(context)
+  return { 
+    props: props
+  };
 }

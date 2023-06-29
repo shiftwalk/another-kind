@@ -2,8 +2,10 @@ import { m, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { reveal } from '@/helpers/transitions';
 import Image from 'next/image';
+import PortableText from 'react-portable-text';
+import SanityImage from './sanity-image';
 
-export default function HeroMission({ image }) {
+export default function HeroMission({ image, headingLine1, headingLine2 }) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -26,7 +28,7 @@ export default function HeroMission({ image }) {
               <div className="relative overflow-hidden ">
                 <m.div style={{ y: moveTextTop }}>
                   <m.h2 variants={reveal} className="text-[calc(5.5vw+5.5vmin)] leading-[0.85] text-center">
-                    <span className="block translate-y-[-15%]">Great spaces.</span>
+                    <span className="block translate-y-[-15%]"><PortableText content={headingLine1}/></span>
                   </m.h2>
                 </m.div>
               </div>
@@ -35,7 +37,13 @@ export default function HeroMission({ image }) {
             <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-10 pointer-events-none">
               <m.div className="relative" style={{ y: moveY }}>
                 <m.div style={{ scale: scale, borderRadius: radius  }} className={`w-[90dvw] lg:w-[50dvw] h-[42vh] max-h-[600px] relative overflow-hidden mx-auto`}>
-                  <Image priority style={{ scale: scale }} fill src={'/images/mission.jpg'} alt="Temp Home Image" className="will-change-transform w-full absolute inset-0 h-full object-cover object-center" />
+                  <SanityImage
+                    priority
+                    image={image}
+                    sizes="(max-width: 1024px) 100vw, 100vw"
+                    alt={image.alt ? image.alt : 'No image description'}
+                    className={`will-change-transform w-full absolute inset-0 h-full object-cover object-center`}
+                  />
                 </m.div>
               </m.div>
             </div>
@@ -44,7 +52,7 @@ export default function HeroMission({ image }) {
               <div className="relative overflow-hidden ">
                 <m.div style={{ y: moveTextBottom }}>
                   <m.h2 variants={reveal} className="text-[calc(5.5vw+5.5vmin)] leading-[0.85] text-center">
-                    <span className="block translate-y-[3%]">Designed for <em>life</em>.</span>
+                    <span className="block translate-y-[3%]"><PortableText content={headingLine2}/></span>
                   </m.h2>
                 </m.div>
               </div>

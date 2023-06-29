@@ -14,6 +14,7 @@ import { homeQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
 import PortableText from "react-portable-text"
 import Link from 'next/link'
+import SanityImageScale from '@/components/sanity-image-scale'
 
 const pageService = new SanityPageService(homeQuery)
 
@@ -52,8 +53,10 @@ export default function Home(initialData) {
 
                 <div className="flex flex-wrap items-end mb-[20vw] lg:mb-[10.5vw] max-w-[1920px]" ref={ref}>
                   <div className="w-full lg:w-1/2 mb-3 lg:mb-0 relative">
-                    <div className="w-full relative overflow-hidden rounded-xl">
-                      <ImageScale image="/images/home.jpg" w={767} h={688} p />
+                    <div className="w-full relative overflow-hidden rounded-xl aspect-[10/9]">
+                      {/* <ImageScale image="/images/home.jpg" w={767} h={688} p /> */}
+                      
+                      <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 70vw" image={home.heroImage} p />
                     </div>
             
                     <m.div style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[33%] max-w-[220px] will-change-transform">
@@ -105,7 +108,10 @@ export default function Home(initialData) {
                         </Link>
                       </div>
                     </MouseParallax>
-                    <ImageScale image="/images/home-01.jpg" w={736} h={1001} />
+
+                    <div className="w-full aspect-[10/13.5] relative">
+                      <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={home.pulloutSectionImage} />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -128,7 +134,9 @@ export default function Home(initialData) {
                   <Link href="/mission" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
-                        <ImageScale image="/images/home-02.jpg" w={736} h={1001} />
+                        <div className="aspect-[10/13]">
+                          <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={home.missionImage} />
+                        </div>
                       </div>
                     </div>
 
@@ -140,7 +148,9 @@ export default function Home(initialData) {
                   <Link href="/team" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
-                        <ImageScale image="/images/home-03.jpg" w={736} h={1001} />
+                        <div className="aspect-[10/13]">
+                          <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={home.teamImage} />
+                        </div>
                       </div>
                     </div>
 
@@ -152,7 +162,9 @@ export default function Home(initialData) {
                   <Link href="/projects" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
-                        <ImageScale image="/images/home-04.jpg" w={736} h={1001} />
+                        <div className="aspect-[10/13]">
+                          <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 33vw" image={home.workImage} />
+                        </div>
                       </div>
                     </div>
 
@@ -167,8 +179,8 @@ export default function Home(initialData) {
         
           <m.div variants={fade}>
             <div className="overflow-hidden">
-              <div className="w-full relative overflow-hidden">
-                <ImageScale image="/images/footer-01.jpg" w={2400} h={1345} />
+              <div className="w-full relative overflow-hidden aspect-[17/10]">
+                <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 90vw" image={home.footerImage} />
               </div>
               <Footer />
             </div>

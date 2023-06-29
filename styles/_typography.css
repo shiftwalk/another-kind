@@ -42,3 +42,10 @@ h1, .h1, h2, .h2, h3, .h3 {
 .hero--projects::last-word {
   @apply italic bg-red-500;
 }
+
+@screen lg {
+  .content--cols {
+    columns: 2;
+    column-gap: 5vw;
+  }
+}

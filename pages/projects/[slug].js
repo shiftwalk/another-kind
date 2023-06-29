@@ -9,11 +9,19 @@ import HeroProject from '@/components/hero-project'
 import ImageScale from '@/components/image-scale'
 import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
+import SanityPageService from '@/services/sanityPageService'
+import { projectQuery } from '@/helpers/queries'
+import PortableText from 'react-portable-text'
+import BodyRenderer from '@/components/body-renderer'
 
-export default function ProjectSlug() {
+const pageService = new SanityPageService(projectQuery)
+
+export default function ProjectSlug(initialData) {
+  const { data: { project }  } = pageService.getPreviewHook(initialData)()
+
   return (
     <Layout>
-      <NextSeo title="Project Slug" />
+      <NextSeo title={project.title} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -23,33 +31,44 @@ export default function ProjectSlug() {
         >
           <m.main className="">
             <m.article variants={fade}>
-              <HeroProject />
+              <HeroProject heading={project.title} image={project.heroImage} />
+
               <div className="relative bg-off-white mt-[100dvh] z-10">
                 <Container>
-                  <div className="flex flex-wrap justify-center pt-[17vw] lg:pt-[10.5vw] mb-[20vw] lg:mb-[10.5vw]">
-                    <span className="block mb-8 overflow-hidden relative w-full text-center">
-                      <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Overview</m.span>
-                    </span>
+                  {project.overview && (
+                    <div className="flex flex-wrap justify-center pt-[17vw] lg:pt-[10.5vw]">
+                      <span className="block mb-8 overflow-hidden relative w-full text-center">
+                        <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Overview</m.span>
+                      </span>
 
-                    <span className="font-display block w-full md:w-[95%] lg:w-[95%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">Behold the stunning <em>transformation</em> of this 1960&rsquo;s split level bungalow. Externally the property now has a combination of stunning standing seam metal, and robust timber cladding. A <em>dramatic</em> change to a deserving property.</span>
+                      <span className="font-display block w-full md:w-[95%] lg:w-[95%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16"><PortableText content={project.overview} /></span>
+                    </div>
+                  )}
+
+                  <div className="w-full mb-5 flex space-x-[4vw] pt-[20vw] lg:pt-[10.5vw]">
+                    {project.location && (
+                      <div className="">
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px]">Location</span>
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">{project.location}</span>
+                      </div>
+                    )}
+                    {project.type && (
+                      <div className="">
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px]">Type</span>
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">{project.type}</span>
+                      </div>
+                    )}
+                    {project.services && (
+                      <div className="">
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px]">Services</span>
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">{project.services}</span>
+                      </div>
+                    )}
                   </div>
+                  
+                  <BodyRenderer body={project.contentBlocks} />
 
-                  <div className="w-full mb-5 flex space-x-[4vw]">
-                    <div className="">
-                      <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px]">Location</span>
-                      <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">Keyworth, Nottingham</span>
-                    </div>
-                    <div className="">
-                      <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px]">Type</span>
-                      <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">Conservation</span>
-                    </div>
-                    <div className="">
-                      <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px]">Services</span>
-                      <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">Concept Design, Planning Process, etc...</span>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 w-full gap-5 mb-5">
+                  {/* <div className="grid grid-cols-2 w-full gap-5 mb-5">
                     <div className="col-span-1">
                       <div className="relative overflow-hidden rounded-2xl">
                         <ImageScale image="/images/projects/slug-1.jpg" w={1157} h={1734} />
@@ -93,7 +112,7 @@ export default function ProjectSlug() {
                         <ImageScale image="/images/projects/slug-5.jpg" w={2343} h={1562} />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[12.5vw] pb-[20vw] lg:pb-[12.5vw]">
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
@@ -129,4 +148,19 @@ export default function ProjectSlug() {
       </LazyMotion>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const props = await pageService.fetchQuery(context)
+  return { 
+    props: props
+  };
+}
+
+export async function getStaticPaths() {
+  const paths = await pageService.fetchPaths('projects')
+  return {
+    paths: paths,
+    fallback: false,
+  };
 }

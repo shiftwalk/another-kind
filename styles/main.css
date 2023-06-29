@@ -81,3 +81,13 @@ html.lenis {
     stroke-width: 10px;
   }
 }
+
+.cover-image {
+  figure, img {
+    @apply absolute inset-0 object-cover object-center w-full h-full;
+  }
+}
+
+.hero-project-filter {
+  filter: brightness(0.9) saturate(0.9) hue-rotate(-10deg) sepia(0.3);
+}
