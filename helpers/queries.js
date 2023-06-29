@@ -110,6 +110,17 @@ export const projectsLandingQuery = `{
           y
         },
       },
+      teaserImage {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      },
       slug {
         current
       }

@@ -84,8 +84,8 @@ export default function Projects(initialData) {
                               <div className="relative overflow-hidden">
                                 <div className="group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
                                   <div className="aspect-[15/10]">
-                                    { e.heroImage ? (
-                                      <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 55vw" image={e.heroImage} />
+                                    { (e.teaserImage || e.heroImage) ? (
+                                      <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 65vw" image={e.teaserImage ? e.teaserImage : e.heroImage} />
                                     ) : (
                                       <div className="w-full h-full absolute inset-0 bg-green"></div>
                                     )}
