@@ -63,7 +63,7 @@ export default function Mission(initialData) {
         >
           <m.main className="">
             <m.article variants={fade}>
-              <MissionManifesto manifestoOpen={manifestoOpen} openManifesto={openManifesto} closeManifesto={closeManifesto} />
+              <MissionManifesto manifestoOpen={manifestoOpen} openManifesto={openManifesto} closeManifesto={closeManifesto} items={mission.manifestoItems} />
 
               <m.button
                 whileHover={{ scale: 1.15, transition:{ duration: 0.6, ease: [0.83, 0, 0.17, 1]} }}

@@ -153,6 +153,39 @@ export const journalLandingQuery = `{
       shareGraphic {
         asset->
       }
+    },
+    "journals": *[_type == "journals"] | order(postDate desc) {
+      title,
+      category->{
+        title,
+      },
+      postDate,
+      content,
+      images[] {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      },
+      teaserImage {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      },
+      slug {
+        current
+      }
     }
   }
 }`
@@ -226,6 +259,17 @@ export const teamQuery = `{
     },
     pulloutSectionHeading,
     pulloutSectionText,
+    pulloutSectionImages[] {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     quoteTitle,
     quoteText,
     footerCtaTitle,
@@ -252,6 +296,10 @@ export const missionQuery = `{
         x,
         y
       },
+    },
+    manifestoItems[] {
+      heading,
+      text
     },
     heroHeadingLine1,
     heroHeadingLine2,
@@ -389,6 +437,70 @@ export const projectQuery = `{
       ...,
       shareGraphic {
         asset->
+      }
+    }
+  }
+}`
+
+export const journalQuery = `{
+  "journal": *[_type == "journals" && slug.current == $slug][0]{
+    title,
+    category->{
+      title,
+    },
+    postDate,
+    content,
+    images[] {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    slug {
+      current
+    },
+    seo {
+      ...,
+      shareGraphic {
+        asset->
+      }
+    },
+    "more": *[_type == "journals" && slug.current != $slug] | order(postDate desc)[0...3] {
+      title,
+      category->{
+        title,
+      },
+      postDate,
+      content,
+      images[] {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      },
+      teaserImage {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      },
+      slug {
+        current
       }
     }
   }

@@ -1,7 +1,7 @@
 import { AnimatePresence, m, useMotionValueEvent, useScroll } from 'framer-motion'
 import { useRef } from 'react';
 
-export default function MissionManifesto( {manifestoOpen, closeManifesto} ) {
+export default function MissionManifesto( {manifestoOpen, closeManifesto, items} ) {
   const missionInnerRef = useRef(null)
   const missionOuterRef = useRef(null)
 
@@ -39,7 +39,34 @@ export default function MissionManifesto( {manifestoOpen, closeManifesto} ) {
             
             <div className="overflow-x-hidden">
               <div className="whitespace-nowrap overflow-x-scroll" ref={missionInnerRef}>
-                {Array.from(Array(3), (e, i) => {
+                {items.map((e, i) => {
+                  let color = ''
+
+                  if (i==0) { color = 'bg-orange text-yellow' }
+                  if (i==1) { color = 'bg-blue text-green' }
+                  if (i==2) { color = 'bg-green text-blue' }
+                  if (i==3) { color = 'bg-yellow text-orange' }
+                  if (i==4) { color = 'bg-orange text-yellow' }
+                  if (i==5) { color = 'bg-blue text-green' }
+                  if (i==6) { color = 'bg-green text-blue' }
+
+                  return (
+                    <div className={`aspect-[10/13] inline-flex flex-wrap mr-5 w-[80%] lg:w-1/3 2xl:w-[30%] ${color} rounded-xl p-5 whitespace-normal`}>
+                      <div className="w-full">
+                        <span className="font-display block w-full text-[10.2vw] md:text-[7.5vw] lg:text-[8vw] xl:text-[10vw] 2xl:text-[170px] leading-[0] md:leading-[0] lg:leading-[0] xl:leading-[0] mb-[20vw] lg:mb-[15vw] xl:mb-[200px] translate-x-[2%] translate-y-[20%]"><em>{i+1}</em></span>
+                      </div>
+
+                      <div className="mt-auto w-full">
+                        <span className="font-display block w-[80%] lg:w-[70%] xl:w-[80%] text-[10vw] md:text-[5vw] lg:text-[3.5vw] xl:text-[4.5vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] mb-8">{e.heading}</span>
+
+                        <div className="w-full content text-sm md:text-base xl:text-lg">
+                          <p>{e.text}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+                {/* {Array.from(Array(3), (e, i) => {
                   return (
                     <>
                     <div className="aspect-[10/8] inline-flex flex-wrap mr-5 w-1/2 lg:w-1/3 2xl:w-[30%] bg-orange text-yellow rounded-xl p-5 whitespace-normal">
@@ -96,7 +123,7 @@ export default function MissionManifesto( {manifestoOpen, closeManifesto} ) {
                     </div>
                   </>
                   )
-                })}
+                })} */}
               </div>
             </div>
           </m.div>

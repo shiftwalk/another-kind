@@ -27,9 +27,9 @@ export default function Team(initialData) {
   const scrollerRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: scrollerRef,
-    offset: ["-120%", "50%"]
+    offset: ["-70%", "30%"]
   })
-  const moveY = useTransform(scrollYProgress,[0, 1],['0%', '-200%'],{ clamp: true })
+  const moveY = useTransform(scrollYProgress,[0, 1],['0%', '-100%'],{ clamp: true })
   
   // function nextImage() {
   //   setCurrentImage(currentImage == 2 ? 0 : currentImage + 1)
@@ -181,26 +181,25 @@ export default function Team(initialData) {
                 <div className="w-full relative overflow-hidden">
                   <div className={`w-full relative overflow-hidden aspect-[10/13]`}>
                     <div className="opacity-0">
-                      <ImageScale image="/images/team-cara-1.jpg" w={1105} h={1501} />
+                      <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={team.pulloutSectionImages[0]} />
                     </div>
                   </div>
 
                   <m.div className={`w-full absolute inset-0 z-[10]`} style={{y: moveY }}>
-                    <div className="w-full relative overflow-hidden aspect-[10/13]">
-                      <div className={`transition-transform ease-ak duration-[800ms]`}>
-                        <ImageScale image="/images/team-cara-2.jpg" w={1105} h={1501} />
-                      </div>
-                    </div>
-                    <div className="w-full relative overflow-hidden aspect-[10/13]">
-                      <div className={`transition-transform ease-ak duration-[800ms]`}>
-                        <ImageScale image="/images/team-cara-3.jpg" w={1105} h={1501} />
-                      </div>
-                    </div>
-                    <div className="w-full relative overflow-hidden aspect-[10/13]">
+                    {team.pulloutSectionImages.map((e, i) => {
+                      return (
+                        <div className="w-full relative overflow-hidden aspect-[10/13]" key={i}>
+                          <div className={`transition-transform ease-ak duration-[800ms]`}>
+                            <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 70vw" image={e} />
+                          </div>
+                        </div>
+                      )
+                    })}
+                    {/* <div className="w-full relative overflow-hidden aspect-[10/13]">
                       <div className={`transition-transform ease-ak duration-[800ms]`}>
                         <ImageScale image="/images/team-cara-4.jpg" w={1105} h={1501} />
                       </div>
-                    </div>
+                    </div> */}
                     {/* <div className="w-full relative overflow-hidden aspect-[10/13]">
                       <div className={`transition-transform ease-ak duration-[800ms] ${currentImage == 3 ? 'scale-1' : 'scale-[1.3]' }`}>
                         <ImageScale image="/images/team-cara-4.jpg" w={1105} h={1501} />
