@@ -51,7 +51,7 @@ export default function MissionManifesto( {manifestoOpen, closeManifesto, items}
                   if (i==6) { color = 'bg-green text-blue' }
 
                   return (
-                    <div className={`aspect-[10/13] inline-flex flex-wrap mr-5 w-[80%] lg:w-1/3 2xl:w-[30%] ${color} rounded-xl p-5 whitespace-normal`}>
+                    <div className={`aspect-[10/13] inline-flex flex-wrap mr-5 w-[80%] lg:w-1/3 2xl:w-[30%] ${color} rounded-xl p-5 whitespace-normal`} key={i}>
                       <div className="w-full">
                         <span className="font-display block w-full text-[10.2vw] md:text-[7.5vw] lg:text-[8vw] xl:text-[10vw] 2xl:text-[170px] leading-[0] md:leading-[0] lg:leading-[0] xl:leading-[0] mb-[20vw] lg:mb-[15vw] xl:mb-[200px] translate-x-[2%] translate-y-[20%]"><em>{i+1}</em></span>
                       </div>

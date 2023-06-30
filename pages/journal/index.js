@@ -64,7 +64,7 @@ export default function Journal(initialData) {
                       let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
 
                       return (
-                        <div className="col-span-2 lg:col-span-1">
+                        <div className="col-span-2 lg:col-span-1" key={i}>
                           <div className="w-full block relative">
                             <Link href={`/journal/${e.slug.current}`} className={`group w-full block border-b border-black lg:border-none pb-6 lg:pb-0 mb-6`}>
                               <div className="w-full relative z-10">
