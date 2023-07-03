@@ -54,7 +54,7 @@ export default function App({ Component, pageProps }) {
 
           <LazyMotion features={domAnimation}>
             { !introContext && router.asPath == '/' && (
-              <div className={`fixed inset-0 z-[1100] flex flex-wrap items-end ${ introContext ? 'cursor-wait' : 'cursor-default' }`}>
+              <div className={`fixed inset-0 z-[2100] flex flex-wrap items-end ${ introContext ? 'cursor-wait' : 'cursor-default' }`}>
                 <m.div 
                   initial="visible"
                   animate="hidden"
