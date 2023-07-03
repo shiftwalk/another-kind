@@ -75,7 +75,7 @@ export default function Projects(initialData) {
 
                       return (
                         <li className="col-span-2 lg:col-span-1" key={i}>
-                          <Link href={`/projects/${e.slug.current}`} className="group">
+                          <Link scroll={false} href={`/projects/${e.slug.current}`} className="group">
                             <div className="relative overflow-hidden mb-8 rounded-2xl">
                               <div className={`absolute pointer-events-none inset-0 z-10 rounded-2xl border-[0vw] group-hover:border-[1vw] transition-all ease-ak duration-[500ms] ${color}`} style={{ background: 'transparent'}}></div>
 
@@ -131,7 +131,7 @@ export default function Projects(initialData) {
                     
                     <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false}>
                       <div className="w-full flex justify-center">
-                        <Link href="/contact" className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
+                        <Link scroll={false} href="/contact" className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
                           <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
                           <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
                             <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />

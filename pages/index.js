@@ -110,7 +110,7 @@ export default function Home(initialData) {
                   <div className="w-full relative overflow-hidden" ref={parallaxRef}>
                     <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false} isAbsolutelyPositioned={true} zIndex={10} >
                       <div className="absolute inset-0 z-10 flex items-center justify-center">
-                        <Link href="/projects" className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
+                        <Link scroll={false} href="/projects" className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
                           <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
                           <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
                             <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
@@ -142,7 +142,7 @@ export default function Home(initialData) {
                 </div>
 
                 <div className="flex flex-wrap mb-[10vw] lg:mb-[7.5vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
-                  <Link href="/mission" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
+                  <Link scroll={false} href="/mission" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
                         <div className="aspect-[10/13]">
@@ -156,7 +156,7 @@ export default function Home(initialData) {
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Mission</span>
                   </Link>
 
-                  <Link href="/team" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
+                  <Link scroll={false} href="/team" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
                         <div className="aspect-[10/13]">
@@ -170,7 +170,7 @@ export default function Home(initialData) {
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Team</span>
                   </Link>
 
-                  <Link href="/projects" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
+                  <Link scroll={false} href="/projects" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
                     <div className="w-full relative overflow-hidden rounded-xl mb-8">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
                         <div className="aspect-[10/13]">

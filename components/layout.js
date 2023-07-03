@@ -5,7 +5,9 @@ import { useEffect } from "react";
 
 export default function Layout({ children }) {
   const lenis = useLenis();
-  useEffect(() => { lenis?.scrollTo(0, { immediate: true }) } , [lenis]);
+  // useEffect(() => { lenis?.scrollTo('#app') } , [lenis]);
+  useEffect(() => { lenis?.scrollTo(0, {offset: 0, immediate: true, duration: 1, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))})} , [lenis]);
+  
   let colors = ['bg-orange text-yellow', 'bg-yellow text-orange', 'bg-blue text-green', 'bg-green text-blue']
   
   let color = colors[colors.length * Math.random() | 0]

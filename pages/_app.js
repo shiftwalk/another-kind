@@ -5,10 +5,10 @@ import { DefaultSeo } from 'next-seo'
 import SunnyIcon from "@/icons/sunny.svg";
 import Header from '@/components/header';
 import SEO from '@/helpers/seo.config';
-import { Lenis as ReactLenis, useLenis } from '@studio-freight/react-lenis'
+import { Lenis as ReactLenis } from '@studio-freight/react-lenis'
 import { PPEditorialNewItalic, Sohne, VCGaramondCondensed, Verlag } from '@/helpers/fonts';
 import { IntroContext } from '@/context/intro'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // import FPSStats from "react-fps-stats";
 

@@ -45,7 +45,7 @@ export default function Error() {
                       </div>
 
                       <div className="w-[95%] lg:w-[60%] content text-lg xl:text-xl text-center mx-auto max-w-[720px]">
-                        <p>Unfortunately, this page doesn&rsquo;t exist! We&rsquo;re really sorry about that. You can head back to the <Link href="/">home page here</Link>, or not, it&rsquo;s upto you...</p>
+                        <p>Unfortunately, this page doesn&rsquo;t exist! We&rsquo;re really sorry about that. You can head back to the <Link scroll={false} href="/">home page here</Link>, or not, it&rsquo;s upto you...</p>
                       </div>
                     </div>
                   </Container>

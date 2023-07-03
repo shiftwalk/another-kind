@@ -27,7 +27,7 @@ export default function HeroProject({ image, heading }) {
 
         <div className="absolute inset-0 w-full flex items-center justify-center z-10 text-center">
           <div className="relative overflow-hidden mt-[-3vw]">
-            <m.h1 style={{ y: move }} className="block font-display text-[16.5vw] lg:text-[17.5vw] 2xl:text-[280px] text-yellow leading-[0.85] mb-0 pb-0">{heading}</m.h1>
+            <m.h1 style={{ y: move }} className="block font-display text-[16.5vw] lg:text-[17.5vw] 2xl:text-[280px] text-yellow leading-[1.2] lg:leading-[1.2] 2xl:leading-[1.2] mb-0 pb-0">{heading}</m.h1>
           </div>
         </div>
 

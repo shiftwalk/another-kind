@@ -76,7 +76,7 @@ export default function JournalSlug(initialData) {
 
                   return (
                     <li className="w-full block px-5 relative" key={i}>
-                      <Link href={`/journal/${e.slug.current}`} className={`group w-full flex flex-wrap border-b border-black transition-colors ease-ak duration-[350ms] hover:border-green py-5 lg:py-8 md:items-end ${i == 0 ? 'border-t' : '' }`}>
+                      <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full flex flex-wrap border-b border-black transition-colors ease-ak duration-[350ms] hover:border-green py-5 lg:py-8 md:items-end ${i == 0 ? 'border-t' : '' }`}>
                         <div className="absolute inset-0 transition-opacity ease-ak duration-[350ms] bg-green opacity-0 scale-y-[1.01] lg:group-hover:opacity-100 z-0 rounded-2xl mx-1"></div>
                         <div className="w-[35%] lg:w-1/4 relative z-10">
                           <div className="relative overflow-hidden rounded-xl">
@@ -104,7 +104,7 @@ export default function JournalSlug(initialData) {
               <Container>
                 <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false}>
                   <div className="w-full flex justify-center mb-[10vw] lg:mb-[5vw]">
-                    <Link href="/journal" className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group outline-none border-none">
+                    <Link scroll={false} href="/journal" className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group outline-none border-none">
                       <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
                       <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
                         <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />

@@ -73,7 +73,7 @@ export default function Journal(initialData) {
                       return (
                         <div className="col-span-2 lg:col-span-1" key={i}>
                           <div className="w-full block relative">
-                            <Link href={`/journal/${e.slug.current}`} className={`group w-full block border-b border-black lg:border-none pb-6 lg:pb-0 mb-6`}>
+                            <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full block border-b border-black lg:border-none pb-6 lg:pb-0 mb-6`}>
                               <div className="w-full relative z-10">
                                 <div className="relative overflow-hidden rounded-xl">
                                   <div className="group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
@@ -118,7 +118,7 @@ export default function Journal(initialData) {
                       let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
                     return (
                       <li className="w-full block px-5 relative" key={i}>
-                        <Link href={`/journal/${e.slug.current}`} className={`group w-full flex flex-wrap border-b border-black transition-colors ease-ak duration-[350ms] hover:border-green py-5 lg:py-8 md:items-end ${i == 0 ? 'border-t' : '' }`}>
+                        <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full flex flex-wrap border-b border-black transition-colors ease-ak duration-[350ms] hover:border-green py-5 lg:py-8 md:items-end ${i == 0 ? 'border-t' : '' }`}>
                           <div className="absolute inset-0 transition-opacity ease-ak duration-[350ms] bg-green opacity-0 scale-y-[1.01] lg:group-hover:opacity-100 z-0 rounded-2xl mx-1"></div>
                           <div className="w-[35%] lg:w-1/4 relative z-10">
                             <div className="relative overflow-hidden rounded-xl">

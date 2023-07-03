@@ -48,7 +48,7 @@ export default function Menu() {
                   <Container>
                     <ul className="font-display text-[12vw] leading-none md:text-6xl md:leading-none">
                       <li className="w-full block">
-                        <Link href="/" className="block w-full border-t border-yellow pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
+                        <Link scroll={false} href="/" className="block w-full border-t border-yellow pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
                           <span className="block overflow-hidden relative">
                             <m.span className="block" variants={reveal}>
                               <span className="block translate-y-[-8%]">
@@ -59,7 +59,7 @@ export default function Menu() {
                         </Link>
                       </li>
                       <li className="w-full block">
-                        <Link href="/mission" className="block w-full border-t border-yellow pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
+                        <Link scroll={false} href="/mission" className="block w-full border-t border-yellow pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
                           <span className="block overflow-hidden relative">
                             <m.span className="block" variants={reveal}>
                               <span className="block translate-y-[-8%]">
@@ -70,7 +70,7 @@ export default function Menu() {
                         </Link>
                       </li>
                       <li className="w-full block">
-                        <Link href="/projects" className="block w-full border-t border-yellow pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
+                        <Link scroll={false} href="/projects" className="block w-full border-t border-yellow pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
                           <span className="block overflow-hidden relative">
                             <m.span className="block" variants={reveal}>
                               <span className="block translate-y-[-8%]">
@@ -81,7 +81,7 @@ export default function Menu() {
                         </Link>
                       </li>
                       <li className="w-full block">
-                        <Link href="/team" className="block w-full border-t border-yellow pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
+                        <Link scroll={false} href="/team" className="block w-full border-t border-yellow pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
                           <span className="block overflow-hidden relative">
                             <m.span className="block" variants={reveal}>
                               <span className="block translate-y-[-8%]">
@@ -92,7 +92,7 @@ export default function Menu() {
                         </Link>
                       </li>
                       <li className="w-full block">
-                        <Link href="/journal" className="block w-full border-t border-yellow pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
+                        <Link scroll={false} href="/journal" className="block w-full border-t border-yellow pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
                           <span className="block overflow-hidden relative">
                             <m.span className="block" variants={reveal}>
                               <span className="block translate-y-[-8%]">
@@ -103,7 +103,7 @@ export default function Menu() {
                         </Link>
                       </li>
                       <li className="w-full block">
-                        <Link href="/contact" className="block w-full border-t border-yellow border-b pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
+                        <Link scroll={false} href="/contact" className="block w-full border-t border-yellow border-b pt-[2vw] pb-[2vw] md:pt-4 md:pb-3">
                           <span className="block overflow-hidden relative">
                             <m.span className="block" variants={reveal}>
                               <span className="block translate-y-[-8%]">
