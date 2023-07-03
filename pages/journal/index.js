@@ -13,12 +13,19 @@ import { journalLandingQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
 import PortableText from "react-portable-text"
 import SanityImageScale from '@/components/sanity-image-scale'
+import { IntroContext } from '@/context/intro'
+import { useContext, useEffect } from 'react'
 
 const pageService = new SanityPageService(journalLandingQuery)
 
 export default function Journal(initialData) {
   const { data: { journalLanding }  } = pageService.getPreviewHook(initialData)()
   let colors = ['bg-orange text-off-white', 'bg-blue text-off-white', 'bg-green text-off-white']
+  const [introContext, setIntroContext] = useContext(IntroContext);
+
+  useEffect(() => {
+    setIntroContext(true)
+  });
 
   return (
     <Layout>

@@ -22,17 +22,25 @@ export const reveal = {
 	}
 }
 
+export const revealNoTransition = {
+	initial: { y: '100%' },
+  enter: { 
+    y: 0
+  },
+	exit: {
+    y: '100%'
+	}
+}
+
 export const scale = {
-	initial: { scale: 0.5, rotate: -10 },
+	initial: { scale: 0.25, rotate: -10 },
   enter: { 
     scale: 1,
     rotate: 13,
-    transition: { duration: 0.6, ease: [0.83, 0, 0.17, 1] }
   },
 	exit: {
-    scale: 0.5,
-    rotate: -10,
-		transition: { duration: 0.55, ease: [0.83, 0, 0.17, 1] }
+    scale: 0.25,
+    rotate: -10
 	}
 }
 

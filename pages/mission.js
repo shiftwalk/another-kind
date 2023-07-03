@@ -10,7 +10,7 @@ import ManifestoBadgeIcon from "@/icons/manifesto-badge.svg";
 import ImageScale from '@/components/image-scale'
 import HeroMission from '@/components/hero-mission'
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import MissionManifesto from '@/components/mission-manifesto'
 import { useLenis } from '@studio-freight/react-lenis'
 import { MouseParallax } from 'react-just-parallax'
@@ -19,6 +19,7 @@ import SanityPageService from '@/services/sanityPageService'
 import { missionQuery } from '@/helpers/queries'
 import PortableText from "react-portable-text"
 import SanityImageScale from '@/components/sanity-image-scale'
+import { IntroContext } from '@/context/intro'
 
 const pageService = new SanityPageService(missionQuery)
 
@@ -50,6 +51,12 @@ export default function Mission(initialData) {
   const moveY = useTransform(scrollYProgress,[0, 0.6],['-50dvh', '0dvh'],{ clamp: true })
   const rotate = useTransform(scrollY, [0, 15], [0, 1], { clamp: false })
   const rotateBadge = useTransform(scrollYProgress,[0, 4],[-360, 360],{ clamp: true })  
+
+  const [introContext, setIntroContext] = useContext(IntroContext);
+
+  useEffect(() => {
+    setIntroContext(true)
+  });
   
   return (
     <Layout>

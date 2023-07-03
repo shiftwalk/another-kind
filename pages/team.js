@@ -11,12 +11,13 @@ import ArrowIcon from "@/icons/arrow.svg";
 import ImageScale from '@/components/image-scale'
 import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
-import { useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { SplitTextHover } from '@/components/splitTextHover'
 import SanityPageService from '@/services/sanityPageService'
 import { teamQuery } from '@/helpers/queries'
 import PortableText from "react-portable-text"
 import SanityImageScale from '@/components/sanity-image-scale'
+import { IntroContext } from '@/context/intro'
 
 const pageService = new SanityPageService(teamQuery)
 
@@ -30,6 +31,12 @@ export default function Team(initialData) {
     offset: ["-70%", "30%"]
   })
   const moveY = useTransform(scrollYProgress,[0, 1],['0%', '-100%'],{ clamp: true })
+
+  const [introContext, setIntroContext] = useContext(IntroContext);
+
+  useEffect(() => {
+    setIntroContext(true)
+  });
   
   // function nextImage() {
   //   setCurrentImage(currentImage == 2 ? 0 : currentImage + 1)

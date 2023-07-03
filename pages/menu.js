@@ -7,8 +7,16 @@ import SunnyIcon from "@/icons/sunny.svg";
 import SunIcon from "@/icons/sun.svg";
 import Link from 'next/link'
 import FancyLink from '@/components/fancyLink'
+import { IntroContext } from '@/context/intro'
+import { useContext, useEffect } from 'react'
 
 export default function Menu() {
+  const [introContext, setIntroContext] = useContext(IntroContext);
+
+  useEffect(() => {
+    setIntroContext(true)
+  });
+
   return (
     <Layout>
       <NextSeo title="Menu" />

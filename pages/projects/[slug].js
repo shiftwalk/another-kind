@@ -13,11 +13,18 @@ import SanityPageService from '@/services/sanityPageService'
 import { projectQuery } from '@/helpers/queries'
 import PortableText from 'react-portable-text'
 import BodyRenderer from '@/components/body-renderer'
+import { useContext, useEffect } from 'react'
+import { IntroContext } from '@/context/intro'
 
 const pageService = new SanityPageService(projectQuery)
 
 export default function ProjectSlug(initialData) {
   const { data: { project }  } = pageService.getPreviewHook(initialData)()
+  const [introContext, setIntroContext] = useContext(IntroContext);
+
+  useEffect(() => {
+    setIntroContext(true)
+  });
 
   return (
     <Layout>

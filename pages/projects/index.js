@@ -13,12 +13,19 @@ import { projectsLandingQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
 import PortableText from "react-portable-text"
 import SanityImageScale from '@/components/sanity-image-scale'
+import { useContext, useEffect } from 'react'
+import { IntroContext } from '@/context/intro'
 
 const pageService = new SanityPageService(projectsLandingQuery)
 
 export default function Projects(initialData) {
   const { data: { projectsLanding }  } = pageService.getPreviewHook(initialData)()
   let colors = ['border-orange bg-orange text-yellow', 'border-yellow bg-yellow text-orange', 'border-blue bg-blue text-green', 'border-green bg-green text-blue']
+  const [introContext, setIntroContext] = useContext(IntroContext);
+
+  useEffect(() => {
+    setIntroContext(true)
+  });
 
   return (
     <Layout>

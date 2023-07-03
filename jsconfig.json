@@ -8,6 +8,7 @@
       "@/public/*": ["public/*"],
       "@/icons/*": ["public/icons/*"],
       "@/services/*": ["services/*"],
+      "@/context/*": ["context/*"]
     }
   }
 }

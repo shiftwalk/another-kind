@@ -9,8 +9,16 @@ import ArrowIcon from "@/icons/arrow.svg";
 import ImageScale from '@/components/image-scale'
 import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
+import { useContext, useEffect } from 'react'
+import { IntroContext } from '@/context/intro'
 
 export default function Privacy() {
+  const [introContext, setIntroContext] = useContext(IntroContext);
+
+  useEffect(() => {
+    setIntroContext(true)
+  });
+
   return (
     <Layout>
       <NextSeo title="Privacy Policy" />

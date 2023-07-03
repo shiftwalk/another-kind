@@ -1,13 +1,13 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { fade, reveal, scale } from '@/helpers/transitions'
-import { LazyMotion, domAnimation, m, useScroll, useTransform} from 'framer-motion'
+import { fade, reveal, revealNoTransition, scale } from '@/helpers/transitions'
+import { LazyMotion, domAnimation, m, useScroll, useTransform, useReducedMotion} from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import LogoIcon from "@/icons/logo.svg";
 import BadgeIcon from "@/icons/badge.svg";
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
-import { useRef } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import ImageScale from '@/components/image-scale'
 import { MouseParallax } from 'react-just-parallax'
 import { homeQuery } from '@/helpers/queries'
@@ -15,11 +15,20 @@ import SanityPageService from '@/services/sanityPageService'
 import PortableText from "react-portable-text"
 import Link from 'next/link'
 import SanityImageScale from '@/components/sanity-image-scale'
+import { IntroContext } from '@/context/intro'
 
 const pageService = new SanityPageService(homeQuery)
 
 export default function Home(initialData) {
   const { data: { home }  } = pageService.getPreviewHook(initialData)()
+  const shouldReduceMotion = useReducedMotion()
+  const [introContext, setIntroContext] = useContext(IntroContext);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIntroContext(true)
+    }, shouldReduceMotion ? 0 : 2750);
+  });
 
   const ref = useRef(null)
   const parallaxRef = useRef(null)
@@ -46,7 +55,7 @@ export default function Home(initialData) {
             <m.article variants={fade}>
               <Container>
                 <div className="w-full mb-6 overflow-hidden">
-                  <m.div variants={reveal}>
+                  <m.div variants={revealNoTransition} transition={{ delay: introContext ? 0 : 2.2, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
                     <LogoIcon className="w-full" />
                   </m.div>
                 </div>
@@ -60,7 +69,9 @@ export default function Home(initialData) {
                     </div>
             
                     <m.div style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[33%] max-w-[220px] will-change-transform">
-                      <BadgeIcon className="w-full" />
+                      <m.div variants={scale} transition={{ delay: introContext ? 0 : 2.2, duration: 0.66, ease: [0.83, 0, 0.17, 1] }}>
+                        <BadgeIcon className="w-full" />
+                      </m.div>
                     </m.div>
                   </div>
                   {home.heroText && (
