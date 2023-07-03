@@ -21,9 +21,9 @@ export default function Layout({ children }) {
             <m.div 
               initial={{ opacity: 0, scaleY: 0, scaleX: 0, rotate: 0 }}
               animate={{ opacity: 0, scaleY: 0, scaleX: 0, rotate: 0 }}
-              exit={{ opacity: 1, scaleY: 0.8, scaleX: 0.75, rotate: 12 }}
+              exit={{ opacity: 1, scaleY: 0.8, scaleX: 0.75, rotate: 750 }}
               transition={{ delay: 0.1, duration: 1, ease: [0.85, 0, 0.15, 1] }}
-              className="w-[25%] max-w-[320px]"
+              className="w-[20%] max-w-[200px]"
             >
               <SunnyIcon className={`w-full text-yellow`} />
             </m.div>
@@ -36,11 +36,11 @@ export default function Layout({ children }) {
           transition={{ delay: 0.25, duration: 1, ease: [0.85, 0, 0.15, 1] }}
           className="fixed inset-0 bg-green z-[200] flex items-center justify-center">
             <m.div 
-              initial={{ opacity: 1, scaleY: 0.8, scaleX: 0.75, rotate: 12 }}
-              animate={{ opacity: 0, scaleY: 0, scaleX: 0, rotate: -12 }}
-              exit={{ opacity: 0, scaleY: 0, scaleX: 0, rotate: -12 }}
+              initial={{ opacity: 1, scaleY: 0.8, scaleX: 0.75, rotate: 750 }}
+              animate={{ opacity: 0, scaleY: 0, scaleX: 0, rotate: 0 }}
+              exit={{ opacity: 0, scaleY: 0, scaleX: 0, rotate: 0 }}
               transition={{ delay: 0.2, duration: 1, ease: [0.85, 0, 0.15, 1] }}
-              className="w-[25%] max-w-[320px]"
+              className="w-[20%] max-w-[200px]"
             >
               <SunnyIcon className={`w-full text-yellow`} />
             </m.div>
