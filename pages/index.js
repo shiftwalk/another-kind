@@ -55,7 +55,7 @@ export default function Home(initialData) {
             <m.article variants={fade}>
               <Container>
                 <div className="w-full mb-6 overflow-hidden">
-                  <m.div variants={revealNoTransition} transition={{ delay: introContext ? 0 : 2.2, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
+                  <m.div variants={revealNoTransition} transition={{ delay: introContext ? 0 : 2.3, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
                     <LogoIcon className="w-full" />
                   </m.div>
                 </div>
@@ -69,7 +69,7 @@ export default function Home(initialData) {
                     </div>
             
                     <m.div style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[33%] max-w-[220px] will-change-transform">
-                      <m.div variants={scale} transition={{ delay: introContext ? 0 : 2.2, duration: 0.66, ease: [0.83, 0, 0.17, 1] }}>
+                      <m.div variants={scale} transition={{ delay: introContext ? 0 : 2.3, duration: 0.66, ease: [0.83, 0, 0.17, 1] }}>
                         <BadgeIcon className="w-full" />
                       </m.div>
                     </m.div>

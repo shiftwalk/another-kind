@@ -20,6 +20,11 @@ export default function App({ Component, pageProps }) {
     visible: { y: 0 },
     hidden: { y: '-100%' }
   }
+  const introBg = {
+    visible: { y: '0', scaleY: 1.2, scaleX: 1.33, borderRadius: '0%' },
+    hidden: { y: '-20%', scaleY: 1.2, scaleX: 1.33, borderRadius: '100%' }
+  }
+  
   const introContainer = {
     visible: { opacity: 0 },
     hidden: {
@@ -49,7 +54,7 @@ export default function App({ Component, pageProps }) {
 
           <LazyMotion features={domAnimation}>
             { !introContext && router.asPath == '/' && (
-              <div className={`fixed inset-0 z-[1000] flex flex-wrap items-end ${ introContext ? 'cursor-wait' : 'cursor-default' }`}>
+              <div className={`fixed inset-0 z-[1100] flex flex-wrap items-end ${ introContext ? 'cursor-wait' : 'cursor-default' }`}>
                 <m.div 
                   initial="visible"
                   animate="hidden"
@@ -62,8 +67,11 @@ export default function App({ Component, pageProps }) {
                     animate="hidden"
                     variants={introEnd}
                     transition={{ delay: 1.75, duration: 1, ease: [0.83, 0, 0.17, 1] }}
-                    className="bg-green text-blue absolute inset-0 z-[1000] w-full h-full cursor-wait"
+                    className="text-blue absolute inset-0 z-[1000] w-full h-full cursor-wait"
+
                   >
+                    <m.div initial="visible" animate="hidden" variants={introBg} transition={{ delay: 1.75, duration: 1, ease: [0.83, 0, 0.17, 1] }} className="absolute inset-0 bg-green scale-125 rounded-full"></m.div>
+
                     <m.div initial="visible" animate="hidden" variants={introContainerUnreveal} transition={{ delay: 1.5, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
                       <SunnyIcon className={`w-[55px] xl:w-[75px] absolute top-0 left-0 m-4 text-blue opacity-100 animate-sunny-spin`} />
                     </m.div>
