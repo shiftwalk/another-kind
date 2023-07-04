@@ -21,7 +21,7 @@ export default function Privacy() {
 
   return (
     <Layout>
-      <NextSeo title="Privacy Policy" />
+      <NextSeo title="Privacy Policy"  />
 
       <LazyMotion features={domAnimation}>
         <m.div
