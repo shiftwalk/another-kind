@@ -9,7 +9,7 @@ export default function SanityImage({ image, className, alt, priority, widthOver
   const myCustomImageBuilder = (imageUrlBuilder, options) => {
     return imageUrlBuilder
       .width((widthOverride ? widthOverride : options.width) || Math.min(( widthOverride ? widthOverride : options.originalImageDimensions.width), 800))
-      .quality(quality ? quality : 90)
+      .quality(quality ? quality : 75)
       .fit('clip')
   };
 
@@ -43,7 +43,7 @@ export default function SanityImage({ image, className, alt, priority, widthOver
         )}
         sizes={sizes ? sizes : `(max-width: 1024px) 100vw,90vw`}
         fill
-        quality={quality ? quality : 70}
+        quality={quality ? quality : 75}
         alt={alt ? alt : 'MISSING ALT TEXT'}
 
         onLoad={event => {
