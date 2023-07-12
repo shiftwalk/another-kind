@@ -45,30 +45,47 @@ export default function ProjectSlug(initialData) {
                   {project.overview && (
                     <div className="flex flex-wrap justify-center pt-[17vw] lg:pt-[10.5vw]">
                       <span className="block mb-8 overflow-hidden relative w-full text-center">
-                        <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Overview</m.span>
+                        <m.span variants={reveal} className="block text-sm leading-none lg:text-xl lg:leading-none">Overview</m.span>
                       </span>
 
-                      <span className="font-display block w-full md:w-[95%] lg:w-[95%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16"><PortableText content={project.overview} /></span>
+                      <span className="font-display block w-full md:w-[95%] lg:w-[95%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[1] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16"><PortableText content={project.overview} /></span>
                     </div>
                   )}
 
-                  <div className="w-full mb-5 flex space-x-[4vw] pt-[20vw] lg:pt-[10.5vw]">
+                  <div className="w-full mb-5 lg:flex lg:space-x-[4vw] pt-[12vw] lg:pt-[10.5vw]">
                     {project.location && (
-                      <div className="">
-                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px]">Location</span>
+                      <div className="mb-5 lg:mb-0">
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px] font-medium">Location</span>
                         <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">{project.location}</span>
                       </div>
                     )}
                     {project.type && (
-                      <div className="">
-                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px]">Type</span>
+                      <div className="mb-5 lg:mb-0">
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px] font-medium">Type</span>
                         <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">{project.type}</span>
                       </div>
                     )}
                     {project.services && (
-                      <div className="">
-                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px]">Services</span>
-                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">{project.services}</span>
+                      <div className="mb-5 lg:mb-0">
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px] font-medium">Services</span>
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">
+                          <div className="relative flex overflow-x-hidden w-2/3 max-w-[320px] lg:max-w-[550px]">
+                            <div className="absolute top-0 right-0 bottom-0 w-16 bg-gradient-to-r from-transparent to-off-white z-10"></div>
+                            <div className="animate-marquee whitespace-nowrap">
+                              <span clasName="">{project.services},&nbsp;</span>
+                              <span clasName="">{project.services},&nbsp;</span>
+                              <span clasName="">{project.services},&nbsp;</span>
+                              <span clasName="">{project.services},&nbsp;</span>
+                            </div>
+
+                            <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
+                              <span clasName="">{project.services},&nbsp;</span>
+                              <span clasName="">{project.services},&nbsp;</span>
+                              <span clasName="">{project.services},&nbsp;</span>
+                              <span clasName="">{project.services},&nbsp;</span>
+                            </div>
+                          </div>
+                        </span>
                       </div>
                     )}
                   </div>
@@ -123,10 +140,10 @@ export default function ProjectSlug(initialData) {
 
                   <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[12.5vw] pb-[20vw] lg:pb-[12.5vw]">
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
-                      <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Need a hand?</m.span>
+                      <m.span variants={reveal} className="block text-sm leading-none lg:text-xl lg:leading-none">Need a hand?</m.span>
                     </span>
 
-                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">Need help transforming a residential property into a beautiful, <em>lasting</em> home? We&rsquo;d love to talk!</span>
+                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[1] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">Need help transforming a residential property into a beautiful, <em>lasting</em> home? We&rsquo;d love to talk!</span>
                     
                     <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false}>
                       <div className="w-full flex justify-center">

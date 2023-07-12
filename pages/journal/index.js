@@ -41,7 +41,7 @@ export default function Journal(initialData) {
             <m.article variants={fade}>
               <div className="relative bg-off-white">
                 <Container>
-                  <div className="flex flex-wrap justify-center pt-[25vw] pb-[20vw] lg:py-[10vw]">
+                  <div className="flex flex-wrap justify-center pt-[100px] pb-[15vw] lg:py-[10vw]">
                     <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[50px] mb-4">
                       <svg className="w-full" viewBox="0 0 500 140">
                         <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
@@ -57,7 +57,7 @@ export default function Journal(initialData) {
                       <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[1] lg:leading-[1] xl:leading-[1] 2xl:leading-[1] text-center mb-0 pb-0"><span className="block translate-y-[-11%]"><PortableText content={journalLanding.heroHeading} /></span></m.h1>
                     </div>
 
-                    <div className="w-[95%] lg:w-[60%] content text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px]">
+                    <div className="w-[95%] lg:w-[60%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px]">
                       <p>{journalLanding.heroText}</p>
                     </div>
                   </div>
@@ -73,10 +73,10 @@ export default function Journal(initialData) {
                       return (
                         <div className="col-span-2 lg:col-span-1" key={i}>
                           <div className="w-full block relative">
-                            <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full block border-b border-black lg:border-none pb-6 lg:pb-0 mb-6`}>
+                            <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full block border-b border-black lg:border-none pb-5 lg:pb-0 mb-0`}>
                               <div className="w-full relative z-10">
                                 <div className="relative overflow-hidden rounded-xl">
-                                  <div className="group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
+                                  <div className="lg:group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
                                     <div className="aspect-[14/10]">
                                       <SanityImageScale image={e.images[0]} fill sizes="(max-width: 1024px) 100vw, 50vw" />
                                     </div>
@@ -85,7 +85,7 @@ export default function Journal(initialData) {
                               </div>
                               <div className="flex-1 relative z-10 mt-5">
                                 <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none mb-2 bg-blue text-off-white`}>{e.category.title}</span>
-                                <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none xl:leading-none mb-3 pb-0">{e.title}</h2>
+                                <h2 className="text-3xl md:text-3xl xl:text-4xl leading-none md:leading-none xl:leading-none mb-3 pb-0">{e.title}</h2>
                                 <span className="text-sm md:text-base lg:text-lg leading-none md:leading-none lg:leading-none block">{da} {mo}, {ye}</span>
                               </div>
                             </Link>
@@ -96,14 +96,14 @@ export default function Journal(initialData) {
                   </div>
 
                  
-                  <div className="flex flex-wrap justify-center mb-[20vw] lg:mb-[8.5vw]">
+                  <div className="flex flex-wrap justify-center mb-[12vw] lg:mb-[8.5vw]">
                     {journalLanding.quoteTitle && (
                       <span className="block mb-8 overflow-hidden relative w-full text-center">
-                        <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">{journalLanding.quoteTitle}</m.span>
+                        <m.span variants={reveal} className="block text-base leading-none lg:text-xl lg:leading-none">{journalLanding.quoteTitle}</m.span>
                       </span>
                     )}
                     {journalLanding.quoteText && (
-                      <span className="font-display block w-full md:w-[80%] lg:w-[75%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16"><PortableText content={journalLanding.quoteText} /></span>
+                      <span className="font-display block w-full md:w-[80%] lg:w-[75%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[1] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16"><PortableText content={journalLanding.quoteText} /></span>
                     )}
                   </div>
                 </Container>
@@ -117,10 +117,10 @@ export default function Journal(initialData) {
                       let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
                       let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
                     return (
-                      <li className="w-full block px-5 relative" key={i}>
+                      <li className="w-full block px-3 lg:px-5 relative" key={i}>
                         <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full flex flex-wrap border-b border-black transition-colors ease-ak duration-[350ms] hover:border-green py-5 lg:py-8 md:items-end ${i == 0 ? 'border-t' : '' }`}>
                           <div className="absolute inset-0 transition-opacity ease-ak duration-[350ms] bg-green opacity-0 scale-y-[1.01] lg:group-hover:opacity-100 z-0 rounded-2xl mx-1"></div>
-                          <div className="w-[35%] lg:w-1/4 relative z-10">
+                          <div className="w-[35%] lg:w-1/4 relative z-10 hidden lg:block">
                             <div className="relative overflow-hidden rounded-xl">
                               <div className="lg:group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
                                 <div className="aspect-[14/10]">
@@ -129,7 +129,7 @@ export default function Journal(initialData) {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-1 pl-5 relative z-10 lg:group-hover:text-off-white">
+                          <div className="flex-1 lg:pl-5 relative z-10 lg:group-hover:text-off-white">
                             <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none ${color} mb-2 transition-colors ease-ak duration-[350ms] lg:group-hover:bg-yellow lg:group-hover:text-green`}>{e.category.title}</span>
                             <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none lg:leading-none mb-3 pb-0 lg:w-10/12">{e.title}</h2>
                             <span className="text-sm md:text-base lg:text-lg leading-none md:leading-none lg:leading-none block">{da} {mo}, {ye}</span>
@@ -163,7 +163,7 @@ export default function Journal(initialData) {
         
           <m.div variants={fade}>
             <div className="overflow-hidden">
-              <div className="w-full relative overflow-hidden aspect-[17/10]">
+              <div className="w-full relative overflow-hidden aspect-[13/10] lg:aspect-[17/10]">
                 <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 90vw" image={journalLanding.footerImage} />
               </div>
               <Footer />

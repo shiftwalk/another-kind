@@ -15,8 +15,8 @@ export default function Layout({ children }) {
     <>
       <LazyMotion features={domAnimation}>
         <m.div 
-          initial={{ y: '-110%', scaleY: 1.2, scaleX: 1.33, borderRadius: '0%' }}
-          animate={{ y: '-110%', scaleY: 1.2, scaleX: 1.33, borderRadius: '100%' }}
+          initial={{ y: '-135%', scaleY: 1.2, scaleX: 1.33, borderRadius: '0%' }}
+          animate={{ y: '-135%', scaleY: 1.2, scaleX: 1.33, borderRadius: '100%' }}
           exit={{ y: 0, scaleY: 1.2, scaleX: 1.33, borderRadius: '0%' }}
           transition={{ duration: 1, ease: [0.85, 0, 0.15, 1] }}
           className="fixed inset-0 bg-green z-[2000] flex items-center justify-center cursor-wait">
@@ -33,8 +33,8 @@ export default function Layout({ children }) {
 
         <m.div 
           initial={{ y: 0, scaleY: 1.2, scaleX: 1.33, borderRadius: '0%' }}
-          animate={{ y: '110%', scaleY: 1.2, scaleX: 1.33, borderRadius: '100%' }}
-          exit={{ y: '110%', scaleY: 1.2, scaleX: 1.33, borderRadius: '100%' }}
+          animate={{ y: '135%', scaleY: 1.2, scaleX: 1.33, borderRadius: '100%' }}
+          exit={{ y: '135%', scaleY: 1.2, scaleX: 1.33, borderRadius: '100%' }}
           transition={{ delay: 0.25, duration: 1, ease: [0.85, 0, 0.15, 1] }}
           className="fixed inset-0 bg-green z-[2000] flex items-center justify-center cursor-wait">
             <m.div 

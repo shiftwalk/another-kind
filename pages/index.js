@@ -39,7 +39,7 @@ export default function Home(initialData) {
   })
   
   const rotateBadge = useTransform(scrollYProgress,[0, 1],[-360, 360],{ clamp: true })
-  const lerpBadge = useTransform(scrollYProgress,[0, 1],[150, -150],{ clamp: true })
+  const lerpBadge = useTransform(scrollYProgress,[0, 1],[100, -150],{ clamp: true })
   
   return (
     <Layout>
@@ -51,7 +51,7 @@ export default function Home(initialData) {
           animate="enter"
           exit="exit"
         >
-          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[90px] xl:pt-[99px]">           
+          <m.main className="pb-6 md:pb-16 xl:pb-24 pt-[80px] xl:pt-[99px]">           
             <m.article variants={fade}>
               <Container>
                 <div className="w-full mb-6 overflow-hidden">
@@ -61,22 +61,26 @@ export default function Home(initialData) {
                 </div>
 
                 <div className="flex flex-wrap items-end mb-[20vw] lg:mb-[10.5vw] max-w-[1920px]" ref={ref}>
-                  <div className="w-full lg:w-1/2 mb-3 lg:mb-0 relative">
+                  <div className="w-full lg:w-1/2 mb-[100px] lg:mb-0 relative">
                     <div className="w-full relative overflow-hidden rounded-xl aspect-[10/9]">
-                      {/* <ImageScale image="/images/home.jpg" w={767} h={688} p /> */}
-                      
                       <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 70vw" image={home.heroImage} p />
                     </div>
             
-                    <m.div style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[33%] max-w-[220px] will-change-transform">
+                    <m.div style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[33%] max-w-[220px] will-change-transform hidden lg:block">
                       <m.div variants={scale} transition={{ delay: introContext ? 0 : 2.3, duration: 0.66, ease: [0.83, 0, 0.17, 1] }}>
                         <BadgeIcon className="w-full" />
                       </m.div>
                     </m.div>
+
+                    <m.div style={{ rotateZ: rotateBadge  }} className="absolute top-auto bottom-[-70px] lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[50%] max-w-[155px] will-change-transform block lg:hidden">
+                      <div variants={scale} transition={{ delay: introContext ? 0 : 2.3, duration: 0.66, ease: [0.83, 0, 0.17, 1] }}>
+                        <BadgeIcon className="w-full" />
+                      </div>
+                    </m.div>
                   </div>
                   {home.heroText && (
                     <div className="w-full lg:w-1/2">
-                      <div className="w-11/12 content text-lg/[1.28] 2xl:text-xl/[1.28] lg:px-5">
+                      <div className="w-[95%] lg:w-11/12 content text-base/[1.28] lg:text-lg/[1.28] 2xl:text-xl/[1.28] lg:px-5">
                         <p>{home.heroText}</p>
                       </div>
                     </div>
@@ -86,11 +90,11 @@ export default function Home(initialData) {
                 <div className="flex flex-wrap justify-center mb-[20vw] lg:mb-[10.5vw]">
                   {home.quoteTitle && (
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
-                      <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">{home.quoteTitle}</m.span>
+                      <m.span variants={reveal} className="block text-base leading-none lg:text-xl lg:leading-none">{home.quoteTitle}</m.span>
                     </span>
                   )}
                   {home.quoteText && (
-                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">
+                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[1] md:leading-[0.9] lg:leading-[0.9]">
                     <PortableText content={home.quoteText} />
                   </span>
                   )}
@@ -99,8 +103,8 @@ export default function Home(initialData) {
 
 
               <div className="bg-orange text-white flex flex-wrap mb-[20vw] lg:mb-[10.5vw]">
-                <div className="w-full lg:w-[50%] mb-3 lg:mb-0 relative p-5 flex flex-col">
-                  <h1 className="text-[16vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[90%] md:w-[80%] lg:w-[95%] mb-[25vw] lg:mb-0">{home.pulloutSectionHeading}</h1>
+                <div className="w-full lg:w-[50%] mb-0 lg:mb-0 relative p-3 lg:p-5 flex flex-col">
+                  <h1 className="text-[15vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[90%] md:w-[80%] lg:w-[95%] mb-[25vw] lg:mb-0">{home.pulloutSectionHeading}</h1>
 
                   <div className="w-full lg:w-10/12 text-base/[1.28] xl:text-lg/[1.28] mt-auto max-w-[800px]">
                     <PortableText className="content" content={home.pulloutSectionText} />
@@ -130,12 +134,12 @@ export default function Home(initialData) {
               <Container>
                 <div className="flex flex-wrap justify-center mb-[20vw] lg:mb-[10.5vw]">
                   {home.quote2Title && (
-                    <span className="block mb-8 overflow-hidden relative w-full text-center">
-                      <m.span variants={reveal} className="block text-lg leading-[1.2] lg:text-xl lg:leading-[1.2]">{home.quote2Title}</m.span>
+                    <span className="block mb-6 lg:mb-8 overflow-hidden relative w-full text-center">
+                      <m.span variants={reveal} className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">{home.quote2Title}</m.span>
                     </span>
                   )}
                   {home.quote2Text && (
-                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">
+                  <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[1] md:leading-[0.9] lg:leading-[0.9]">
                     <PortableText content={home.quote2Text} />
                   </span>
                   )}
@@ -143,7 +147,7 @@ export default function Home(initialData) {
 
                 <div className="flex flex-wrap mb-[10vw] lg:mb-[7.5vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
                   <Link scroll={false} href="/mission" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                    <div className="w-full relative overflow-hidden rounded-xl mb-8">
+                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-8">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
                         <div className="aspect-[10/13]">
                           <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={home.missionImage} />
@@ -151,13 +155,13 @@ export default function Home(initialData) {
                       </div>
                     </div>
 
-                    <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">01</span>
+                    <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-2">01</span>
 
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Mission</span>
                   </Link>
 
                   <Link scroll={false} href="/team" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                    <div className="w-full relative overflow-hidden rounded-xl mb-8">
+                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-8">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
                         <div className="aspect-[10/13]">
                           <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={home.teamImage} />
@@ -165,13 +169,13 @@ export default function Home(initialData) {
                       </div>
                     </div>
 
-                    <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">02</span>
+                    <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-2">02</span>
 
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Team</span>
                   </Link>
 
                   <Link scroll={false} href="/projects" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                    <div className="w-full relative overflow-hidden rounded-xl mb-8">
+                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-8">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
                         <div className="aspect-[10/13]">
                           <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 33vw" image={home.workImage} />
@@ -179,7 +183,7 @@ export default function Home(initialData) {
                       </div>
                     </div>
 
-                    <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">03</span>
+                    <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-2">03</span>
 
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Work</span>
                   </Link>
@@ -190,7 +194,7 @@ export default function Home(initialData) {
         
           <m.div variants={fade}>
             <div className="overflow-hidden">
-              <div className="w-full relative overflow-hidden aspect-[17/10]">
+              <div className="w-full relative overflow-hidden aspect-[13/10] lg:aspect-[17/10]">
                 <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 90vw" image={home.footerImage} />
               </div>
               <Footer />

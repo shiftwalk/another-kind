@@ -4,7 +4,12 @@ export const Sohne = localFont({
   src: [
     {
       path: '../public/fonts/Sohne-Buch.woff2',
-      weight: '300',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Sohne-Kraftig.woff2',
+      weight: '500',
       style: 'normal',
     }
   ],

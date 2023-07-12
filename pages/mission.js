@@ -45,12 +45,13 @@ export default function Mission(initialData) {
     target: ref,
     offset: ["0%", "100%"]
   })
-
+  
   const { scrollY } = useScroll()
   const moveX = useTransform(scrollYProgress,[0, 0.6],['-17.75dvw', '0dvw'],{ clamp: true })
   const moveY = useTransform(scrollYProgress,[0, 0.6],['-50dvh', '0dvh'],{ clamp: true })
   const rotate = useTransform(scrollY, [0, 15], [0, 1], { clamp: false })
-  const rotateBadge = useTransform(scrollYProgress,[0, 4],[-360, 360],{ clamp: true })  
+  const rotateBadge = useTransform(scrollYProgress,[0, 2],[-360, 360],{ clamp: true })  
+  const rotateBadge2 = useTransform(scrollY,[0, 0.5],[-100, 360],{ clamp: true })
 
   const [introContext, setIntroContext] = useContext(IntroContext);
 
@@ -90,8 +91,8 @@ export default function Mission(initialData) {
               
               <div className="block lg:hidden">
                 <Container>
-                  <div className="pt-[110px] mb-16 text-center">
-                    <h1 className="text-[13vw] mb-0 pb-0 leading-[0.9]">
+                  <div className="pt-[85px] mb-12 lg:mb-16 text-center">
+                    <h1 className="text-[15vw] mb-0 pb-0 leading-[0.9]">
                       <PortableText content={mission.heroHeadingLine1} />
                       <PortableText content={mission.heroHeadingLine2} />
                     </h1>
@@ -101,9 +102,11 @@ export default function Mission(initialData) {
                 <div className="relative">
                   <m.button
                     onClick={openManifesto}
-                    className="absolute w-[140px] xl:w-[180px] -bottom-16 right-5 z-[100] block lg:hidden outline-none border-none"
+                    className="absolute z-[100] lg:hidden outline-none border-none w-full h-full inset-0 flex items-center justify-center"
                   >
-                    <ManifestoBadgeIcon className="w-full" />
+                    <m.div style={{ rotateZ: rotateBadge}} className="w-[140px] xl:w-[180px]">
+                      <ManifestoBadgeIcon className="w-full" />
+                    </m.div>
                   </m.button>
 
                   <div className="overflow-hidden relative">
@@ -124,22 +127,22 @@ export default function Mission(initialData) {
               <div className="relative bg-off-white lg:mt-[300dvh] z-[10]">
                 <Container>
                   {mission.ourMissionText && (
-                    <div className="flex flex-wrap justify-center pt-[16vw] lg:pt-[10vw] mb-[18vw] lg:mb-[10vw]">
+                    <div className="flex flex-wrap justify-center pt-[16vw] lg:pt-[10vw] mb-[20vw] lg:mb-[10vw]">
                       <span className="block mb-8 overflow-hidden relative w-full text-center">
-                        <m.span variants={reveal} className="block text-lg leading-none lg:text-xl lg:leading-none">Our Mission.</m.span>
+                        <m.span variants={reveal} className="block text-base leading-none lg:text-xl lg:leading-none">Our Mission.</m.span>
                       </span>
 
-                      <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[7vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]">
+                      <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[1] md:leading-[0.9] lg:leading-[0.9]">
                         <PortableText content={mission.ourMissionText} />
                       </span>
                     </div>
                   )}
                 </Container>
 
-                <div className="bg-green text-off-white flex flex-wrap mb-[20vw] lg:mb-[10vw]">
-                  <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
+                <div className="bg-green text-off-white flex flex-wrap mb-[15vw] lg:mb-[10vw]">
+                  <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-3 lg:p-5 flex flex-col">
                     {mission.pulloutSection1Heading && (
-                      <h1 className="text-[16vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[85%] md:w-[75%] lg:w-[85%] mb-[25vw] lg:mb-0">{mission.pulloutSection1Heading}</h1>
+                      <h1 className="text-[15vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[85%] md:w-[75%] lg:w-[85%] mb-[25vw] lg:mb-0">{mission.pulloutSection1Heading}</h1>
                     )}
 
                     <div className="w-full lg:w-9/12 content text-base/[1.28] xl:text-lg/[1.28] mt-auto">
@@ -167,31 +170,31 @@ export default function Mission(initialData) {
                 </div>
 
                 <Container>
-                  <div className="flex flex-wrap justify-center mb-[20vw] lg:mb-[10vw]">
-                    <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-3 lg:mb-0">Creating new stories.</span>
+                  <div className="flex flex-wrap justify-center mb-[15vw] lg:mb-[10vw]">
+                    <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-1 lg:mb-0">Creating new stories.</span>
 
-                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[10vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-8 lg:mb-10">Sectors we serve.</span>
+                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[15vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-8 lg:mb-10">Sectors we serve.</span>
 
                     {mission.sectorsWeServeText && (
-                      <div className="content text-lg/[1.28] lg:text-xl/[1.28] w-[90%] lg:w-[45%] mx-auto max-w-[800px] text-center">
+                      <div className="content text-base/[1.28] lg:text-xl/[1.28] w-[100%] lg:w-[45%] mx-auto max-w-[800px] text-center">
                         <p>{mission.sectorsWeServeText}</p>
                       </div>
                     )}
                   </div>
 
-                  <div className="flex flex-wrap mb-[20vw] lg:mb-[10vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
+                  <div className="flex flex-wrap mb-[5vw] lg:mb-[10vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
 
                     {mission.sectorsCtas.map((e, i) => {
                       return (
                         <div className="w-full lg:flex-1 mb-12 lg:mb-0 group relative" key={i}>
-                          <div className={`absolute inset-0 bg-yellow z-[8] h-[68%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] group-hover:delay-[0ms] group-hover:rotate-[-1.5deg]`}></div>
+                          <div className={`absolute inset-0 bg-yellow z-[8] h-[68%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] lg:group-hover:delay-[0ms] lg:group-hover:rotate-[-1.5deg]`}></div>
 
-                          <div className={`w-full relative overflow-hidden rounded-xl mb-8 transition-transform ease-ak duration-[750ms] z-[9] group-hover:rotate-[1.5deg]`}>
+                          <div className={`w-full relative overflow-hidden rounded-xl mb-4 lg:mb-8 transition-transform ease-ak duration-[750ms] z-[9] lg:group-hover:rotate-[1.5deg]`}>
                             {e.text && (
-                              <div className="absolute inset-0 bg-orange z-[9] translate-y-[150%] group-hover:translate-y-0 transition-transition ease-ak duration-[750ms] rounded-full scale-[1.8] delay-[100ms] group-hover:rotate-45 group-hover:delay-[0ms]"></div>
+                              <div className="absolute inset-0 bg-orange z-[9] lg:translate-y-[150%] lg:group-hover:translate-y-0 transition-transition ease-ak duration-[750ms] rounded-full scale-[1.8] delay-[100ms] lg:group-hover:rotate-45 lg:group-hover:delay-[0ms] hidden lg:block"></div>
                             )}
 
-                            <div className="absolute inset-0 text-yellow z-[10] p-8 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity ease-ak duration-[600ms] rounded-full">
+                            <div className="absolute inset-0 text-yellow z-[10] p-8 flex items-center justify-center text-center opacity-0 lg:group-hover:opacity-100 transition-opacity ease-ak duration-[600ms] rounded-full">
 
                               {e.text && (
                                 <div className="w-full">                          
@@ -203,17 +206,17 @@ export default function Mission(initialData) {
                                 </div>
                               )}
                             </div>
-                            <div className="scale-[1] group-hover:scale-[1.18] transition-all ease-ak duration-[850ms] aspect-[10/13] relative">
+                            <div className="scale-[1] lg:group-hover:scale-[1.18] transition-all ease-ak duration-[850ms] aspect-[10/13] relative">
                               <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 33vw" image={e.image} />
                             </div>
                           </div>
                           
-                          <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">0{i+1}</span>
+                          <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-2">0{i+1}</span>
 
                           <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] mb-3">{e.name}</span>
 
                           {e.shortText && (
-                            <span className="block text-lg leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center">{e.shortText}</span>
+                            <span className="block text-base leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center">{e.shortText}</span>
                           )}
                         </div>
                       )
@@ -221,7 +224,7 @@ export default function Mission(initialData) {
                   </div>
                 </Container>
 
-                <div className="bg-yellow text-black flex flex-wrap mb-[20vw] lg:mb-[10vw]">
+                <div className="bg-yellow text-black flex flex-wrap mb-[15vw] lg:mb-[10vw]">
                   <div className="w-full lg:w-[48%] relative">
                     <div className="w-full relative overflow-hidden">
                       <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false} isAbsolutelyPositioned={true} zIndex={10}>
@@ -240,9 +243,9 @@ export default function Mission(initialData) {
                       </div>
                     </div>
                   </div>
-                  <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
+                  <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-3 lg:p-5 flex flex-col">
                     {mission.pulloutSection2Heading && (
-                      <h1 className="text-[16vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-orange w-[85%] md:w-[75%] lg:w-[85%] mb-[25vw] lg:mb-0">{mission.pulloutSection2Heading}</h1>
+                      <h1 className="text-[15vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-orange w-[85%] md:w-[75%] lg:w-[85%] mb-[25vw] lg:mb-0">{mission.pulloutSection2Heading}</h1>
                     )}
 
                     <div className="w-full lg:w-9/12 content text-base/[1.28] xl:text-lg/[1.28] mt-auto">
@@ -252,28 +255,28 @@ export default function Mission(initialData) {
                 </div>
 
                 <Container className="lg:px-[5vw]">
-                  <div className="pb-[20vw] lg:pb-[10vw]">
-                    <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full mb-3 lg:mb-0">Overview.</span>
+                  <div className="pb-[15vw] lg:pb-[10vw]">
+                    <span className="block text-sm leading-none lg:text-xl lg:leading-none w-full mb-1 lg:mb-0">Overview.</span>
 
-                    <span className="font-display block w-full text-[10vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-8 lg:mb-24">Services we supply.</span>
+                    <span className="font-display block w-full text-[15vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-[25vw] lg:mb-24">Services we supply.</span>
                     
                     {mission.servicesWeSupplyText && (
-                      <div className="content text-lg/[1.28] lg:text-xl/[1.28] w-[90%] lg:flex lg:flex-wrap lg:mx-[-2.5vw] mb-8 lg:mb-24">
+                      <div className="content text-base/[1.28] lg:text-xl/[1.28] w-[90%] lg:flex lg:flex-wrap lg:mx-[-2.5vw] mb-8 lg:mb-24">
                         <PortableText className="content content--cols lg:pl-[2.5vw]" content={mission.servicesWeSupplyText} />
                       </div>
                     )}
 
                     <div className="flex flex-wrap items-start">
-                      <div className="w-full lg:w-[55%] mb-16 lg:mb-0 relative" ref={badgeRef}>
-                        <div className="overflow-hidden rounded-xl relative aspect-[15.5/10]">
+                      <div className="w-full lg:w-[55%] mb-6 lg:mb-0 relative" ref={badgeRef}>
+                        <div className="overflow-hidden rounded-xl relative aspect-[13/10] lg:aspect-[15.5/10]">
                           <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={mission.servicesWeSupplyImage} />
                         </div>
-                        <div className="absolute bottom-[-60px] xl:bottom-[-100px] left-[5%] xl:left-[25%] w-[140px] xl:w-[175px] rotate-12">
+                        <m.div style={{ rotateZ: rotate }} className="absolute bottom-[-60px] xl:bottom-[-100px] left-auto right-[3%] xl:right-auto xl:left-[25%] w-[130px] xl:w-[175px] rotate-12">
                           <BadgeLightningIcon className="w-full" />
-                        </div>
+                        </m.div>
                       </div>
 
-                      <div className="w-full lg:w-[45%] content text-xl leading-[1.28] xl:text-[27px] xl:leading-[1.28] flex">
+                      <div className="w-full lg:w-[45%] content text-lg lg:text-xl leading-[1.28] xl:text-[27px] xl:leading-[1.28] flex">
                         <ol className="lg:mx-auto w-auto tabular-nums">
                           {mission.services.map((e, i) => {
                             return (
@@ -291,7 +294,7 @@ export default function Mission(initialData) {
         
           <m.div variants={fade}>
             <div className="overflow-hidden bg-off-white z-[10] relative">
-              <div className="w-full relative overflow-hidden aspect-[17/10]">
+              <div className="w-full relative overflow-hidden aspect-[13/10] lg:aspect-[17/10]">
                 <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 90vw" image={mission.footerImage} />
               </div>
               <Footer />

@@ -9,28 +9,28 @@ const bodySerializers = {
   block: {
     component: BlockContentWrapper,
     wrapper: ({ children }) => 
-      <div className="mb-5">
+      <div className="mb-3 lg:mb-5">
         {children}
       </div>
   },
   doubleImageBlock: {
     component: ModularDoubleImageBlock,
     wrapper: ({ children }) => 
-      <div className="mb-5">
+      <div className="mb-3 lg:mb-5">
         {children}
       </div>
   },
   singleImageBlock: {
     component: ModularSingleImageBlock,
     wrapper: ({ children }) => 
-      <div className="mb-5">
+      <div className="mb-3 lg:mb-5">
         {children}
       </div>
   },
   imageTextBlock: {
     component: ModularImageTextBlock,
     wrapper: ({ children }) => 
-      <div className="mb-5">
+      <div className="mb-3 lg:mb-5">
         {children}
       </div>
   }

@@ -12,12 +12,12 @@ export default function ModularImageTextBlock({ image, text, textHeading }) {
         </div>
       </div>
       <div className="col-span-2 lg:col-span-1 flex items-center justify-center">
-        <div className="w-[90%] md:w-[90%] lg:w-[80%] py-[10vw] lg:py-0">
+        <div className="w-[90%] md:w-[90%] lg:w-[80%] pt-[10vw] pb-[15vw] lg:py-0">
           <span className="block mb-8 overflow-hidden relative w-full text-center">
-            <span className="block text-lg leading-none lg:text-xl lg:leading-none">{textHeading}</span>
+            <span className="block text-sm leading-none lg:text-xl lg:leading-none">{textHeading}</span>
           </span>
 
-          <span className="font-display block w-full text-center text-[7.5vw] md:text-[3.2vw] lg:text-[3vw] xl:text-[2.7vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9]"><PortableText content={text} /></span>
+          <span className="font-display block w-full text-center text-[8vw] md:text-[3.2vw] lg:text-[3vw] xl:text-[2.7vw] leading-[1] md:leading-[0.9] lg:leading-[0.9]"><PortableText content={text} /></span>
         </div>
       </div>
     </div>

@@ -44,6 +44,20 @@ export const scale = {
 	}
 }
 
+export const scaleSunny = {
+	initial: { scale: 0, rotate: -10 },
+  enter: { 
+    scale: 1,
+    rotate: 13,
+    transition: { delay: 0.55, duration: 0.55, ease: [0.83, 0, 0.17, 1] }
+  },
+	exit: {
+    scale: 0,
+    rotate: -10,
+    transition: { duration: 0.55, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
 export const imageScale = {
 	initial: { scale: 1.075 },
   enter: { 

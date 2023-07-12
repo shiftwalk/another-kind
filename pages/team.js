@@ -30,6 +30,10 @@ export default function Team(initialData) {
     target: scrollerRef,
     offset: ["-70%", "30%"]
   })
+
+  const { scrollY } = useScroll()
+  
+  const rotate = useTransform(scrollY, [0, 1000], ['-20deg', '360deg'], { clamp: false })
   const moveY = useTransform(scrollYProgress,[0, 1],['0%', '-100%'],{ clamp: true })
 
   const [introContext, setIntroContext] = useContext(IntroContext);
@@ -56,14 +60,14 @@ export default function Team(initialData) {
           animate="enter"
           exit="exit"
         >
-          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[90px] xl:pt-[103px]">
+          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[70px] xl:pt-[103px]">
             <Container>
               <m.article variants={fade}>
                 <div className="flex flex-wrap max-w-[1920px] mx-auto">
                   <div className="w-full lg:w-1/2 order-2 lg:order-1 relative mb-[30vw] lg:mb-0">
-                    <div className="flex flex-wrap lg:justify-center lg:pt-[7.5vw] h-full lg:px-5">
+                    <div className="flex flex-wrap justify-center lg:pt-[7.5vw] h-full lg:px-5">
                       <div className="lg:w-[80%] lg:max-w-[720px] lg:translate-x-[-5%] xl:translate-x-[-10%] relative z-10">
-                        <span className="font-mono text-center uppercase tracking-[11.5px] block w-[110px] lg:w-[140px] text-[47px] mb-6 lg:mb-10 translate-x-[-8%]">
+                        <span className="font-mono text-center uppercase tracking-[11.5px] block w-[110px] lg:w-[140px] text-[47px] mb-6 lg:mb-10 translate-x-[-8%] mx-auto lg:mx-0">
                           <svg className="w-full" viewBox="0 0 500 140">
                             <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                             <text>
@@ -74,8 +78,8 @@ export default function Team(initialData) {
                           </svg>
                         </span>
 
-                        <div className="relative w-auto mb-8 lg:mb-10">
-                          <h1 className="text-[15vw] lg:text-[9.8vw] xl:text-[9vw] 2xl:text-[150px] leading-[1] lg:leading-[0.85] xl:leading-[0.85] 2xl:leading-[0.85] mb-0 pb-0 block">
+                        <div className="relative w-auto mb-5 lg:mb-10">
+                          <h1 className="text-[15vw] lg:text-[9.8vw] xl:text-[9vw] 2xl:text-[150px] leading-[1] lg:leading-[0.85] xl:leading-[0.85] 2xl:leading-[0.85] mb-0 pb-0 block text-center lg:text-left">
                             <span className="block relative overflow-hidden">
                               <m.span variants={reveal} className="block">
                                 <span className="block translate-y-[-10%]">
@@ -87,64 +91,64 @@ export default function Team(initialData) {
                         </div>
 
                         {team.heroText && (
-                          <div className="w-[95%] lg:w-[90%] content text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px]">
+                          <div className="w-[95%] lg:w-[90%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px] text-center lg:text-left">
                             <p>{team.heroText}</p>
                           </div>
                         )}
                       </div>
 
-                      <SquiggleTeamIcon className="w-[70%] absolute left-0 bottom-[-35vw] lg:bottom-[-10vw] xl:bottom-[-5vw] 2xl:bottom-[0] -translate-x-5" />
+                      <SquiggleTeamIcon className="w-[70%] absolute left-0 bottom-[-40vw] lg:bottom-[-10vw] xl:bottom-[-5vw] 2xl:bottom-[0] -translate-x-5" />
                     </div>
                   </div>
 
-                  <div className="w-full lg:w-1/2 mb-5 lg:mb-0 relative order-1 lg:order-2">
-                    <div className="w-[120px] xl:w-[170px] rotate-12 aspect-square absolute bottom-5 left-5 lg:bottom-auto lg:top-[10%] lg:left-[-10%] z-10 rounded-full bg-yellow text-green p-3">
+                  <div className="w-full lg:w-1/2 mb-16 lg:mb-0 relative order-1 lg:order-2">
+                    <m.div style={{ rotateZ: rotate }} className="w-[115px] xl:w-[170px] rotate-12 aspect-square absolute bottom-[-55px] left-5 lg:bottom-auto lg:top-[10%] lg:left-[-10%] z-10 rounded-full bg-yellow text-green p-3">
                       <SunnyIcon className="w-[100%] aspect-square" />
-                    </div>
+                    </m.div>
                     <div className="w-full relative overflow-hidden rounded-xl">
-                      <div className="aspect-[10/11]">
+                      <div className="aspect-[10/9] lg:aspect-[10/11]">
                         <SanityImageScale p fill sizes="(max-width: 1024px) 100vw, 65vw" image={team.heroImage} />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[7.8vw] pb-[10vw] lg:pb-[6.25vw]">
+                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[7.8vw] pb-[7vw] lg:pb-[6.25vw]">
                   {team.quoteTitle && (
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
-                      <m.span variants={reveal} className="block text-lg leading-[1.25] lg:text-xl lg:leading-[1.25]">{team.quoteTitle}</m.span>
+                      <m.span variants={reveal} className="block text-base leading-[1.25] lg:text-xl lg:leading-[1.25]">{team.quoteTitle}</m.span>
                     </span>
                   )}
                   {team.quoteText && (
-                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">We&rsquo;re a friendly, forward-thinking collective — an approachable <em>team</em> with a can-do attitude.</span>
+                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[1] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">We&rsquo;re a friendly, forward-thinking collective — an approachable <em>team</em> with a can-do attitude.</span>
                   )}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-[20vw] lg:mb-[10vw] px-[10vw] lg:px-[8vw] gap-[6vw] lg:gap-[5vw]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-[20vw] lg:mb-[10vw] px-[10vw] lg:px-[8vw] gap-[12vw] lg:gap-[5vw]">
                   {team.teamMembers.map((e, i) => {
                     let rotation = 'group-hover:rotate-[-1.5deg]'
                     let bgRotation = 'group-hover:rotate-[1.5deg]'
                     
                     if (i % 1 == 0) {
-                      rotation = 'group-hover:rotate-[-1.5deg]'
-                      bgRotation = 'group-hover:rotate-[1.5deg]'
+                      rotation = 'lg:group-hover:rotate-[-1.5deg]'
+                      bgRotation = 'lg:group-hover:rotate-[1.5deg]'
                     }
                     if (i % 2 == 0) {
-                      rotation = 'group-hover:rotate-[1.5deg]'
-                      bgRotation = 'group-hover:rotate-[-1.5deg]'
+                      rotation = 'lg:group-hover:rotate-[1.5deg]'
+                      bgRotation = 'lg:group-hover:rotate-[-1.5deg]'
                     }
                     return (
                       <div className="w-full lg:col-span-1 group relative" key={i}>
-                        <div className={`absolute inset-0 bg-yellow z-[8] h-[77%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] group-hover:delay-[0ms] ${bgRotation}`}></div>
+                        <div className={`absolute inset-0 bg-yellow z-[8] h-[77%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] lg:group-hover:delay-[0ms] ${bgRotation}`}></div>
                         
-                        <div className={`w-full relative overflow-hidden rounded-xl mb-8 transition-transform ease-ak duration-[750ms] z-[9] ${rotation}`}>
-                          <div className="absolute inset-0 bg-orange z-[9] translate-y-[150%] group-hover:translate-y-0 transition-transition ease-ak duration-[750ms] rounded-full scale-[1.8] delay-[100ms] group-hover:rotate-45 group-hover:delay-[0ms]"></div>
+                        <div className={`w-full relative overflow-hidden rounded-xl mb-4 lg:mb-8 transition-transform ease-ak duration-[750ms] z-[9] ${rotation}`}>
+                          <div className="absolute inset-0 bg-orange z-[9] lg:translate-y-[150%] lg:group-hover:translate-y-0 transition-transition ease-ak duration-[750ms] rounded-full scale-[1.8] delay-[100ms] lg:group-hover:rotate-45 lg:group-hover:delay-[0ms] hidden lg:block"></div>
 
-                          <div className="absolute inset-0 text-yellow z-[10] p-8 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity ease-ak duration-[600ms] rounded-full">
+                          <div className="absolute inset-0 text-yellow z-[10] p-8 items-center justify-center text-center opacity-0 lg:group-hover:opacity-100 transition-opacity ease-ak duration-[600ms] rounded-full hidden lg:flex">
 
                             <div className="w-full">
                               <div className="w-[42px] mb-4 mx-auto">
-                                <SunnyNoRaysIcon className="w-full aspect-square mb-2 transition-transform ease-ak duration-[650ms] scale-0 group-hover:scale-[1] group-hover:rotate-[360deg]" />
+                                <SunnyNoRaysIcon className="w-full aspect-square mb-2 transition-transform ease-ak duration-[650ms] scale-0 lg:group-hover:scale-[1] lg:group-hover:rotate-[360deg]" />
                               </div>
 
                               {e.bio && (
@@ -158,7 +162,7 @@ export default function Team(initialData) {
                               )}
                             </div>
                           </div>
-                          <div className="scale-[1] group-hover:scale-[1.18] transition-all ease-ak duration-[850ms]">
+                          <div className="scale-[1] lg:group-hover:scale-[1.18] transition-all ease-ak duration-[850ms]">
                             <div className="aspect-[10/14]">
                               {e.image ? (
                               <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 33vw" image={e.image} />
@@ -170,7 +174,7 @@ export default function Team(initialData) {
                         </div>
                         
                         {e.role && (
-                          <span className="block text-lg leading-none lg:text-xl lg:leading-none w-full text-center mb-2">{e.role}</span>
+                          <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-1 lg:mb-2">{e.role}</span>
                         )}
 
                         {e.name && (
@@ -215,13 +219,13 @@ export default function Team(initialData) {
                   </m.div>
                 </div>
               </div>
-              <div className="w-full lg:w-[52%] mb-3 lg:mb-0 relative p-5 flex flex-col">
+              <div className="w-full lg:w-[52%] relative p-3 lg:p-5 flex flex-col">
                 {team.pulloutSectionHeading && (
-                  <h1 className="text-[16vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[85%] md:w-[85%] lg:w-[90%] mb-[25vw] lg:mb-0">{team.pulloutSectionHeading}</h1>
+                  <h1 className="text-[15vw] lg:text-[9vw] leading-[0.82] lg:leading-[0.82] text-yellow w-[85%] md:w-[85%] lg:w-[90%] mb-[25vw] lg:mb-0">{team.pulloutSectionHeading}</h1>
                 )}
 
                 <div className="w-full lg:w-10/12 mt-auto max-w-[800px]">
-                  <div className="content text-base/[1.28] xl:text-lg/[1.28] mb-5">
+                  <div className="content text-base/[1.28] xl:text-lg/[1.28] lg:mb-5">
                     <PortableText className="content" content={team.pulloutSectionText} />
                   </div>
 
@@ -246,15 +250,15 @@ export default function Team(initialData) {
             </div>
 
             <Container>
-              <div className="flex flex-wrap justify-center pb-[10vw] lg:pb-[6.25vw]">
+              <div className="flex flex-wrap justify-center pb-[0vw] lg:pb-[6.25vw]">
                 {team.footerCtaTitle && (
                   <span className="block mb-8 overflow-hidden relative w-full text-center">
-                    <m.span variants={reveal} className="block text-lg leading-[1.25] lg:text-xl lg:leading-[1.25]">{team.footerCtaTitle}</m.span>
+                    <m.span variants={reveal} className="block text-base leading-[1.25] lg:text-xl lg:leading-[1.25]">{team.footerCtaTitle}</m.span>
                   </span>
                 )}
 
                 {team.footerCtaText && (
-                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16"><PortableText content={team.footerCtaText} /></span>
+                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[1] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16"><PortableText content={team.footerCtaText} /></span>
                   )}
 
                 <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false}>
@@ -273,7 +277,7 @@ export default function Team(initialData) {
           </m.main>
         
           <m.div variants={fade}>
-            <div className="overflow-hidden pt-[20vw] lg:pt-[5vw]">
+            <div className="overflow-hidden pt-[12vw] lg:pt-[5vw]">
               <Footer />
             </div>
           </m.div>

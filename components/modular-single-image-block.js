@@ -2,7 +2,7 @@ import SanityImageScale from "./sanity-image-scale";
 
 export default function ModularSingleImageBlock({ image }) {
   return (
-    <div className="grid grid-cols-1 w-full gap-5 mb-5">
+    <div className="grid grid-cols-1 w-full gap-3 lg:gap-5 mb-3 lg:mb-5">
       <div className="col-span-1">
         <div className="relative overflow-hidden rounded-2xl">
           <div className="aspect-[15/10]">

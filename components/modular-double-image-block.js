@@ -2,7 +2,7 @@ import SanityImageScale from "./sanity-image-scale"
 
 export default function ModularDoubleImageBlock({ images }) {
   return (
-    <div className="grid grid-cols-2 w-full gap-5 mb-5">
+    <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-3 lg:gap-5 mb-3 lg:mb-5">
       {images.map((e, i) => { 
         return (
           <div className="col-span-1" key={i}>
