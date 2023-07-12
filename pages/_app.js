@@ -48,7 +48,7 @@ export default function App({ Component, pageProps }) {
   }
 
   return (
-    <ReactLenis root>
+    <ReactLenis root options={{ lerp: 0.125 }}>
       <IntroContext.Provider value={[introContext, setIntroContext]}>
         <div id="app" className={`${Sohne.variable} ${PPEditorialNewItalic.variable} ${Verlag.variable} ${VCGaramondCondensed.variable} font-sans`}>
 
