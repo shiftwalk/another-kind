@@ -24,11 +24,11 @@ export default function HeroMission({ image, headingLine1, headingLine2 }) {
       <div className="w-full h-[300dvh] fixed inset-0 z-[10] bg-off-white" ref={ref}>
         <div className="w-full h-[100vh] flex flex-col overflow-hidden absolute inset-0 pt-[0px] xl:pt-[0px]">
           <div className="w-full h-full flex flex-col relative">
-            <div className="w-full overflow-hidden relative z-[1] pt-[82px] mt-[7dvh]">
-              <div className="relative overflow-hidden ">
+            <div className="w-full overflow-hidden relative z-[1] pt-[82px] mt-[3.5dvh]">
+              <div className="relative overflow-hidden">
                 <m.div style={{ y: moveTextTop }}>
-                  <m.h2 variants={reveal} className="text-[calc(5.5vw+5.5vmin)] leading-[0.85] text-center">
-                    <span className="block translate-y-[-15%]"><PortableText content={headingLine1}/></span>
+                  <m.h2 variants={reveal} className="text-[calc(13.3dvh)] leading-[0.85] text-center">
+                    <span className="block"><PortableText content={headingLine1}/></span>
                   </m.h2>
                 </m.div>
               </div>
@@ -36,7 +36,7 @@ export default function HeroMission({ image, headingLine1, headingLine2 }) {
 
             <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-10 pointer-events-none">
               <m.div className="relative" style={{ y: moveY }}>
-                <m.div style={{ scale: scale, borderRadius: radius  }} className={`w-[90dvw] lg:w-[50dvw] h-[42vh] max-h-[600px] relative overflow-hidden mx-auto`}>
+                <m.div style={{ scale: scale, borderRadius: radius  }} className={`w-[90dvw] lg:w-[50dvw] xl:w-[45dvw] h-[45vh] max-h-[600px] relative overflow-hidden mx-auto`}>
                   <SanityImage
                     priority
                     image={image}
@@ -48,10 +48,10 @@ export default function HeroMission({ image, headingLine1, headingLine2 }) {
               </m.div>
             </div>
             
-            <div className="w-full mt-auto overflow-hidden relative z-[1] mb-[7dvh]">
+            <div className="w-full mt-auto overflow-hidden relative z-[1] mb-[4dvh]">
               <div className="relative overflow-hidden ">
                 <m.div style={{ y: moveTextBottom }}>
-                  <m.h2 variants={reveal} className="text-[calc(5.5vw+5.5vmin)] leading-[0.85] text-center">
+                  <m.h2 variants={reveal} className="text-[calc(13.3dvh)] leading-[0.85] text-center">
                     <span className="block translate-y-[3%]"><PortableText content={headingLine2}/></span>
                   </m.h2>
                 </m.div>

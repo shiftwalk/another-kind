@@ -60,7 +60,7 @@ export default function Team(initialData) {
           animate="enter"
           exit="exit"
         >
-          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[70px] xl:pt-[103px]">
+          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[70px] lg:pt-[95px] xl:pt-[103px]">
             <Container>
               <m.article variants={fade}>
                 <div className="flex flex-wrap max-w-[1920px] mx-auto">
@@ -83,7 +83,14 @@ export default function Team(initialData) {
                             <span className="block relative overflow-hidden">
                               <m.span variants={reveal} className="block">
                                 <span className="block translate-y-[-10%]">
-                                  <PortableText content={team.heroHeading} />
+                                  It’s a team
+                                </span>
+                              </m.span>
+                            </span>
+                            <span className="block relative overflow-hidden">
+                              <m.span variants={reveal} className="block">
+                                <span className="block translate-y-[-35%] lg:translate-y-[-25%]">
+                                  game.
                                 </span>
                               </m.span>
                             </span>
@@ -113,7 +120,7 @@ export default function Team(initialData) {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[7.8vw] pb-[7vw] lg:pb-[6.25vw]">
+                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[7.8vw] pb-[7vw] lg:pb-[3.5vw]">
                   {team.quoteTitle && (
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
                       <m.span variants={reveal} className="block text-base leading-[1.25] lg:text-xl lg:leading-[1.25]">{team.quoteTitle}</m.span>
@@ -124,24 +131,25 @@ export default function Team(initialData) {
                   )}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-[20vw] lg:mb-[10vw] px-[10vw] lg:px-[8vw] gap-[12vw] lg:gap-[5vw]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-[20vw] lg:mb-[15vw] px-[10vw] lg:px-[8vw] gap-[12vw] lg:gap-[5vw] lg:gap-y-[6vw]">
                   {team.teamMembers.map((e, i) => {
-                    let rotation = 'group-hover:rotate-[-1.5deg]'
-                    let bgRotation = 'group-hover:rotate-[1.5deg]'
+                    let rotation = 'group-hover:rotate-[-3deg]'
+                    let bgRotation = 'group-hover:rotate-[3deg]'
                     
-                    if (i % 1 == 0) {
-                      rotation = 'lg:group-hover:rotate-[-1.5deg]'
-                      bgRotation = 'lg:group-hover:rotate-[1.5deg]'
+                    if ((i + 1) % 1 == 0) {
+                      rotation = 'lg:group-hover:rotate-[-3deg]'
+                      bgRotation = 'lg:group-hover:rotate-[3deg]'
                     }
-                    if (i % 2 == 0) {
-                      rotation = 'lg:group-hover:rotate-[1.5deg]'
-                      bgRotation = 'lg:group-hover:rotate-[-1.5deg]'
+
+                    if ((i + 1) % 2 == 0) {
+                      rotation = 'lg:group-hover:rotate-[3deg]'
+                      bgRotation = 'lg:group-hover:rotate-[-3deg]'
                     }
                     return (
                       <div className="w-full lg:col-span-1 group relative" key={i}>
                         <div className={`absolute inset-0 bg-yellow z-[8] h-[77%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] lg:group-hover:delay-[0ms] ${bgRotation}`}></div>
                         
-                        <div className={`w-full relative overflow-hidden rounded-xl mb-4 lg:mb-8 transition-transform ease-ak duration-[750ms] z-[9] ${rotation}`}>
+                        <div className={`w-full relative overflow-hidden rounded-xl mb-4 lg:mb-6 transition-transform ease-ak duration-[750ms] z-[9]`}>
                           <div className="absolute inset-0 bg-orange z-[9] lg:translate-y-[150%] lg:group-hover:translate-y-0 transition-transition ease-ak duration-[750ms] rounded-full scale-[1.8] delay-[100ms] lg:group-hover:rotate-45 lg:group-hover:delay-[0ms] hidden lg:block"></div>
 
                           <div className="absolute inset-0 text-yellow z-[10] p-8 items-center justify-center text-center opacity-0 lg:group-hover:opacity-100 transition-opacity ease-ak duration-[600ms] rounded-full hidden lg:flex">
@@ -152,7 +160,7 @@ export default function Team(initialData) {
                               </div>
 
                               {e.bio && (
-                                <span className="font-display text-[5.2vw] md:text-[3vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1] flex flex-wrap overflow-hidden justify-center">
+                                <span className="font-display text-[5.2vw] md:text-[3vw] lg:text-[1.75vw] leading-[1.16] lg:leading-[1.16] flex flex-wrap overflow-hidden justify-center">
                                   “
                                   <SplitTextHover>
                                     {e.bio}
@@ -174,7 +182,7 @@ export default function Team(initialData) {
                         </div>
                         
                         {e.role && (
-                          <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-1 lg:mb-2">{e.role}</span>
+                          <span className="block text-base leading-none lg:text-lg lg:leading-none w-full text-center mb-1 lg:mb-2">{e.role}</span>
                         )}
 
                         {e.name && (
@@ -225,7 +233,7 @@ export default function Team(initialData) {
                 )}
 
                 <div className="w-full lg:w-10/12 mt-auto max-w-[800px]">
-                  <div className="content text-base/[1.28] xl:text-lg/[1.28] lg:mb-5">
+                  <div className="content text-base/[1.28] xl:text-lg/[1.28] lg:mb-0">
                     <PortableText className="content" content={team.pulloutSectionText} />
                   </div>
 
@@ -250,7 +258,7 @@ export default function Team(initialData) {
             </div>
 
             <Container>
-              <div className="flex flex-wrap justify-center pb-[0vw] lg:pb-[6.25vw]">
+              <div className="flex flex-wrap justify-center pb-[0vw] lg:pb-[4.25vw]">
                 {team.footerCtaTitle && (
                   <span className="block mb-8 overflow-hidden relative w-full text-center">
                     <m.span variants={reveal} className="block text-base leading-[1.25] lg:text-xl lg:leading-[1.25]">{team.footerCtaTitle}</m.span>

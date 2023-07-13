@@ -16,7 +16,7 @@ export default function Header({ sunny }) {
     <LazyMotion features={domAnimation}>
       <div className="fixed top-3 lg:top-5 left-3 lg:left-5 right-3 lg:right-5 z-[1000]">
         <header className="w-full flex flex-wrap">
-          <div className="flex-1 pr-2">
+          <div className="flex-1 pr-2 lg:pr-0">
             <div className={`w-full bg-yellow rounded-full px-10 ${sunny ? 'py-[3px] lg:py-[7px]' : 'py-[3px] lg:py-[7px]' }`}>
               <div className="flex flex-wrap items-center">
                 <nav className="mr-auto hidden space-x-2 xl:space-x-3 w-full text-lg xl:text-xl xl:leading-none md:w-auto mt-[-2px] lg:flex">

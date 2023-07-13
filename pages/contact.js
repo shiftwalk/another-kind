@@ -32,7 +32,7 @@ export default function Contact(initialData) {
           animate="enter"
           exit="exit"
         >
-          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[70px] xl:pt-[103px]">
+          <m.main className="pb-12 md:pb-16 xl:pb-24 pt-[70px] lg:pt-[95px] xl:pt-[103px]">
             <Container>
               <m.article variants={fade}>
                 <div className="flex flex-wrap max-w-[1920px] mx-auto">
@@ -50,7 +50,7 @@ export default function Contact(initialData) {
                   <div className="w-full lg:w-1/2">
                     <div className="flex flex-wrap lg:justify-center lg:pt-[7.5vw] h-full lg:px-5">
                       <div className="lg:w-[75%] lg:max-w-[720px] lg:translate-x-[5%] xl:translate-x-[10%]">
-                        <span className="font-mono text-center uppercase tracking-[11.5px] block w-[110px] lg:w-[140px] text-[47px] mb-3 translate-x-[-8%] mx-auto lg:mx-0">
+                        <span className="font-mono text-center uppercase tracking-[11.5px] block w-[110px] lg:w-[140px] text-[47px] mb-3 lg:mb-6 translate-x-[-8%] mx-auto lg:mx-0">
                           <svg className="w-full" viewBox="0 0 500 140">
                             <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                             <text>
@@ -69,7 +69,7 @@ export default function Contact(initialData) {
                           </m.h1>
                         </div>
 
-                        <div className="w-[95%] lg:w-[90%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px] mb-12 text-center lg:text-left">
+                        <div className="w-[95%] lg:w-[100%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px] mb-12 text-center lg:text-left">
                           <p>{contact.heroText}</p>
                         </div>
 
@@ -127,7 +127,7 @@ export default function Contact(initialData) {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[10vw] pb-0 lg:pb-[6.25vw]">
+                <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[10vw] pb-0 lg:pb-[4.25vw]">
                   {contact.footerCtaTitle && (
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
                       <m.span variants={reveal} className="block text-base leading-[1.25] lg:text-xl lg:leading-[1.25]">{contact.footerCtaTitle}</m.span>

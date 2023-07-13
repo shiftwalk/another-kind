@@ -44,14 +44,13 @@ export default function Home(initialData) {
   return (
     <Layout>
       <NextSeo title={home.title} />
-
       <LazyMotion features={domAnimation}>
         <m.div
           initial="initial"
           animate="enter"
           exit="exit"
         >
-          <m.main className="pb-6 md:pb-16 xl:pb-24 pt-[80px] xl:pt-[99px]">           
+          <m.main className="pb-6 md:pb-16 xl:pb-24 pt-[80px] lg:pt-[90px] xl:pt-[99px]">           
             <m.article variants={fade}>
               <Container>
                 <div className="w-full mb-6 overflow-hidden">
@@ -147,7 +146,7 @@ export default function Home(initialData) {
 
                 <div className="flex flex-wrap mb-[10vw] lg:mb-[7.5vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
                   <Link scroll={false} href="/mission" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-8">
+                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-6">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
                         <div className="aspect-[10/13]">
                           <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={home.missionImage} />
@@ -155,13 +154,13 @@ export default function Home(initialData) {
                       </div>
                     </div>
 
-                    <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-2">01</span>
+                    <span className="block text-base leading-none 2xl:text-xl 2xl:leading-none w-full text-center mb-2">01</span>
 
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Mission</span>
                   </Link>
 
                   <Link scroll={false} href="/team" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-8">
+                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-6">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
                         <div className="aspect-[10/13]">
                           <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={home.teamImage} />
@@ -169,13 +168,13 @@ export default function Home(initialData) {
                       </div>
                     </div>
 
-                    <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-2">02</span>
+                    <span className="block text-base leading-none 2xl:text-xl 2xl:leading-none w-full text-center mb-2">02</span>
 
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Team</span>
                   </Link>
 
                   <Link scroll={false} href="/projects" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-8">
+                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-6">
                       <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
                         <div className="aspect-[10/13]">
                           <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 33vw" image={home.workImage} />
@@ -183,7 +182,7 @@ export default function Home(initialData) {
                       </div>
                     </div>
 
-                    <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-2">03</span>
+                    <span className="block text-base leading-none 2xl:text-xl 2xl:leading-none w-full text-center mb-2">03</span>
 
                     <span className="font-display block w-full text-center text-[8.2vw] md:text-[5vw] lg:text-[3.2vw] xl:text-[2.8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] xl:leading-[0.9]">Our Work</span>
                   </Link>

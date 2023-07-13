@@ -15,16 +15,16 @@ export default function Layout({ children }) {
     <>
       <LazyMotion features={domAnimation}>
         <m.div 
-          initial={{ y: '-135%', scaleY: 1.2, scaleX: 1.33, borderRadius: '0%' }}
-          animate={{ y: '-135%', scaleY: 1.2, scaleX: 1.33, borderRadius: '100%' }}
-          exit={{ y: 0, scaleY: 1.2, scaleX: 1.33, borderRadius: '0%' }}
-          transition={{ duration: 1, ease: [0.85, 0, 0.15, 1] }}
+          initial={{ y: '-100%', borderRadius: '0%' }}
+          animate={{ y: '-100%', borderRadius: '100%' }}
+          exit={{ y: 0, borderRadius: '0%' }}
+          transition={{ duration: 0.8, ease: [0.85, 0, 0.15, 1] }}
           className="fixed inset-0 bg-green z-[2000] flex items-center justify-center cursor-wait">
             <m.div 
-              initial={{ opacity: 0, scaleY: 0, scaleX: 0, rotate: 0 }}
-              animate={{ opacity: 0, scaleY: 0, scaleX: 0, rotate: 0 }}
-              exit={{ opacity: 1, scaleY: 0.8, scaleX: 0.75, rotate: 750 }}
-              transition={{ delay: 0.1, duration: 1, ease: [0.85, 0, 0.15, 1] }}
+              initial={{ opacity: 0, rotate: 0 }}
+              animate={{ opacity: 0, rotate: 0 }}
+              exit={{ opacity: 1, rotate: 750 }}
+              transition={{ delay: 0.1, duration: 0.8, ease: [0.85, 0, 0.15, 1] }}
               className="w-[20%] max-w-[200px]"
             >
               <SunnyIcon className={`w-full text-yellow`} />
@@ -32,16 +32,16 @@ export default function Layout({ children }) {
         </m.div>
 
         <m.div 
-          initial={{ y: 0, scaleY: 1.2, scaleX: 1.33, borderRadius: '0%' }}
-          animate={{ y: '135%', scaleY: 1.2, scaleX: 1.33, borderRadius: '100%' }}
-          exit={{ y: '135%', scaleY: 1.2, scaleX: 1.33, borderRadius: '100%' }}
-          transition={{ delay: 0.25, duration: 1, ease: [0.85, 0, 0.15, 1] }}
+          initial={{ y: 0, borderRadius: '0%' }}
+          animate={{ y: '100%', borderRadius: '100%' }}
+          exit={{ y: '100%', borderRadius: '100%' }}
+          transition={{ delay: 0.25, duration: 0.8, ease: [0.85, 0, 0.15, 1] }}
           className="fixed inset-0 bg-green z-[2000] flex items-center justify-center cursor-wait">
             <m.div 
-              initial={{ opacity: 1, scaleY: 0.8, scaleX: 0.75, rotate: 750 }}
-              animate={{ opacity: 0, scaleY: 0, scaleX: 0, rotate: 0 }}
-              exit={{ opacity: 0, scaleY: 0, scaleX: 0, rotate: 0 }}
-              transition={{ delay: 0.2, duration: 1, ease: [0.85, 0, 0.15, 1] }}
+              initial={{ opacity: 1, rotate: 750 }}
+              animate={{ opacity: 0, rotate: 0 }}
+              exit={{ opacity: 0, rotate: 0 }}
+              transition={{ delay: 0.2, duration: 0.8, ease: [0.85, 0, 0.15, 1] }}
               className="w-[20%] max-w-[200px]"
             >
               <SunnyIcon className={`w-full text-yellow`} />

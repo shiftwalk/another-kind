@@ -51,8 +51,8 @@ export default function Projects(initialData) {
             <m.article variants={fade}>
               <div className="relative bg-off-white">
                 <Container>
-                  <div className="flex flex-wrap justify-center pt-[100px] pb-[25vw] lg:py-[10vw]">
-                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[47px] mb-3">
+                  <div className="flex flex-wrap justify-center pt-[100px] pb-[25vw] lg:pt-[12.5vw] lg:pb-[10vw]">
+                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[47px] mb-3 lg:mb-6">
                       <svg className="w-full" viewBox="0 0 500 140">
                         <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                         <text>
@@ -76,7 +76,7 @@ export default function Projects(initialData) {
                     </div>
                   </div>
 
-                  <ul className="grid grid-cols-2 lg:px-[6vw] gap-[12vw] lg:gap-[5vw] mb-[10vw] lg:mb-[6.25vw] relative">
+                  <ul className="grid grid-cols-2 lg:px-[6vw] gap-[12vw] lg:gap-[5vw] lg:gap-y-[6.5vw] mb-[10vw] lg:mb-[3vw] relative">
                     <m.div style={{ rotateZ: rotateBadge }} className="absolute top-[-50px] lg:top-[-70px] left-[10%] lg:left-[9%] w-[120px] xl:w-[170px] p-3 z-[20] bg-orange text-yellow rounded-full">
                       <SunnyIcon className="w-full aspect-square" />
                     </m.div>
@@ -86,7 +86,7 @@ export default function Projects(initialData) {
                       return (
                         <li className="col-span-2 lg:col-span-1" key={i}>
                           <Link scroll={false} href={`/projects/${e.slug.current}`} className="group">
-                            <div className="relative overflow-hidden mb-4 lg:mb-8 rounded-2xl">
+                            <div className="relative overflow-hidden mb-4 lg:mb-6 rounded-2xl">
                               <div className={`absolute pointer-events-none inset-0 z-10 rounded-2xl border-[0vw] lg:group-hover:border-[1vw] transition-all ease-ak duration-[500ms] ${color}`} style={{ background: 'transparent'}}></div>
 
                               <div className="absolute inset-0 z-10 items-center justify-center hidden lg:flex lg:group-hover:scale-[1] scale-0 transition-transform ease-ak duration-[400ms]">
@@ -112,8 +112,8 @@ export default function Projects(initialData) {
                             </div>
 
                             {e.location && (
-                              <span className="block relative overflow-hidden lg:mb-1">
-                                <m.span variants={reveal} className="block text-base leading-[1.125] lg:text-xl lg:leading-[1.125] w-full text-center">{e.location}</m.span>
+                              <span className="block relative overflow-hidden">
+                                <m.span variants={reveal} className="block text-base leading-[1.25] lg:text-xl lg:leading-[1.25] w-full text-center">{e.location}</m.span>
                               </span>
                             )}
 

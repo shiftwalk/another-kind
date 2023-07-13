@@ -41,8 +41,8 @@ export default function Journal(initialData) {
             <m.article variants={fade}>
               <div className="relative bg-off-white">
                 <Container>
-                  <div className="flex flex-wrap justify-center pt-[100px] pb-[15vw] lg:py-[10vw]">
-                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[50px] mb-4">
+                  <div className="flex flex-wrap justify-center pt-[100px] pb-[15vw] lg:pt-[12.5vw] lg:pb-[10vw]">
+                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[50px] mb-4 lg:mb-8">
                       <svg className="w-full" viewBox="0 0 500 140">
                         <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                         <text>
@@ -85,8 +85,8 @@ export default function Journal(initialData) {
                               </div>
                               <div className="flex-1 relative z-10 mt-5">
                                 <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none mb-2 bg-blue text-off-white`}>{e.category.title}</span>
-                                <h2 className="text-3xl md:text-3xl xl:text-4xl leading-none md:leading-none xl:leading-none mb-3 pb-0">{e.title}</h2>
-                                <span className="text-sm md:text-base lg:text-lg leading-none md:leading-none lg:leading-none block">{da} {mo}, {ye}</span>
+                                <h2 className="text-3xl md:text-3xl xl:text-4xl leading-none md:leading-none xl:leading-none mb-3 pb-0 lg:max-w-[80%]">{e.title}</h2>
+                                <span className="text-sm md:text-sm lg:text-base leading-none md:leading-none lg:leading-none block">{da} {mo}, {ye}</span>
                               </div>
                             </Link>
                           </div>
@@ -96,7 +96,7 @@ export default function Journal(initialData) {
                   </div>
 
                  
-                  <div className="flex flex-wrap justify-center mb-[12vw] lg:mb-[8.5vw]">
+                  <div className="flex flex-wrap justify-center mb-[12vw] lg:mb-[6.5vw]">
                     {journalLanding.quoteTitle && (
                       <span className="block mb-8 overflow-hidden relative w-full text-center">
                         <m.span variants={reveal} className="block text-base leading-none lg:text-xl lg:leading-none">{journalLanding.quoteTitle}</m.span>
@@ -131,8 +131,8 @@ export default function Journal(initialData) {
                           </div>
                           <div className="flex-1 lg:pl-5 relative z-10 lg:group-hover:text-off-white">
                             <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none ${color} mb-2 transition-colors ease-ak duration-[350ms] lg:group-hover:bg-yellow lg:group-hover:text-green`}>{e.category.title}</span>
-                            <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none lg:leading-none mb-3 pb-0 lg:w-10/12">{e.title}</h2>
-                            <span className="text-sm md:text-base lg:text-lg leading-none md:leading-none lg:leading-none block">{da} {mo}, {ye}</span>
+                            <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none lg:leading-none mb-3 pb-0 lg:w-8/12">{e.title}</h2>
+                            <span className="text-sm md:text-sm lg:text-base leading-none md:leading-none lg:leading-none block">{da} {mo}, {ye}</span>
                             <div className={`w-[4vw] h-[4vw] max-w-[60px] max-h-[60px] hidden lg:flex absolute bottom-0 right-0 transition-colors ease-ak duration-[350ms] lg:group-hover:bg-yellow lg:group-hover:text-green ${color} p-[10px] flex items-center justify-center rounded-full`}>
                               <ArrowIcon className="w-full" />
                             </div>

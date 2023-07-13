@@ -52,7 +52,7 @@ export default function ProjectSlug(initialData) {
                     </div>
                   )}
 
-                  <div className="w-full mb-5 lg:flex lg:space-x-[4vw] pt-[12vw] lg:pt-[10.5vw]">
+                  <div className="w-full mb-5 lg:flex lg:space-x-[4vw] pt-[12vw] lg:pt-[8.5vw]">
                     {project.location && (
                       <div className="mb-5 lg:mb-0">
                         <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px] font-medium">Location</span>
@@ -69,7 +69,7 @@ export default function ProjectSlug(initialData) {
                       <div className="mb-5 lg:mb-0">
                         <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px] font-medium">Services</span>
                         <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">
-                          <div className="relative flex overflow-x-hidden w-2/3 max-w-[320px] lg:max-w-[550px]">
+                          <div className="relative flex overflow-x-hidden w-2/3 max-w-[320px] lg:max-w-[550px] remove-scroll">
                             <div className="absolute top-0 right-0 bottom-0 w-16 bg-gradient-to-r from-transparent to-off-white z-10"></div>
                             <div className="animate-marquee whitespace-nowrap">
                               <span clasName="">{project.services},&nbsp;</span>
@@ -138,7 +138,7 @@ export default function ProjectSlug(initialData) {
                     </div>
                   </div> */}
 
-                  <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[12.5vw] pb-[20vw] lg:pb-[12.5vw]">
+                  <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[10vw] pb-[20vw] lg:pb-[10vw]">
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
                       <m.span variants={reveal} className="block text-sm leading-none lg:text-xl lg:leading-none">Need a hand?</m.span>
                     </span>

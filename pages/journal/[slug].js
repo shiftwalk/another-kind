@@ -59,8 +59,8 @@ export default function JournalSlug(initialData) {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-2 lg:col-span-1">
-                    <div className="w-[90%] lg:w-[65%] lg:max-w-[520px] lg:mx-auto text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] break-words">
+                  <div className="col-span-2 lg:col-span-1 pt-[5vw]">
+                    <div className="w-[90%] lg:w-[65%] lg:max-w-[520px] lg:mx-auto text-base/[1.28] lg:text-base/[1.28] 2xl:text-xl/[1.28] break-words">
                       <p className="block mb-5 font-medium">{mainda} {mainmo} {mainye}</p>
 
                       <PortableText content={journal.content} className="content" />
@@ -94,8 +94,8 @@ export default function JournalSlug(initialData) {
                         </div>
                         <div className="flex-1 lg:pl-5 relative z-10 lg:group-hover:text-off-white">
                           <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none ${color} mb-2 transition-colors ease-ak duration-[350ms] lg:group-hover:bg-yellow lg:group-hover:text-green`}>{e.category.title}</span>
-                          <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none lg:leading-none mb-3 pb-0 lg:w-10/12">{e.title}</h2>
-                          <span className="text-sm md:text-base lg:text-lg leading-none md:leading-none lg:leading-none block">{da} {mo}, {ye}</span>
+                          <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none lg:leading-none mb-3 pb-0 lg:w-8/12">{e.title}</h2>
+                          <span className="text-sm md:text-sm lg:text-base leading-none md:leading-none lg:leading-none block">{da} {mo}, {ye}</span>
                           <div className={`w-[4vw] h-[4vw] max-w-[60px] max-h-[60px] hidden lg:flex absolute bottom-0 right-0 transition-colors ease-ak duration-[350ms] lg:group-hover:bg-yellow lg:group-hover:text-green ${color} p-[10px] flex items-center justify-center rounded-full`}>
                             <ArrowIcon className="w-full" />
                           </div>
@@ -108,7 +108,7 @@ export default function JournalSlug(initialData) {
 
               <Container>
                 <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false}>
-                  <div className="w-full flex justify-center mb-[0vw] lg:mb-[5vw]">
+                  <div className="w-full flex justify-center mb-[0vw] lg:mb-[3vw]">
                     <Link scroll={false} href="/journal" className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group outline-none border-none">
                       <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
                       <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
