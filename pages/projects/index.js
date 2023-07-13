@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { fade, reveal } from '@/helpers/transitions'
+import { fade, reveal, revealLtr, revealTtb } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m, useScroll, useTransform } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
@@ -52,7 +52,8 @@ export default function Projects(initialData) {
               <div className="relative bg-off-white">
                 <Container>
                   <div className="flex flex-wrap justify-center pt-[100px] pb-[25vw] lg:pt-[12.5vw] lg:pb-[10vw]">
-                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[47px] mb-3 lg:mb-6">
+                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[47px] mb-3 lg:mb-6 relative">
+                      <m.div variants={revealLtr} className="bg-off-white absolute inset-0"></m.div>
                       <svg className="w-full" viewBox="0 0 500 140">
                         <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                         <text>
@@ -64,14 +65,16 @@ export default function Projects(initialData) {
                     </span>
 
                     <div className="relative overflow-hidden w-full mb-6 lg:mb-8">
-                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[1] lg:leading-[1.1] xl:leading-[1.1] 2xl:leading-[1.1] text-center mb-0 pb-0 hero--projects">
+                      <h1 className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[1] lg:leading-[1.1] xl:leading-[1.1] 2xl:leading-[1.1] text-center mb-0 pb-0 hero--projects relative">
+                        <m.div variants={revealTtb} className="bg-off-white absolute inset-0 z-10"></m.div>  
                         <div className="translate-y-[-5%]">
                           <PortableText content={projectsLanding.heroHeading} />
                         </div>
-                      </m.h1>
+                      </h1>
                     </div>
 
-                    <div className="w-[95%] lg:w-[60%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px]">
+                    <div className="w-[95%] lg:w-[60%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px] relative">
+                      <m.div variants={revealTtb} className="bg-off-white absolute inset-0"></m.div>
                       <p>{projectsLanding.heroText}</p>
                     </div>
                   </div>

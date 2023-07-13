@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { fade, reveal } from '@/helpers/transitions'
+import { fade, reveal, revealLtr } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
@@ -42,7 +42,8 @@ export default function Journal(initialData) {
               <div className="relative bg-off-white">
                 <Container>
                   <div className="flex flex-wrap justify-center pt-[100px] pb-[15vw] lg:pt-[12.5vw] lg:pb-[10vw]">
-                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[50px] mb-4 lg:mb-8">
+                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[50px] mb-4 lg:mb-8 relative">
+                      <m.div variants={revealLtr} className="bg-off-white absolute inset-0"></m.div>
                       <svg className="w-full" viewBox="0 0 500 140">
                         <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                         <text>

@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { fade, reveal } from '@/helpers/transitions'
+import { fade, reveal, revealLtr } from '@/helpers/transitions'
 import { LazyMotion, domMax, m, useScroll, useTransform } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
@@ -67,7 +67,8 @@ export default function Team(initialData) {
                   <div className="w-full lg:w-1/2 order-2 lg:order-1 relative mb-[30vw] lg:mb-0">
                     <div className="flex flex-wrap justify-center lg:pt-[7.5vw] h-full lg:px-5">
                       <div className="lg:w-[80%] lg:max-w-[720px] lg:translate-x-[-5%] xl:translate-x-[-10%] relative z-10">
-                        <span className="font-mono text-center uppercase tracking-[11.5px] block w-[110px] lg:w-[140px] text-[47px] mb-6 lg:mb-10 translate-x-[-8%] mx-auto lg:mx-0">
+                        <span className="font-mono text-center uppercase tracking-[11.5px] block w-[110px] lg:w-[140px] text-[47px] mb-6 lg:mb-10 translate-x-[-8%] mx-auto lg:mx-0 relative">
+                          <m.div variants={revealLtr} className="bg-off-white absolute inset-0"></m.div>
                           <svg className="w-full" viewBox="0 0 500 140">
                             <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                             <text>
