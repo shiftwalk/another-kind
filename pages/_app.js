@@ -18,11 +18,11 @@ export default function App({ Component, pageProps }) {
 
   const introEnd = {
     visible: { y: 0 },
-    hidden: { y: '-100%' }
+    hidden: { y: '100%' },
   }
   const introBg = {
-    visible: { y: '0', scaleY: 1.2, scaleX: 1.33, borderRadius: '0%' },
-    hidden: { y: '-20%', scaleY: 1.2, scaleX: 1.33, borderRadius: '100%' }
+    visible: { y: '0', borderRadius: '0%' },
+    hidden: { y: '0', borderRadius: '0%' }
   }
   
   const introContainer = {
@@ -30,17 +30,17 @@ export default function App({ Component, pageProps }) {
     hidden: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.0275
+        staggerChildren: 0.035
       }
     }
   }
   const introContainerUnreveal = {
     visible: { opacity: 1 },
-    hidden: { opacity: 0 }
+    hidden: { opacity: 1 }
   }
   const introLetter = {
     visible: { opacity: 0 },
-    hidden: { opacity: 1, transition: { duration: 0.25, ease: [0.83, 0, 0.17, 1] }}
+    hidden: { opacity: 1, transition: { duration: 0.3, ease: [0.71,0,0.17,1] }}
   }
   const introFullEnd = {
     visible: { visibility: 'block' },
@@ -59,24 +59,24 @@ export default function App({ Component, pageProps }) {
                   initial="visible"
                   animate="hidden"
                   variants={introFullEnd}
-                  transition={{ delay: 2.75, duration: 0, ease: [0.83, 0, 0.17, 1] }}
+                  transition={{ delay: 2.25, duration: 0, ease: [0.71,0,0.17,1] }}
                   className="w-full h-full cursor-wait absolute inset-0"
                 >
                   <m.div 
                     initial="visible"
                     animate="hidden"
                     variants={introEnd}
-                    transition={{ delay: 1.75, duration: 1, ease: [0.83, 0, 0.17, 1] }}
-                    className="text-blue absolute inset-0 z-[1000] w-full h-full cursor-wait"
+                    transition={{ delay: 1.65, duration: 0.6, ease: [0.71,0,0.17,1] }}
+                    className="text-yellow absolute inset-0 z-[1000] w-full h-full cursor-wait"
 
                   >
-                    <m.div initial="visible" animate="hidden" variants={introBg} transition={{ delay: 1.75, duration: 1, ease: [0.83, 0, 0.17, 1] }} className="absolute inset-0 bg-green scale-125 rounded-full"></m.div>
+                    <m.div initial="visible" animate="hidden" variants={introBg} transition={{ delay: 1.75, duration: 1, ease: [0.71,0,0.17,1] }} className="absolute inset-0 bg-orange rounded-full"></m.div>
 
-                    <m.div initial="visible" animate="hidden" variants={introContainerUnreveal} transition={{ delay: 1.5, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
-                      <SunnyIcon className={`w-[55px] xl:w-[75px] absolute top-0 left-0 m-4 text-blue opacity-100 animate-sunny-spin`} />
+                    <m.div initial="visible" animate="hidden" variants={introContainerUnreveal} transition={{ delay: 1.5, duration: 0.6, ease: [0.71,0,0.17,1] }}>
+                      <SunnyIcon className={`w-[55px] xl:w-[75px] absolute top-0 left-0 m-4 text-yellow opacity-100 animate-sunny-spin`} />
                     </m.div>
 
-                    <m.div initial="visible" animate="hidden" variants={introContainerUnreveal} transition={{ delay: 1.65, duration: 0.6, ease: [0.83, 0, 0.17, 1] }} className="flex flex-wrap items-center justify-center w-full h-full">
+                    <m.div initial="visible" animate="hidden" variants={introContainerUnreveal} transition={{ delay: 1.65, duration: 0.6, ease: [0.71,0,0.17,1] }} className="flex flex-wrap items-center justify-center w-full h-full">
                       <m.div initial="visible" animate="hidden" variants={introContainer} className="w-10/12 md:w-8/12 lg:w-1/2">
                         <svg className="w-full" viewBox="0 0 670 196" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <m.path variants={introLetter} d="M19.725 104.4L0.86499 90.94L3.98499 86.54L18.865 97.18L24.265 89.61L28.265 92.46L19.725 104.4Z" fill="currentColor"/>

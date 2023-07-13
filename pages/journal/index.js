@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { fade, reveal, revealLtr } from '@/helpers/transitions'
+import { fade, reveal, revealLtr, revealTtb } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
@@ -58,7 +58,8 @@ export default function Journal(initialData) {
                       <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[1] lg:leading-[1] xl:leading-[1] 2xl:leading-[1] text-center mb-0 pb-0"><span className="block translate-y-[-11%]"><PortableText content={journalLanding.heroHeading} /></span></m.h1>
                     </div>
 
-                    <div className="w-[95%] lg:w-[60%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px]">
+                    <div className="w-[95%] lg:w-[60%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px] relative">
+                      <m.div variants={revealTtb} className="bg-off-white absolute inset-0"></m.div>
                       <p>{journalLanding.heroText}</p>
                     </div>
                   </div>

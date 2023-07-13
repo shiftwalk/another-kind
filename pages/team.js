@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { fade, reveal, revealLtr } from '@/helpers/transitions'
+import { fade, reveal, revealLtr, revealTtb } from '@/helpers/transitions'
 import { LazyMotion, domMax, m, useScroll, useTransform } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
@@ -99,7 +99,8 @@ export default function Team(initialData) {
                         </div>
 
                         {team.heroText && (
-                          <div className="w-[95%] lg:w-[90%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px] text-center lg:text-left">
+                          <div className="w-[95%] lg:w-[90%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px] text-center lg:text-left relative">
+                            <m.div variants={revealTtb} className="bg-off-white absolute inset-0"></m.div>
                             <p>{team.heroText}</p>
                           </div>
                         )}

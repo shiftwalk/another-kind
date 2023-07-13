@@ -35,7 +35,7 @@ export const revealLtr = {
 	initial: { x: 0 },
   enter: { 
     x: '100%',
-    transition: { delay: 0.28, duration: 0.75, ease: [0.71,0,0.17,1] }
+    transition: { delay: 0.3, duration: 0.75, ease: [0.71,0,0.17,1] }
   },
 	exit: {
     x: '100%'
