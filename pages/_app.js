@@ -65,22 +65,22 @@ export default function App({ Component, pageProps }) {
                   initial="visible"
                   animate="hidden"
                   variants={introFullEnd}
-                  transition={{ delay: 2.8, duration: 0, ease: [0.71,0,0.17,1] }}
+                  transition={{ delay: 2.7, duration: 0, ease: [0.71,0,0.17,1] }}
                   className="w-full h-full cursor-wait absolute inset-0"
                 >
                   <m.div 
                     initial="visible"
                     animate="hidden"
                     variants={introEnd}
-                    transition={{ delay: 2, duration: 0.8, ease: [0.71,0,0.17,1] }}
+                    transition={{ delay: 1.9, duration: 0.8, ease: [0.71,0,0.17,1] }}
                     className="text-yellow absolute inset-0 z-[1000] w-full h-full cursor-wait"
 
                   >
                     <div className="absolute inset-0 bg-green"></div>
 
-                    <m.div initial="visible" animate="hidden" variants={introContainerUnreveal} transition={{ delay: 1.5, duration: 0.6, ease: [0.71,0,0.17,1] }}>
+                    {/* <m.div initial="visible" animate="hidden" variants={introContainerUnreveal} transition={{ delay: 1.5, duration: 0.6, ease: [0.71,0,0.17,1] }}>
                       <SunnyIcon className={`w-[55px] xl:w-[75px] absolute top-0 left-0 m-4 text-yellow opacity-100 animate-sunny-spin`} />
-                    </m.div>
+                    </m.div> */}
 
                     <m.div initial="visible" animate="hidden" variants={introContainerUnreveal} transition={{ delay: 1.65, duration: 0.6, ease: [0.71,0,0.17,1] }} className="flex flex-wrap items-center justify-center w-full h-full">
                       <m.div initial="visible" animate="hidden" variants={introContainer} className="w-10/12 md:w-8/12 lg:w-1/2 relative">
