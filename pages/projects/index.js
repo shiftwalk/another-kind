@@ -65,12 +65,11 @@ export default function Projects(initialData) {
                     </span>
 
                     <div className="relative overflow-hidden w-full mb-6 lg:mb-8">
-                      <h1 className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[1] lg:leading-[1.1] xl:leading-[1.1] 2xl:leading-[1.1] text-center mb-0 pb-0 hero--projects relative">
-                        <m.div variants={revealTtb} className="bg-off-white absolute inset-0 z-10"></m.div>  
+                      <m.h1 variants={reveal} className="text-[15vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[10vw] leading-[1] lg:leading-[1.1] xl:leading-[1.1] 2xl:leading-[1.1] text-center mb-0 pb-0 hero--projects">
                         <div className="translate-y-[-5%]">
                           <PortableText content={projectsLanding.heroHeading} />
                         </div>
-                      </h1>
+                      </m.h1>
                     </div>
 
                     <div className="w-[95%] lg:w-[60%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px] relative">
