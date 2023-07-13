@@ -54,7 +54,7 @@ export default function Home(initialData) {
             <m.article variants={fade}>
               <Container>
                 <div className="w-full mb-6 overflow-hidden">
-                  <m.div variants={revealNoTransition} transition={{ delay: introContext ? 0 : 2.3, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
+                  <m.div variants={revealNoTransition} transition={{ delay: introContext ? 0.25 : 2.3, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
                     <LogoIcon className="w-full" />
                   </m.div>
                 </div>

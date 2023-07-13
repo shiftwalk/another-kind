@@ -18,13 +18,13 @@ export default function Layout({ children }) {
           initial={{ y: '-100%', borderRadius: '0%' }}
           animate={{ y: '-100%', borderRadius: '100%' }}
           exit={{ y: 0, borderRadius: '0%' }}
-          transition={{ duration: 0.66, ease: [0.86, 0, 0.07, 1] }}
+          transition={{ duration: 0.66, ease: [0.71,0,0.17,1] }}
           className="fixed inset-0 bg-green z-[2000] flex items-center justify-center cursor-wait">
             <m.div 
-              initial={{ opacity: 0, rotate: 0 }}
-              animate={{ opacity: 0, rotate: 0 }}
-              exit={{ opacity: 1, rotate: 130 }}
-              transition={{ delay: 0.1, duration: 0.66, ease: [0.86, 0, 0.07, 1] }}
+              initial={{ opacity: 0, rotate: -90 }}
+              animate={{ opacity: 0, rotate: -90 }}
+              exit={{ opacity: 1, rotate: 33 }}
+              transition={{ delay: 0.1, duration: 0.66, ease: [0.71,0,0.17,1] }}
               className="w-[20%] max-w-[200px]"
             >
               <SunnyIcon className={`w-full text-yellow`} />
@@ -35,13 +35,13 @@ export default function Layout({ children }) {
           initial={{ y: 0, borderRadius: '0%' }}
           animate={{ y: '100%', borderRadius: '0%' }}
           exit={{ y: '100%', borderRadius: '0%' }}
-          transition={{ delay: 0.2, duration: 0.66, ease: [0.86, 0, 0.07, 1] }}
+          transition={{ delay: 0.2, duration: 0.66, ease: [0.71,0,0.17,1] }}
           className="fixed inset-0 bg-green z-[2000] flex items-center justify-center cursor-wait">
             <m.div 
-              initial={{ opacity: 1, rotate: 130 }}
-              animate={{ opacity: 0, rotate: 0 }}
-              exit={{ opacity: 0, rotate: 0 }}
-              transition={{ delay: 0.15, duration: 0.66, ease: [0.86, 0, 0.07, 1] }}
+              initial={{ opacity: 1, rotate: 33 }}
+              animate={{ opacity: 0, rotate: -90 }}
+              exit={{ opacity: 0, rotate: -90 }}
+              transition={{ delay: 0.15, duration: 0.66, ease: [0.71,0,0.17,1] }}
               className="w-[20%] max-w-[200px]"
             >
               <SunnyIcon className={`w-full text-yellow`} />
