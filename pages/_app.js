@@ -70,7 +70,7 @@ export default function App({ Component, pageProps }) {
                     className="text-yellow absolute inset-0 z-[1000] w-full h-full cursor-wait"
 
                   >
-                    <m.div initial="visible" animate="hidden" variants={introBg} transition={{ delay: 1.75, duration: 1, ease: [0.71,0,0.17,1] }} className="absolute inset-0 bg-orange rounded-full"></m.div>
+                    <m.div initial="visible" animate="hidden" variants={introBg} transition={{ delay: 1.75, duration: 1, ease: [0.71,0,0.17,1] }} className="absolute inset-0 bg-green rounded-full"></m.div>
 
                     <m.div initial="visible" animate="hidden" variants={introContainerUnreveal} transition={{ delay: 1.5, duration: 0.6, ease: [0.71,0,0.17,1] }}>
                       <SunnyIcon className={`w-[55px] xl:w-[75px] absolute top-0 left-0 m-4 text-yellow opacity-100 animate-sunny-spin`} />
