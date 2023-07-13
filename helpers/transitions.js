@@ -24,7 +24,7 @@ export const revealTtb = {
 	initial: { y: 0 },
   enter: { 
     y: '100%',
-    transition: { delay: 0.25, duration: 0.88, ease: [0.71,0,0.17,1] }
+    transition: { delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }
   },
 	exit: {
     y: '100%'
