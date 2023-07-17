@@ -39,7 +39,7 @@ export default function SanityImage({ image, className, alt, priority, widthOver
 		  <Image
         src={imageProps.src}
         loader={imageProps.loader}
-        className={`will-change-transform transition-all ease-in-out duration-[1500ms] ${imageIsLoaded ? 'scale-1 opacity-100' : 'scale-[1.05]'} ${priority ? 'opacity-0' : ''}`}
+        className={`will-change-transform transition-all ease-in-out duration-[1500ms] ${imageIsLoaded ? 'scale-1' : 'scale-[1.05]'} ${priority ? 'opacity-100' : ''}`}
         {...(priority ? {
           priority: true} : {}
         )}
