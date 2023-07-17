@@ -16,7 +16,7 @@ export default function Footer({ image, noLerp }) {
     <div ref={ref}>
       {image && (
         <div className="w-full relative overflow-hidden aspect-[13/10] lg:aspect-[17/10]">
-          <SanityImageScale quality={85} invert fill sizes="(max-width: 1024px) 100vw, 90vw" image={image} />
+          <SanityImageScale quality={85} footerOffset fill sizes="(max-width: 1024px) 100vw, 90vw" image={image} />
         </div>
       )}
       <m.footer style={{ y: image ? lerpBadge : null }} className="bg-yellow text-black pb-3 lg:pb-4 relative" >

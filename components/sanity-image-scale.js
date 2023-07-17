@@ -3,13 +3,22 @@ import { useRef, useState } from 'react'
 import SanityImage from './sanity-image';
 import SanityImageResponsive from './sanity-image-responsive';
 
-export default function SanityImageScale({ image, p, alt, fill, sizes, invert, heroOffset, quality }) {
+export default function SanityImageScale({ image, p, alt, fill, sizes, invert, heroOffset, footerOffset, quality }) {
   const ref = useRef(null)
   const [imageIsLoaded, setImageIsLoaded] = useState(false)
 
+  let offset = ["start end", "end start"]
+  heroOffset && (
+    offset = ["-20%", "end start"]
+  )
+
+  footerOffset && (
+    offset = ["-200%", "end"]
+  )
+
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: heroOffset ? ["-20%", "end start"] : ["start end", "end start"]
+    offset: offset
   })
   
   const scale = useTransform(scrollYProgress,[0, 1],[invert ? 1 : 1.2, invert ? 1.2 : 1],{ clamp: false })
