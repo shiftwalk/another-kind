@@ -101,14 +101,14 @@ export default function Projects(initialData) {
                               <div className="relative overflow-hidden mb-4 lg:mb-6 rounded-2xl z-10">
                                 <div className={`absolute pointer-events-none inset-0 z-10 rounded-2xl transition-all ease-ak duration-[500ms]`} style={{ background: 'transparent'}}></div>
 
-                                {/* <div className="absolute inset-0 z-10 items-center justify-center hidden lg:flex lg:group-hover:scale-[1] scale-0 transition-transform ease-ak duration-[400ms]">
+                                <div className="absolute inset-0 z-10 items-center justify-center hidden lg:flex lg:group-hover:scale-[1] scale-0 transition-transform ease-ak duration-[650ms]">
                                   <div className={`w-[140px] xl:w-[180px] aspect-square rounded-full flex items-center justify-center ${color} scale-[0] lg:group-hover:scale-[1] transition-transform ease-ak duration-[500ms]`}>
                                     <div className={`w-full text-center -mt-3 lg:-mt-5`}>
                                       <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
                                       <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">See More!</span>
                                     </div>
                                   </div>
-                                </div> */}
+                                </div>
 
                                 <div className="relative overflow-hidden">
                                   <div className="lg:group-hover:scale-[1.05] transition-transform ease-ak duration-[600ms]">
