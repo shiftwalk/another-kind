@@ -62,7 +62,7 @@ export default function Home(initialData) {
                 <div className="flex flex-wrap items-end mb-[20vw] lg:mb-[10.5vw] max-w-[1920px]" ref={ref}>
                   <div className="w-full lg:w-1/2 mb-[100px] lg:mb-0 relative">
                     <div className="w-full relative overflow-hidden rounded-xl aspect-[10/9]">
-                      <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 70vw" image={home.heroImage} p />
+                      <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 70vw" image={home.heroImage} p invert />
                     </div>
             
                     <m.div style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[33%] max-w-[220px] will-change-transform hidden lg:block">

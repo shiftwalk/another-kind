@@ -117,7 +117,7 @@ export default function Team(initialData) {
                     </m.div>
                     <div className="w-full relative overflow-hidden rounded-xl">
                       <div className="aspect-[10/9] lg:aspect-[10/11]">
-                        <SanityImageScale p fill sizes="(max-width: 1024px) 100vw, 65vw" image={team.heroImage} />
+                        <SanityImageScale p invert heroOffset fill sizes="(max-width: 1024px) 100vw, 65vw" image={team.heroImage} />
                       </div>
                     </div>
                   </div>

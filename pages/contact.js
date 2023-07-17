@@ -44,7 +44,7 @@ export default function Contact(initialData) {
                     </m.div>
                     <div className="w-full relative overflow-hidden rounded-xl">
                       <div className="aspect-[11/10] lg:aspect-[10/11]">
-                        <SanityImageScale p fill sizes="(max-width: 1024px) 100vw, 55vw" image={contact.heroImage} />
+                        <SanityImageScale p invert heroOffset fill sizes="(max-width: 1024px) 100vw, 55vw" image={contact.heroImage} />
                       </div>
                     </div>
                   </div>
