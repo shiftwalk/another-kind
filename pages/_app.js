@@ -9,6 +9,7 @@ import { Lenis as ReactLenis } from '@studio-freight/react-lenis'
 import { PPEditorialNewItalic, Sohne, VCGaramondCondensed, Verlag } from '@/helpers/fonts';
 import { IntroContext } from '@/context/intro'
 import { useEffect, useState } from 'react';
+import Div100vh from 'react-div-100vh';
 
 // import FPSStats from "react-fps-stats";
 
@@ -60,7 +61,7 @@ export default function App({ Component, pageProps }) {
 
           <LazyMotion features={domAnimation}>
             { !introContext && router.asPath == '/' && (
-              <div className={`fixed inset-0 z-[2100] flex flex-wrap items-end ${ introContext ? 'cursor-wait' : 'cursor-default' }`}>
+              <Div100vh className={`fixed inset-0 z-[2100] flex flex-wrap items-end ${ introContext ? 'cursor-wait' : 'cursor-default' }`}>
                 <m.div 
                   initial="visible"
                   animate="hidden"
@@ -124,7 +125,7 @@ export default function App({ Component, pageProps }) {
                     </m.div>
                   </m.div>
                 </m.div>
-              </div>
+              </Div100vh>
             )}
           </LazyMotion>          
 

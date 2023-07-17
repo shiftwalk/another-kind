@@ -21,7 +21,7 @@ export default function SanityImageScale({ image, p, alt, fill, sizes, invert, h
     offset: offset
   })
   
-  const scale = useTransform(scrollYProgress,[0, 1],[invert ? 1 : 1.2, invert ? 1.2 : 1],{ clamp: false })
+  const scale = useTransform(scrollYProgress,[0, 1],[invert ? 1 : 1.125, invert ? 1.125 : 1],{ clamp: false })
   
   return (
     <m.div style={{ scale: scale }} className={`will-change-transform bg-orange overflow-hidden ${ fill ? 'absolute inset-0 w-full h-full' : 'relative' }`}>

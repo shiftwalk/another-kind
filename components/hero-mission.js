@@ -1,9 +1,9 @@
 import { m, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { reveal } from '@/helpers/transitions';
-import Image from 'next/image';
 import PortableText from 'react-portable-text';
 import SanityImage from './sanity-image';
+import Div100vh from 'react-div-100vh';
 
 export default function HeroMission({ image, headingLine1, headingLine2 }) {
   const ref = useRef(null)
@@ -22,7 +22,7 @@ export default function HeroMission({ image, headingLine1, headingLine2 }) {
   return (
     <>
       <div className="w-full h-[300dvh] fixed inset-0 z-[10] bg-off-white" ref={ref}>
-        <div className="w-full h-[100vh] flex flex-col overflow-hidden absolute inset-0 pt-[0px] xl:pt-[0px]">
+        <Div100vh className="w-full h-[100vh] flex flex-col overflow-hidden absolute inset-0 pt-[0px] xl:pt-[0px]">
           <div className="w-full h-full flex flex-col relative">
             <div className="w-full overflow-hidden relative z-[1] pt-[82px] mt-[3.5dvh]">
               <div className="relative overflow-hidden">
@@ -58,7 +58,7 @@ export default function HeroMission({ image, headingLine1, headingLine2 }) {
               </div>
             </div>
           </div>
-        </div>
+        </Div100vh>
       </div>
     </>
   )

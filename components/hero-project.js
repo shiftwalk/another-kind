@@ -1,9 +1,8 @@
 import { m, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import SunnyIcon from "@/icons/sunny.svg";
-import { reveal } from '@/helpers/transitions';
-import Image from 'next/image';
 import SanityImageScale from './sanity-image-scale';
+import Div100vh from 'react-div-100vh';
 
 export default function HeroProject({ image, heading }) {
   const ref = useRef(null)
@@ -16,7 +15,7 @@ export default function HeroProject({ image, heading }) {
   
   return (
     <>
-      <div className="w-full h-[100dvh] fixed inset-0 z-[10] bg-off-white" ref={ref}>
+      <Div100vh className="w-full h-[100dvh] fixed inset-0 z-[10] bg-off-white" ref={ref}>
         <m.div style={{ scale: scale  }} className={`w-full h-full absolute inset-0`}>
           { image ? (
           <SanityImageScale p fill sizes="(max-width: 1024px) 100vw, 100vw"   image={image} />
@@ -38,7 +37,7 @@ export default function HeroProject({ image, heading }) {
         <div className="absolute left-0 lg:left-auto bottom-6 right-0 lg:right-6 z-10 w-full text-center lg:text-right lg:w-auto">
           <span className="text-base lg:text-xl text-yellow">Scroll to explore</span>
         </div>
-      </div>
+      </Div100vh>
     </>
   )
 }

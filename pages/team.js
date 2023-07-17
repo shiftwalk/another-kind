@@ -37,6 +37,11 @@ export default function Team(initialData) {
   const rotate = useTransform(scrollY, [0, 1000], ['-20deg', '360deg'], { clamp: false })
   const moveY = useTransform(scrollYProgress,[0, 1],['0%', '-100%'],{ clamp: true })
 
+  const draw = {
+    initial: { pathLength: 0 },
+    enter: { pathLength: 1, transition: { delay: 0.2, duration: 1, ease: [0.71,0,0.17,1] }},
+  };
+
   useEffect(() => {
     setIntroContext(true)
   }, [setIntroContext]);
@@ -105,7 +110,12 @@ export default function Team(initialData) {
                         )}
                       </div>
 
-                      <SquiggleTeamIcon className="w-[70%] absolute left-0 bottom-[-40vw] lg:bottom-[-10vw] xl:bottom-[-5vw] 2xl:bottom-[0] -translate-x-5 z-10" />
+                      {/* <SquiggleTeamIcon className="w-[70%] absolute left-0 bottom-[-40vw] lg:bottom-[-10vw] xl:bottom-[-5vw] 2xl:bottom-[0] -translate-x-5 z-10" /> */}
+
+                      <m.svg className="w-[70%] absolute left-0 bottom-[-40vw] lg:bottom-[-10vw] xl:bottom-[-5vw] 2xl:bottom-[0] -translate-x-5 z-10" viewBox="0 0 750 316" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <m.path variants={draw} d="M11.8027 76.8723C36.5866 63.368 59.6574 47.1272 83.6404 32.4438C97.9678 24.1231 123.619 7.37066 140.327 11.7312C158.526 17.4043 155.011 50.976 153.743 65.9932C152.319 79.8534 151.14 93.7582 150.739 107.73C149.849 140.701 152.564 187.977 192.164 197.432C225.781 204.841 265.092 188.489 295.46 175.274C346.897 151.736 394.885 121.813 441.872 90.7993C453.53 83.2574 466.055 76.7388 478.647 70.7542C578.828 23.7449 678.987 26.9486 717.275 144.817C734.362 197.699 736.52 254.141 735.029 309.316" stroke="black" stroke-width="3"/>
+                      </m.svg>
+
                     </div>
                   </div>
 

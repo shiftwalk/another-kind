@@ -9,6 +9,7 @@ import Link from 'next/link'
 import FancyLink from '@/components/fancyLink'
 import { IntroContext } from '@/context/intro'
 import { useContext, useEffect } from 'react'
+import Div100vh from 'react-div-100vh'
 
 export default function Menu() {
   const [introContext, setIntroContext] = useContext(IntroContext);
@@ -29,7 +30,7 @@ export default function Menu() {
         >
           <m.main className="">
             <m.article variants={fade}>
-              <div className="w-[100vw] relative bg-orange text-off-white h-screen flex items-center justify-center overflow-hidden">
+              <Div100vh className="w-[100vw] relative bg-orange text-off-white h-screen flex items-center justify-center overflow-hidden">
                 <div className={`absolute bottom-2 right-3`}>
                   <m.div variants={scaleSunny} className="w-[100%] max-w-[125px]">
                     <SunnyIcon className="w-full text-yellow aspect-square" />
@@ -38,7 +39,7 @@ export default function Menu() {
 
                 <div className={`absolute left-3 bottom-2`}>
                   <nav className="ml-auto flex space-x-2 xl:space-x-3 w-full text-base xl:text-xl xl:leading-none lg:w-auto order-2 lg:order-3 justify-center lg:justify-end mb-2 lg:mb-0">
-                    <a href="https://example.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.instagram.com/anotherkind_architects/?hl=en" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     <SunIcon className="w-5 mt-[2px]" />
                     <a href="https://example.com" target="_blank" rel="noopener noreferrer">Instagram</a>
                   </nav>
@@ -116,7 +117,7 @@ export default function Menu() {
                     </ul>
                   </Container>
                 </div>
-              </div>
+              </Div100vh>
             </m.article>
           </m.main>
         </m.div>

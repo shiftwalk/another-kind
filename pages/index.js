@@ -146,10 +146,14 @@ export default function Home(initialData) {
 
                 <div className="flex flex-wrap mb-[10vw] lg:mb-[7.5vw] px-[10vw] lg:px-[8vw] lg:space-x-[5vw]">
                   <Link scroll={false} href="/mission" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-6">
-                      <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
-                        <div className="aspect-[10/13]">
-                          <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={home.missionImage} />
+                    <div className="relative">
+                      <div className={`absolute inset-0 bg-yellow z-[8] h-[100%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] lg:group-hover:delay-[0ms] group-hover:rotate-[3deg]`}></div>
+
+                      <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-6 z-10">
+                        <div className="transition-translate ease-ak duration-[750ms] group-hover:scale-[1.05]">
+                          <div className="aspect-[10/13]">
+                            <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={home.missionImage} />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -160,10 +164,14 @@ export default function Home(initialData) {
                   </Link>
 
                   <Link scroll={false} href="/team" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-6">
-                      <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
-                        <div className="aspect-[10/13]">
-                          <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={home.teamImage} />
+                    <div className="relative">
+                      <div className={`absolute inset-0 bg-yellow z-[8] h-[100%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] lg:group-hover:delay-[0ms] group-hover:rotate-[-3deg]`}></div>
+
+                      <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-6 z-10">
+                        <div className="transition-translate ease-ak duration-[750ms] group-hover:scale-[1.05]">
+                          <div className="aspect-[10/13]">
+                            <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={home.teamImage} />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -174,10 +182,14 @@ export default function Home(initialData) {
                   </Link>
 
                   <Link scroll={false} href="/projects" className="w-full lg:flex-1 mb-12 lg:mb-0 group">
-                    <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-6">
-                      <div className="transition-translate ease-ak duration-[500ms] group-hover:scale-[1.1]">
-                        <div className="aspect-[10/13]">
-                          <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 33vw" image={home.workImage} />
+                    <div className="relative">
+                      <div className={`absolute inset-0 bg-yellow z-[8] h-[100%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] lg:group-hover:delay-[0ms] group-hover:rotate-[3deg]`}></div>
+
+                        <div className="w-full relative overflow-hidden rounded-xl mb-4 lg:mb-6 z-10">
+                        <div className="transition-translate ease-ak duration-[750ms] group-hover:scale-[1.05]">
+                          <div className="aspect-[10/13]">
+                            <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 33vw" image={home.workImage} />
+                          </div>
                         </div>
                       </div>
                     </div>

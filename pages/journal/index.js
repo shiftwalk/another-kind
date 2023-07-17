@@ -76,11 +76,15 @@ export default function Journal(initialData) {
                         <div className="col-span-2 lg:col-span-1" key={i}>
                           <div className="w-full block relative">
                             <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full block border-b border-black lg:border-none pb-5 lg:pb-0 mb-0`}>
-                              <div className="w-full relative z-10">
-                                <div className="relative overflow-hidden rounded-xl">
-                                  <div className="lg:group-hover:scale-[1.05] transition-transform ease-ak duration-[750ms]">
-                                    <div className="aspect-[14/10]">
-                                      <SanityImageScale image={e.images[0]} fill sizes="(max-width: 1024px) 100vw, 50vw" />
+                              <div className="relative">
+                                <div className={`absolute inset-0 ${ i == 0 ? 'bg-yellow' : 'bg-orange'} z-[8] h-[100%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] lg:group-hover:delay-[0ms] ${ i == 0 ? 'lg:group-hover:rotate-[-3deg]' : 'lg:group-hover:rotate-[3deg]' }`}></div>
+
+                                <div className="w-full relative z-10">
+                                  <div className="relative overflow-hidden rounded-xl">
+                                    <div className="lg:group-hover:scale-[1.05] transition-transform ease-ak duration-[750ms]">
+                                      <div className="aspect-[14/10]">
+                                        <SanityImageScale image={e.images[0]} fill sizes="(max-width: 1024px) 100vw, 50vw" />
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
