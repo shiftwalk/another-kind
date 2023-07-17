@@ -7,7 +7,7 @@ export default function SanityImageScale({ image, p, alt, fill, sizes, invert, h
   const ref = useRef(null)
   const [imageIsLoaded, setImageIsLoaded] = useState(false)
 
-  let offset = ["start end", "end start"]
+  let offset = ["start end", "-50%"]
   heroOffset && (
     offset = ["-20%", "end start"]
   )
