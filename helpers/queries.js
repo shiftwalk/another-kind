@@ -96,8 +96,9 @@ export const projectsLandingQuery = `{
         asset->
       }
     },
-    "projects": *[_type == "projects"]{
+    "projects": *[_type == "projects"] | order(orderRank asc) {
       title,
+      orderRank,
       location,
       heroImage {
         asset-> {
@@ -432,6 +433,9 @@ export const projectQuery = `{
     location,
     type,
     services,
+    servicess[]-> {
+      title
+    },
     overview,
     seo {
       ...,

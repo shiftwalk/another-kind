@@ -31,12 +31,10 @@ export default function Mission(initialData) {
   const lenis = useLenis();
 
   function openManifesto() {
-    lenis.scrollTo(0, { duration: 0.6 })
     setManifestoOpen(true)
   }
 
   function closeManifesto() {
-    lenis.scrollTo(0, { duration: 0.6 })
     setManifestoOpen(false)
   }
 
@@ -73,13 +71,16 @@ export default function Mission(initialData) {
             <m.article variants={fade}>
               <MissionManifesto manifestoOpen={manifestoOpen} openManifesto={openManifesto} closeManifesto={closeManifesto} items={mission.manifestoItems} />
 
+              
               <m.button
-                whileHover={{ scale: 1.15, transition:{ duration: 0.6, ease: [0.83, 0, 0.17, 1]} }}
+                whileHover={{ scale: 1.15, transition:{ duration: 0.6, ease: [0.71,0,0.17,1]} }}
                 onClick={openManifesto}
                 style={{ x: moveX, y: moveY, rotate: rotate  }}
                 className="fixed w-[140px] lg:w-[160px] 2xl:w-[180px] bottom-5 right-5 z-[100] hidden lg:block outline-none border-none"
               >
-                <ManifestoBadgeIcon className="w-full" />
+                <m.div variants={scale} transition={{ delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }}>
+                  <ManifestoBadgeIcon className="w-full" />
+                </m.div>
               </m.button>
               
               {/* Fake */}
@@ -153,7 +154,7 @@ export default function Mission(initialData) {
                     <div className="w-full relative overflow-hidden">
                       <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false} isAbsolutelyPositioned={true} zIndex={10} >
                         <div className="absolute inset-0 z-10 flex items-center justify-center">
-                          <Link scroll={false} href="/projects" className="w-[140px] xl:w-[180px] aspect-square bg-yellow text-green rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
+                          <Link scroll={false} href="/projects" className="w-[140px] xl:w-[180px] aspect-square bg-yellow text-green hover:text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
                             <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
                             <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
                               <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
@@ -206,7 +207,7 @@ export default function Mission(initialData) {
 
                               {e.text && (
                                 <div className="w-full">                          
-                                  <span className="font-display text-[5.2vw] md:text-[3vw] lg:text-[1.75vw] leading-[1.1] lg:leading-[1.1] flex flex-wrap overflow-hidden justify-center">
+                                  <span className="font-display text-[5vw] md:text-[2.7vw] lg:text-[1.6vw] leading-[1.175] lg:leading-[1.175] flex flex-wrap overflow-hidden justify-center">
                                     <SplitTextHover>
                                     {e.text}
                                     </SplitTextHover>
@@ -237,7 +238,7 @@ export default function Mission(initialData) {
                     <div className="w-full relative overflow-hidden">
                       <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false} isAbsolutelyPositioned={true} zIndex={10}>
                         <div className="absolute inset-0 z-10 flex items-center justify-center">
-                          <Link scroll={false} href="/projects" className="w-[140px] xl:w-[180px] aspect-square bg-yellow text-green rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
+                          <Link scroll={false} href="/projects" className="w-[140px] xl:w-[180px] aspect-square bg-yellow text-green hover:text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
                             <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
                             <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
                               <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
@@ -302,10 +303,7 @@ export default function Mission(initialData) {
         
           <m.div variants={fade}>
             <div className="overflow-hidden bg-off-white z-[10] relative">
-              <div className="w-full relative overflow-hidden aspect-[13/10] lg:aspect-[17/10]">
-                <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 90vw" image={mission.footerImage} />
-              </div>
-              <Footer />
+              <Footer image={mission.footerImage} />
             </div>
           </m.div>
         </m.div>

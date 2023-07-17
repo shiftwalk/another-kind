@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { fade, reveal, revealLtr, revealTtb } from '@/helpers/transitions'
+import { fade, reveal, revealLtr, revealTtb, scale } from '@/helpers/transitions'
 import { LazyMotion, domMax, m, useScroll, useTransform } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
@@ -23,6 +23,7 @@ const pageService = new SanityPageService(teamQuery)
 
 export default function Team(initialData) {
   const { data: { team }  } = pageService.getPreviewHook(initialData)()
+  const [introContext, setIntroContext] = useContext(IntroContext);
 
   // const [currentImage, setCurrentImage] = useState(0);
   const scrollerRef = useRef(null)
@@ -36,11 +37,9 @@ export default function Team(initialData) {
   const rotate = useTransform(scrollY, [0, 1000], ['-20deg', '360deg'], { clamp: false })
   const moveY = useTransform(scrollYProgress,[0, 1],['0%', '-100%'],{ clamp: true })
 
-  const [introContext, setIntroContext] = useContext(IntroContext);
-
   useEffect(() => {
     setIntroContext(true)
-  });
+  }, [setIntroContext]);
   
   // function nextImage() {
   //   setCurrentImage(currentImage == 2 ? 0 : currentImage + 1)
@@ -100,19 +99,21 @@ export default function Team(initialData) {
 
                         {team.heroText && (
                           <div className="w-[95%] lg:w-[90%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px] text-center lg:text-left relative">
-                            <m.div variants={revealTtb} className="bg-off-white absolute inset-0"></m.div>
+                            <m.div variants={revealTtb} className="absolute inset-0 bg-gradient-to-b from-off-white via-off-white to-transparent via-[70%]"></m.div>
                             <p>{team.heroText}</p>
                           </div>
                         )}
                       </div>
 
-                      <SquiggleTeamIcon className="w-[70%] absolute left-0 bottom-[-40vw] lg:bottom-[-10vw] xl:bottom-[-5vw] 2xl:bottom-[0] -translate-x-5" />
+                      <SquiggleTeamIcon className="w-[70%] absolute left-0 bottom-[-40vw] lg:bottom-[-10vw] xl:bottom-[-5vw] 2xl:bottom-[0] -translate-x-5 z-10" />
                     </div>
                   </div>
 
                   <div className="w-full lg:w-1/2 mb-16 lg:mb-0 relative order-1 lg:order-2">
-                    <m.div style={{ rotateZ: rotate }} className="w-[115px] xl:w-[170px] rotate-12 aspect-square absolute bottom-[-55px] left-5 lg:bottom-auto lg:top-[10%] lg:left-[-10%] z-10 rounded-full bg-yellow text-green p-3">
-                      <SunnyIcon className="w-[100%] aspect-square" />
+                    <m.div variants={scale} transition={{ delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }} className="absolute bottom-[-55px] left-5 lg:bottom-auto lg:top-[10%] lg:left-[-10%] z-10">
+                      <m.div style={{ rotateZ: rotate }} className="w-[115px] xl:w-[170px] rotate-12 aspect-square rounded-full bg-yellow text-green p-3">
+                        <SunnyIcon className="w-[100%] aspect-square" />
+                      </m.div>
                     </m.div>
                     <div className="w-full relative overflow-hidden rounded-xl">
                       <div className="aspect-[10/9] lg:aspect-[10/11]">
@@ -162,7 +163,7 @@ export default function Team(initialData) {
                               </div>
 
                               {e.bio && (
-                                <span className="font-display text-[5.2vw] md:text-[3vw] lg:text-[1.75vw] leading-[1.16] lg:leading-[1.16] flex flex-wrap overflow-hidden justify-center">
+                                <span className="font-display text-[5.2vw] md:text-[2.8vw] lg:text-[1.6vw] leading-[1.2] lg:leading-[1.2] flex flex-wrap overflow-hidden justify-center">
                                   “
                                   <SplitTextHover>
                                     {e.bio}

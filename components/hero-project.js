@@ -27,12 +27,12 @@ export default function HeroProject({ image, heading }) {
 
         <div className="absolute inset-0 w-full flex items-center justify-center z-10 text-center">
           <div className="relative mt-[-3vw]">
-            <m.h1 style={{ y: move }} className="block font-display text-[16.5vw] lg:text-[17.5vw] 2xl:text-[280px] text-yellow leading-[1.2] lg:leading-[1.2] 2xl:leading-[1.2] mb-0 pb-0">{heading}</m.h1>
+            <m.h1 style={{ y: move }} className="block font-display text-[16.5vw] lg:text-[17.5vw] 2xl:text-[280px] text-yellow leading-[0.75] lg:leading-[0.75] 2xl:leading-[0.75] mb-0 pb-0">{heading}</m.h1>
           </div>
         </div>
 
         <div className="absolute bottom-14 lg:bottom-6 left-0 right-0 w-full flex items-center justify-center z-10">
-          <SunnyIcon className={`w-[15%] lg:w-[5%] max-w-[80px] text-yellow mx-auto opacity-100`} />
+          <SunnyIcon className={`w-[15%] lg:w-[5%] max-w-[80px] text-yellow mx-auto opacity-100 animate-spin-slow`} />
         </div>
 
         <div className="absolute left-0 lg:left-auto bottom-6 right-0 lg:right-6 z-10 w-full text-center lg:text-right lg:w-auto">

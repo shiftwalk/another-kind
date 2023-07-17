@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { fade, reveal, revealLtr, revealTtb } from '@/helpers/transitions'
+import { fade, reveal, revealLtr, revealTtb, scale } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m, useScroll, useTransform } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
@@ -31,7 +31,7 @@ export default function Projects(initialData) {
     offset: ["start end", "end start"]
   })
   
-  const rotateBadge = useTransform(scrollYProgress,[0, 0.5],[-100, 360],{ clamp: true })
+  const rotateBadge = useTransform(scrollYProgress,[0, 0.5],[-180, 360],{ clamp: true })
 
   useEffect(() => {
     setIntroContext(true)
@@ -73,14 +73,16 @@ export default function Projects(initialData) {
                     </div>
 
                     <div className="w-[95%] lg:w-[60%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px] relative">
-                      <m.div variants={revealTtb} className="bg-off-white absolute inset-0"></m.div>
+                      <m.div variants={revealTtb} className="absolute inset-0 bg-gradient-to-b from-off-white via-off-white to-transparent via-[70%]"></m.div>
                       <p>{projectsLanding.heroText}</p>
                     </div>
                   </div>
 
                   <ul className="grid grid-cols-2 lg:px-[6vw] gap-[12vw] lg:gap-[5vw] lg:gap-y-[6.5vw] mb-[10vw] lg:mb-[3vw] relative">
-                    <m.div style={{ rotateZ: rotateBadge }} className="absolute top-[-50px] lg:top-[-70px] left-[10%] lg:left-[9%] w-[120px] xl:w-[170px] p-3 z-[20] bg-orange text-yellow rounded-full">
-                      <SunnyIcon className="w-full aspect-square" />
+                    <m.div variants={scale} transition={{ delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }} className="absolute top-[-50px] lg:top-[-70px] left-[10%] lg:left-[9%] z-[20]">
+                      <m.div style={{ rotateZ: rotateBadge }} className="w-[120px] xl:w-[170px] p-3 z-[20] bg-orange text-yellow rounded-full">                      
+                        <SunnyIcon className="w-full aspect-square" />
+                      </m.div>
                     </m.div>
                     {projectsLanding.projects.map((e, i) => {
                       let color = colors[colors.length * Math.random() | 0]
@@ -160,7 +162,7 @@ export default function Projects(initialData) {
           </m.main>
         
           <m.div variants={fade}>
-            <div className="overflow-hidden bg-off-white z-[10] relative pt-[10vw] lg:pt-[5vw]">
+            <div className="overflow-hidden bg-off-white z-[20] relative pt-[10vw] lg:pt-[5vw]">
               <Footer />
             </div>
           </m.div>

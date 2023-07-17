@@ -66,7 +66,7 @@ export default function Home(initialData) {
                     </div>
             
                     <m.div style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[33%] max-w-[220px] will-change-transform hidden lg:block">
-                      <m.div variants={scale} transition={{ delay: introContext ? 0 : 2.1, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
+                      <m.div variants={scale} transition={{ delay: introContext ? 0.25 : 2.1, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
                         <BadgeIcon className="w-full" />
                       </m.div>
                     </m.div>
@@ -193,10 +193,7 @@ export default function Home(initialData) {
         
           <m.div variants={fade}>
             <div className="overflow-hidden">
-              <div className="w-full relative overflow-hidden aspect-[13/10] lg:aspect-[17/10]">
-                <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 90vw" image={home.footerImage} />
-              </div>
-              <Footer />
+              <Footer image={home.footerImage} />
             </div>
           </m.div>
         </m.div>

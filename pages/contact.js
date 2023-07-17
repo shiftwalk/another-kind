@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { fade, reveal, revealLtr, revealTtb } from '@/helpers/transitions'
+import { fade, reveal, revealLtr, revealTtb, scale } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m, useScroll, useTransform } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import SunnyNoRaysIcon from "@/icons/sunny-no-rays.svg";
@@ -37,8 +37,10 @@ export default function Contact(initialData) {
               <m.article variants={fade}>
                 <div className="flex flex-wrap max-w-[1920px] mx-auto">
                   <div className="w-full lg:w-1/2 mb-[60px] lg:mb-0 relative">
-                    <m.div style={{ rotateZ: rotate }} className="w-[120px] xl:w-[170px] absolute bottom-[-50px] left-5 lg:bottom-auto lg:left-auto lg:top-[10%] lg:right-[-10%] z-10 rounded-full bg-yellow text-green p-3 rotate-12">
-                      <SunnyIcon className="w-[100%] aspect-square" />
+                    <m.div variants={scale} transition={{ delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }} className="absolute bottom-[-50px] left-5 lg:bottom-auto lg:left-auto lg:top-[10%] lg:right-[-10%] z-10">
+                      <m.div style={{ rotateZ: rotate }} className="w-[120px] xl:w-[170px]  rounded-full bg-yellow text-green p-3 rotate-12">
+                        <SunnyIcon className="w-[100%] aspect-square" />
+                      </m.div>
                     </m.div>
                     <div className="w-full relative overflow-hidden rounded-xl">
                       <div className="aspect-[11/10] lg:aspect-[10/11]">
@@ -72,14 +74,14 @@ export default function Contact(initialData) {
                         </div>
 
                         <div className="w-[95%] lg:w-[100%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] max-w-[800px] mb-12 text-center lg:text-left relative">
-                          <m.div variants={revealTtb} className="bg-off-white absolute inset-0"></m.div>
+                          <m.div variants={revealTtb} className="absolute inset-0 bg-gradient-to-b from-off-white via-off-white to-transparent via-[70%]"></m.div>
                           <p>{contact.heroText}</p>
                         </div>
 
                         {contact.emailAddress && (
                           <div className="border-b border-black lg:border-none">
-                            <a href={`mailto:${contact.emailAddress}`} className="py-5 relative group block transition-colors ease-ak duration-[600ms] lg:hover:text-yellow">
-                              <div className="bg-orange w-full h-full inset-0 absolute z-0 lg:scale-x-[1.065] rounded-xl hidden lg:block transition-opacity ease-ak duration-[600ms] opacity-0 lg:group-hover:opacity-100"></div>
+                            <a href={`mailto:${contact.emailAddress}`} className="py-5 relative group block transition-colors ease-ak duration-[400ms] lg:hover:text-yellow">
+                              <div className="bg-orange w-full bottom-0 left-0 right-0 absolute z-0 lg:scale-x-[1.065] rounded-xl hidden lg:block transition-all ease-ak duration-[400ms] h-[0px] lg:group-hover:h-full"></div>
 
                               <div className="relative z-[1]">
                                 <div className="mb-2 lg:mb-3">
@@ -94,8 +96,8 @@ export default function Contact(initialData) {
                       
                         {contact.telephone && (
                           <div className="border-b border-black lg:border-none">
-                            <a href={`tel:${contact.telephone}`} className="py-5 relative group block transition-colors ease-ak duration-[600ms] lg:hover:text-yellow">
-                              <div className="bg-orange w-full h-full inset-0 absolute z-0 lg:scale-x-[1.065] rounded-xl hidden lg:block transition-opacity ease-ak duration-[600ms] opacity-0 lg:group-hover:opacity-100"></div>
+                            <a href={`tel:${contact.telephone}`} className="py-5 relative group block transition-colors ease-ak duration-[400ms] lg:hover:text-yellow">
+                              <div className="bg-orange w-full bottom-0 left-0 right-0 absolute z-0 lg:scale-x-[1.065] rounded-xl hidden lg:block transition-all ease-ak duration-[400ms] h-[0px] lg:group-hover:h-full"></div>
 
                               <div className="relative z-[1]">
                                 <div className="mb-2 lg:mb-3">

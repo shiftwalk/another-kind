@@ -59,7 +59,7 @@ export default function Journal(initialData) {
                     </div>
 
                     <div className="w-[95%] lg:w-[60%] content text-base/[1.28] lg:text-lg/[1.28] xl:text-xl/[1.28] text-center mx-auto max-w-[800px] relative">
-                      <m.div variants={revealTtb} className="bg-off-white absolute inset-0"></m.div>
+                      <m.div variants={revealTtb} className="absolute inset-0 bg-gradient-to-b from-off-white via-off-white to-transparent via-[70%]"></m.div>
                       <p>{journalLanding.heroText}</p>
                     </div>
                   </div>
@@ -78,7 +78,7 @@ export default function Journal(initialData) {
                             <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full block border-b border-black lg:border-none pb-5 lg:pb-0 mb-0`}>
                               <div className="w-full relative z-10">
                                 <div className="relative overflow-hidden rounded-xl">
-                                  <div className="lg:group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
+                                  <div className="lg:group-hover:scale-[1.05] transition-transform ease-ak duration-[750ms]">
                                     <div className="aspect-[14/10]">
                                       <SanityImageScale image={e.images[0]} fill sizes="(max-width: 1024px) 100vw, 50vw" />
                                     </div>
@@ -120,22 +120,28 @@ export default function Journal(initialData) {
                       let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
                     return (
                       <li className="w-full block px-3 lg:px-5 relative" key={i}>
-                        <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full flex flex-wrap border-b border-black transition-colors ease-ak duration-[350ms] hover:border-green py-5 lg:py-8 md:items-end ${i == 0 ? 'border-t' : '' }`}>
-                          <div className="absolute inset-0 transition-opacity ease-ak duration-[350ms] bg-green opacity-0 scale-y-[1.01] lg:group-hover:opacity-100 z-0 rounded-2xl mx-1"></div>
+                        <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full flex flex-wrap border-b border-black transition-colors ease-ak duration-[400ms] hover:border-green py-5 lg:py-8 ${i == 0 ? 'border-t' : '' }`}>
+                          <div className="absolute bottom-0 left-0 right-0 transition-all ease-ak duration-[400ms] bg-green h-0 scale-y-[1.01] lg:group-hover:h-full z-0 rounded-2xl mx-1"></div>
+
                           <div className="w-[35%] lg:w-1/4 relative z-10 hidden lg:block">
                             <div className="relative overflow-hidden rounded-xl">
-                              <div className="lg:group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
+                              <div className="lg:group-hover:scale-[1.07] transition-transform ease-ak duration-[750ms]">
                                 <div className="aspect-[14/10]">
                                   <SanityImageScale image={e.images[0]} fill sizes="(max-width: 1024px) 30vw, 25vw" />
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div className="flex-1 lg:pl-5 relative z-10 lg:group-hover:text-off-white">
-                            <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none ${color} mb-2 transition-colors ease-ak duration-[350ms] lg:group-hover:bg-yellow lg:group-hover:text-green`}>{e.category.title}</span>
-                            <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none lg:leading-none mb-3 pb-0 lg:w-8/12">{e.title}</h2>
-                            <span className="text-sm md:text-sm lg:text-base leading-none md:leading-none lg:leading-none block">{da} {mo}, {ye}</span>
-                            <div className={`w-[4vw] h-[4vw] max-w-[60px] max-h-[60px] hidden lg:flex absolute bottom-0 right-0 transition-colors ease-ak duration-[350ms] lg:group-hover:bg-yellow lg:group-hover:text-green ${color} p-[10px] flex items-center justify-center rounded-full`}>
+                          <div className="flex-1 lg:pl-5 relative z-10 transition-colors ease-ak duration-[400ms] lg:group-hover:text-off-white flex flex-wrap">
+                            <div className="w-full mb-auto">
+                              <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none ${color} mb-2 transition-colors ease-ak duration-[400ms] lg:group-hover:bg-yellow lg:group-hover:text-green`}>{e.category.title}</span>
+                            </div>
+                            <div className="w-full mt-auto">
+                              <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none lg:leading-none mb-3 pb-0 lg:w-8/12">{e.title}</h2>
+                              <span className="text-sm md:text-sm lg:text-base leading-none md:leading-none lg:leading-none block">{da} {mo}, {ye}</span>
+                            </div>
+
+                            <div className={`w-[4vw] h-[4vw] max-w-[60px] max-h-[60px] hidden lg:flex absolute bottom-0 right-0 transition-colors ease-ak duration-[400ms] lg:group-hover:bg-yellow lg:group-hover:text-green ${color} p-[10px] flex items-center justify-center rounded-full`}>
                               <ArrowIcon className="w-full" />
                             </div>
                           </div>
@@ -165,10 +171,7 @@ export default function Journal(initialData) {
         
           <m.div variants={fade}>
             <div className="overflow-hidden">
-              <div className="w-full relative overflow-hidden aspect-[13/10] lg:aspect-[17/10]">
-                <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 90vw" image={journalLanding.footerImage} />
-              </div>
-              <Footer />
+              <Footer image={journalLanding.footerImage} />
             </div>
           </m.div>
         </m.div>

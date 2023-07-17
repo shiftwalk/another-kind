@@ -65,24 +65,49 @@ export default function ProjectSlug(initialData) {
                         <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">{project.type}</span>
                       </div>
                     )}
-                    {project.services && (
+                    {(project.services && !project.servicess) && (
                       <div className="mb-5 lg:mb-0">
                         <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px] font-medium">Services</span>
                         <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">
                           <div className="relative flex overflow-x-hidden w-2/3 max-w-[320px] lg:max-w-[550px] remove-scroll">
                             <div className="absolute top-0 right-0 bottom-0 w-16 bg-gradient-to-r from-transparent to-off-white z-10"></div>
-                            <div className="animate-marquee whitespace-nowrap">
+                            <div className="animate-marqueeSlow whitespace-nowrap">
                               <span clasName="">{project.services},&nbsp;</span>
                               <span clasName="">{project.services},&nbsp;</span>
                               <span clasName="">{project.services},&nbsp;</span>
                               <span clasName="">{project.services},&nbsp;</span>
                             </div>
 
+                            <div className="absolute top-0 animate-marquee2Slow whitespace-nowrap">
+                              <span clasName="">{project.services},&nbsp;</span>
+                              <span clasName="">{project.services},&nbsp;</span>
+                              <span clasName="">{project.services},&nbsp;</span>
+                              <span clasName="">{project.services},&nbsp;</span>
+                            </div>
+                          </div>
+                        </span>
+                      </div>
+                    )}
+                    {project.servicess && (
+                      <div className="mb-5 lg:mb-0">
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2] mb-[2px] font-medium">Services</span>
+                        <span className="block text-base leading-[1.2] lg:text-xl lg:leading-[1.2]">
+                          <div className="relative flex overflow-x-hidden w-2/3 max-w-[320px] lg:max-w-[550px] remove-scroll">
+                            <div className="absolute top-0 right-0 bottom-0 w-16 bg-gradient-to-r from-transparent to-off-white z-10"></div>
+                            <div className="animate-marquee whitespace-nowrap">
+                              {project.servicess.map((e, i) => {
+                                return (
+                                  <span clasName="" key={i}>{e.title},&nbsp;</span>
+                                )
+                              })}
+                            </div>
+
                             <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
-                              <span clasName="">{project.services},&nbsp;</span>
-                              <span clasName="">{project.services},&nbsp;</span>
-                              <span clasName="">{project.services},&nbsp;</span>
-                              <span clasName="">{project.services},&nbsp;</span>
+                              {project.servicess.map((e, i) => {
+                                return (
+                                  <span clasName="" key={i}>{e.title},&nbsp;</span>
+                                )
+                              })}
                             </div>
                           </div>
                         </span>

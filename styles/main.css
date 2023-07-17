@@ -124,3 +124,29 @@ html.lenis {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 75%;
+  min-width: 0;
+}
+
+@screen lg {
+  .embla__slide {
+    flex: 0 0 30%;
+    min-width: 0;
+  }
+}
+
+@screen 2xl {
+  .embla__slide {
+    flex: 0 0 28%;
+    min-width: 0;
+  }
+}

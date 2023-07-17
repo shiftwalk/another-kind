@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import sanity from '@/services/sanity'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNextSanityImage } from 'next-sanity-image';
+import { IntroContext } from '@/context/intro';
 
 export default function SanityImage({ image, className, alt, priority, widthOverride, quality, focalPoint, sizes }) {
-  const [imageIsLoaded, setImageIsLoaded] = useState(priority ? priority : false)
+  const [imageIsLoaded, setImageIsLoaded] = useState(false)
+  const [introContext, setIntroContext] = useContext(IntroContext);
 
   const myCustomImageBuilder = (imageUrlBuilder, options) => {
     return imageUrlBuilder
@@ -37,7 +39,7 @@ export default function SanityImage({ image, className, alt, priority, widthOver
 		  <Image
         src={imageProps.src}
         loader={imageProps.loader}
-        className={`will-change-transform ${imageIsLoaded ? 'scale-1' : 'scale-[1.05]'} ${priority ? 'opacity-100' : 'transition-all ease-in-out duration-[1500ms]'}`}
+        className={`will-change-transform transition-all ease-in-out duration-[1500ms] ${imageIsLoaded ? 'scale-1' : 'scale-[1.05]'} ${priority ? 'opacity-100' : ''}`}
         {...(priority ? {
           priority: true} : {}
         )}
@@ -48,7 +50,16 @@ export default function SanityImage({ image, className, alt, priority, widthOver
 
         onLoad={event => {
           const target = event.target;
-          if (target.src.indexOf('data:image/gif;base64') < 0) {
+            if (priority) {
+              if (introContext) {
+                  setImageIsLoaded(true)
+              } else {
+                setTimeout(() => {
+                  setImageIsLoaded(true)
+                }, 2000)
+              }
+            }
+            else if (target.src.indexOf('data:image/gif;base64') < 0) {
             setImageIsLoaded(true)
           }
         }}

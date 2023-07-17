@@ -59,8 +59,8 @@ export const scale = {
     rotate: 13,
   },
 	exit: {
-    scale: 0.25,
-    rotate: -10
+    scale: 1,
+    rotate: 13
 	}
 }
 
