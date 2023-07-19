@@ -7,7 +7,7 @@ export default function FancyLink( {destination, a11yText, label, className, act
       
       <span className={`${active ? 'w-full opacity-100' : 'w-0 opacity-0 rotate-0' } transition-ak ease-in-out duration-[350ms] z-[1] h-[7px] rounded-full bg-orange absolute bottom-[2px] xl:bottom-[-2px] left-0 right-0`}></span>
 
-      <span className={`${active ? 'w-full opacity-100' : 'w-0 group-hover:w-full opacity-100 rotate-0' } transition-ak ease-in-out duration-[350ms] z-[0] h-[7px] rounded-full bg-white absolute bottom-[2px] xl:bottom-[-2px] left-0 right-0`}></span>
+      <span className={`${active ? 'w-full opacity-0' : 'w-[0px] group-hover:w-full opacity-100 group-hover:opacity-100 group-hover:rounded-full' } transition-ak transition-translate duration-[350ms] z-[0] h-[7px] bg-white absolute bottom-[2px] xl:bottom-[-2px] left-[-1px] right-0`}></span>
     </Link>
   )
 }

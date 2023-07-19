@@ -34,16 +34,18 @@ export default function HeroMission({ image, headingLine1, headingLine2 }) {
               </div>
             </div>
 
-            <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-10 pointer-events-none">
+            <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-10 pointer-events-none ">
               <m.div className="relative" style={{ y: moveY }}>
-                <m.div style={{ scale: scale, borderRadius: radius  }} className={`w-[90dvw] lg:w-[50dvw] xl:w-[45dvw] h-[45vh] max-h-[600px] relative overflow-hidden mx-auto`}>
-                  <SanityImage
-                    priority
-                    image={image}
-                    sizes="(max-width: 1024px) 100vw, 100vw"
-                    alt={image.alt ? image.alt : 'No image description'}
-                    className={`will-change-transform w-full absolute inset-0 h-full object-cover object-center`}
-                  />
+                <m.div style={{ scale: scale  }} className={`w-[90dvw] lg:w-[50dvw] xl:w-[45dvw] h-[45vh] max-h-[600px] relative overflow-hidden mx-auto`}>
+                  <div className="safari-rounded rounded-3xl absolute inset-0 w-full h-full overflow-hidden">
+                    <SanityImage
+                      priority
+                      image={image}
+                      sizes="(max-width: 1024px) 100vw, 100vw"
+                      alt={image.alt ? image.alt : 'No image description'}
+                      className={`will-change-transform w-full absolute inset-0 h-full object-cover object-center `}
+                    />
+                  </div>
                 </m.div>
               </m.div>
             </div>

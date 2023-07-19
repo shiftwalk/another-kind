@@ -105,6 +105,13 @@ html.lenis {
   -moz-transform: translate3d(0, 0, 0)
 }
 
+.safari-rounded {
+  -webkit-backface-visibility: hidden !important;
+  -moz-backface-visibility: hidden!important;
+  -webkit-transform: translate3d(0, 0, 0)!important;
+  -moz-transform: translate3d(0, 0, 0)!important;
+}
+
 .remove-scroll::-webkit-scrollbar {
   display: none;
 }

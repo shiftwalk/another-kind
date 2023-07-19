@@ -36,7 +36,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 
 .font-display {
   em {
-    @apply font-displayItalic font-light text-[92%] leading-[75%];
+    @apply font-displayItalic font-light text-[92%] leading-[75%] pr-[0.2%];
   }
 }
 
