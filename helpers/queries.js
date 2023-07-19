@@ -83,6 +83,19 @@ export const homeQuery = `{
   }
 }`
 
+export const privacyQuery = `{
+  "privacy": *[_type == "privacy"][0]{
+    title,
+    content,
+    seo {
+      ...,
+      shareGraphic {
+        asset->
+      }
+    }
+  }
+}`
+
 export const projectsLandingQuery = `{
   "projectsLanding": *[_type == "projectsLanding"][0]{
     title,
@@ -304,6 +317,7 @@ export const missionQuery = `{
     },
     heroHeadingLine1,
     heroHeadingLine2,
+    ourMissionSubHeading,
     ourMissionText,
     pulloutSection1Heading,
     pulloutSection1Text,
@@ -318,6 +332,7 @@ export const missionQuery = `{
         y
       },
     },
+    sectorsWeServeSubHeading,
     sectorsWeServeText,
     pulloutSection2Heading,
     pulloutSection2Text,

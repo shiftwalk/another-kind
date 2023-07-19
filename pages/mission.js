@@ -134,7 +134,7 @@ export default function Mission(initialData) {
                   {mission.ourMissionText && (
                     <div className="flex flex-wrap justify-center pt-[16vw] lg:pt-[10vw] mb-[20vw] lg:mb-[10vw]">
                       <span className="block mb-8 overflow-hidden relative w-full text-center">
-                        <m.span variants={reveal} className="block text-base leading-none lg:text-xl lg:leading-none">Our Mission.</m.span>
+                        <m.span variants={reveal} className="block text-base leading-none lg:text-xl lg:leading-none">{mission.ourMissionSubHeading}</m.span>
                       </span>
 
                       <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[1] md:leading-[0.9] lg:leading-[0.9]">
@@ -176,7 +176,7 @@ export default function Mission(initialData) {
 
                 <Container>
                   <div className="flex flex-wrap justify-center mb-[15vw] lg:mb-[7.5vw]">
-                    <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-1 lg:mb-4">Creating new stories.</span>
+                    <span className="block text-base leading-none lg:text-xl lg:leading-none w-full text-center mb-1 lg:mb-4">{mission.sectorsWeServeSubHeading}</span>
 
                     <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[15vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-8 lg:mb-10">Sectors we serve.</span>
 

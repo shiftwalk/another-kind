@@ -11,8 +11,15 @@ import Link from 'next/link'
 import { MouseParallax } from 'react-just-parallax'
 import { useContext, useEffect } from 'react'
 import { IntroContext } from '@/context/intro'
+import SanityPageService from '@/services/sanityPageService'
+import { privacyQuery } from '@/helpers/queries'
+import PortableText from 'react-portable-text'
+import Table from '@/components/table'
 
-export default function Privacy() {
+const pageService = new SanityPageService(privacyQuery)
+
+export default function Privacy(initialData) {
+  const { data: { privacy }  } = pageService.getPreviewHook(initialData)()
   const [introContext, setIntroContext] = useContext(IntroContext);
 
   useEffect(() => {
@@ -21,7 +28,7 @@ export default function Privacy() {
 
   return (
     <Layout>
-      <NextSeo title="Privacy Policy"  />
+      <NextSeo title={privacy.title}  />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -37,47 +44,11 @@ export default function Privacy() {
 
                 <div className="mb-[18vw] lg:mb-[10vw] w-full">
                   <div className="content w-[90%] lg:w-[72%] lg:max-w-[1250px] text-base/[1.28] lg:text-lg/[1.28] break-words">
-                    <h2>Introduction</h2>
-                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
-                    
-                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
-                    
-                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
-
-                    <h2>Important Information</h2>
-                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
-                    
-                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
-                    
-                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
-
-                    <h2>How else we use your data</h2>
-                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
-                    
-                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
-                    
-                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
-
-                    <h2>Introduction</h2>
-                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
-                    
-                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
-                    
-                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
-
-                    <h2>Important Information</h2>
-                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
-                    
-                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
-                    
-                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
-
-                    <h2>How else we use your data</h2>
-                    <p>This is the Website Privacy Policy (“Website Policy”) for Player Robert Bell Architects Ltd (“PRB”).</p>
-                    
-                    <p>PRB respects your privacy and is committed to protecting your personal data. Our Website Policy applies when you visit our website as well as when we are in contact with you in other ways - this may be in your capacity as an individual or as director, shareholder, partner, employee or representative of a company or organisation.</p>
-                    
-                    <p>It sets out how we look after your personal data when you visit our website; your privacy rights; and how the law protects you. Our Website Policy does not apply to personal data you might provide to us, or which we might collect, in the context of providing architectural services to you.</p>
+                    <PortableText
+                    content={privacy.content}
+                    className="content"
+                    serializers={{table: (props) => <Table props={props} />}}
+                  />
                   </div>
                 </div>
               </Container>
@@ -93,4 +64,11 @@ export default function Privacy() {
       </LazyMotion>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const props = await pageService.fetchQuery(context)
+  return { 
+    props: props
+  };
 }

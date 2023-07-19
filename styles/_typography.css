@@ -50,3 +50,13 @@ h1, .h1, h2, .h2, h3, .h3 {
     column-gap: 5vw;
   }
 }
+
+table {
+  tr:first-of-type {
+    @apply font-medium bg-black/5;
+  }
+
+  td {
+    @apply align-top;
+  }
+}

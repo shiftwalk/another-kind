@@ -14,7 +14,7 @@ import SanityPageService from '@/services/sanityPageService'
 import PortableText from "react-portable-text"
 import SanityImageScale from '@/components/sanity-image-scale'
 import { IntroContext } from '@/context/intro'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 const pageService = new SanityPageService(journalLandingQuery)
 
@@ -22,6 +22,7 @@ export default function Journal(initialData) {
   const { data: { journalLanding }  } = pageService.getPreviewHook(initialData)()
   let colors = ['bg-orange text-off-white', 'bg-blue text-off-white', 'bg-green text-off-white']
   const [introContext, setIntroContext] = useContext(IntroContext);
+  const [journalCap, setJournalCap] = useState(6);
 
   useEffect(() => {
     setIntroContext(true)
@@ -132,8 +133,8 @@ export default function Journal(initialData) {
                   </div>
                 </Container>
 
-                <ul className="mb-[20vw] lg:mb-[10vw] w-full">
-                  {journalLanding.journals.slice(2).map((e, i) => {
+                <ul className="mb-[7.5vw] w-full">
+                  {journalLanding.journals.slice(2, journalCap).map((e, i) => {
                     let color = colors[colors.length * Math.random() | 0]
                     
                     e.category.title == 'Project News' && (
@@ -157,7 +158,7 @@ export default function Journal(initialData) {
                         <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full flex flex-wrap border-b border-black transition-colors ease-ak duration-[400ms] hover:border-green py-5 lg:py-8 ${i == 0 ? 'border-t' : '' }`}>
                           <div className="absolute bottom-0 left-0 right-0 transition-all ease-ak duration-[400ms] bg-green h-0 scale-y-[1.01] lg:group-hover:h-full z-0 rounded-2xl mx-1"></div>
 
-                          <div className="w-[35%] lg:w-[20%] relative z-10 hidden lg:block">
+                          <div className="w-[35%] lg:w-[22%] lg:max-w-[300px] relative z-10 hidden lg:block">
                             <div className="relative overflow-hidden rounded-xl">
                               <div className="lg:group-hover:scale-[1.07] transition-transform ease-ak duration-[750ms]">
                                 <div className="aspect-square">
@@ -200,6 +201,22 @@ export default function Journal(initialData) {
                 </Container> */}
 
               </div>
+              
+              {!(journalCap > 10) && (
+                <Container className="mb-[7.5vw]">
+                  <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false}>
+                    <div className="w-full flex justify-center mb-[0vw] lg:mb-[3vw]">
+                      <button onClick={()=>setJournalCap(100)} className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group outline-none border-none">
+                        <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
+                        <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
+                          <SunnyNoRaysIcon className="w-[33px] lg:w-[45px] mx-auto mb-0 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
+                          <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">Load More</span>
+                        </div>
+                      </button>
+                    </div>
+                  </MouseParallax>
+                </Container>
+              )}
             </m.article>
           </m.main>
         

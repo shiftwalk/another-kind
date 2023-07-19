@@ -122,7 +122,7 @@ export default function JournalSlug(initialData) {
                     <li className="w-full block px-3 lg:px-5 relative" key={i}>
                       <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full flex flex-wrap border-b border-black transition-colors ease-ak duration-[350ms] hover:border-green py-5 lg:py-8 md:items-end ${i == 0 ? 'border-t' : '' }`}>
                         <div className="absolute inset-0 transition-opacity ease-ak duration-[350ms] bg-green opacity-0 scale-y-[1.01] lg:group-hover:opacity-100 z-0 rounded-2xl mx-1"></div>
-                        <div className="w-[35%] lg:w-[20%] relative z-10 hidden lg:block">
+                        <div className="w-[35%] lg:w-[22%] lg:max-w-[300px] relative z-10 hidden lg:block">
                           <div className="relative overflow-hidden rounded-xl">
                             <div className="lg:group-hover:scale-[1.1] transition-transform ease-ak duration-[500ms]">
                               <div className="aspect-square">
