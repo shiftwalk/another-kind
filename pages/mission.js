@@ -266,9 +266,9 @@ export default function Mission(initialData) {
                     </div>
                   </div>
                 </div>
-
+                
                 <Container className="lg:px-[5vw]">
-                  <div className="pb-[15vw] lg:pb-[10vw]">
+                  <div className="pb-[15vw] lg:pb-[10vw] overflow-hidden">
                     <span className="block text-sm leading-none lg:text-xl lg:leading-none w-full mb-1 lg:mb-4">Overview.</span>
 
                     <span className="font-display block w-full text-[15vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-[25vw] lg:mb-24">Services we supply.</span>
@@ -279,7 +279,7 @@ export default function Mission(initialData) {
                       </div>
                     )}
 
-                    <div className="flex flex-wrap items-start overflow-hidden">
+                    <div className="flex flex-wrap items-start">
                       <div className="w-full lg:w-[55%] mb-6 lg:mb-0 relative" ref={badgeRef}>
                         <div className="overflow-hidden rounded-xl relative aspect-[13/10] lg:aspect-[15.5/10]">
                           <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={mission.servicesWeSupplyImage} />
