@@ -6,7 +6,7 @@ export default function Table({ props }) {
           <tr key={i}>
             {e.cells.map((e, i) => {
               return (
-                <td className="border border-black/30 p-3">{e}</td>
+                <td key={i} className="border border-black/30 p-3">{e}</td>
               )
             })}
           </tr>
