@@ -42,12 +42,12 @@ export default function Journal(initialData) {
               <div className="relative bg-off-white">
                 <Container>
                   <div className="flex flex-wrap justify-center pt-[100px] pb-[15vw] lg:pt-[12.5vw] lg:pb-[10vw]">
-                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[50px] mb-4 lg:mb-8 relative">
+                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[53px] mb-4 lg:mb-8 relative">
                       <m.div variants={revealLtr} className="bg-off-white absolute inset-0"></m.div>
                       <svg className="w-full" viewBox="0 0 500 140">
                         <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                         <text>
-                          <textPath href="#curve">
+                          <textPath className="font-sans font-bold" href="#curve">
                             The Journal
                           </textPath>
                         </text>
@@ -67,10 +67,23 @@ export default function Journal(initialData) {
                   <div className="w-full grid grid-cols-2 gap-5 max-w-[1920px] mx-auto mb-[18vw] lg:mb-[9.2vw]">
                     {journalLanding.journals.slice(0,2).map((e, i) => {
 
+                      let color = 'bg-blue text-off-white' 
                       let d = new Date(e.postDate);
                       let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
                       let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
                       let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+
+                      e.category.title == 'Project News' && (
+                        color = 'bg-orange text-off-white'
+                      )
+  
+                      e.category.title == 'Team News' && (
+                        color = 'bg-green text-off-white'
+                      )
+  
+                      e.category.title == 'Company News' && (
+                        color = 'bg-blue text-off-white'
+                      )
 
                       return (
                         <div className="col-span-2 lg:col-span-1" key={i}>
@@ -90,7 +103,7 @@ export default function Journal(initialData) {
                                 </div>
                               </div>
                               <div className="flex-1 relative z-10 mt-5">
-                                <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none mb-2 bg-blue text-off-white`}>{e.category.title}</span>
+                                <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[7px] md:pb-[9px] rounded-full font-sans font-bold tracking-wider uppercase text-[8px] md:text-[10px] leading-none mb-2 ${color}`}>{e.category.title}</span>
                                 <h2 className="text-3xl md:text-3xl xl:text-4xl leading-none md:leading-none xl:leading-none mb-3 pb-0 lg:max-w-[80%]">{e.title}</h2>
                                 <span className="text-sm md:text-sm lg:text-base leading-none md:leading-none lg:leading-none block">{da} {mo}, {ye}</span>
                               </div>
@@ -117,6 +130,18 @@ export default function Journal(initialData) {
                 <ul className="mb-[20vw] lg:mb-[10vw] w-full">
                   {journalLanding.journals.slice(2).map((e, i) => {
                     let color = colors[colors.length * Math.random() | 0]
+                    
+                    e.category.title == 'Project News' && (
+                      color = 'bg-orange text-off-white'
+                    )
+
+                    e.category.title == 'Team News' && (
+                      color = 'bg-green text-off-white'
+                    )
+
+                    e.category.title == 'Company News' && (
+                      color = 'bg-blue text-off-white'
+                    )
 
                     let d = new Date(e.postDate);
                       let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
@@ -127,10 +152,10 @@ export default function Journal(initialData) {
                         <Link scroll={false} href={`/journal/${e.slug.current}`} className={`group w-full flex flex-wrap border-b border-black transition-colors ease-ak duration-[400ms] hover:border-green py-5 lg:py-8 ${i == 0 ? 'border-t' : '' }`}>
                           <div className="absolute bottom-0 left-0 right-0 transition-all ease-ak duration-[400ms] bg-green h-0 scale-y-[1.01] lg:group-hover:h-full z-0 rounded-2xl mx-1"></div>
 
-                          <div className="w-[35%] lg:w-1/4 relative z-10 hidden lg:block">
+                          <div className="w-[35%] lg:w-[20%] relative z-10 hidden lg:block">
                             <div className="relative overflow-hidden rounded-xl">
                               <div className="lg:group-hover:scale-[1.07] transition-transform ease-ak duration-[750ms]">
-                                <div className="aspect-[14/10]">
+                                <div className="aspect-square">
                                   <SanityImageScale image={e.images[0]} fill sizes="(max-width: 1024px) 30vw, 25vw" />
                                 </div>
                               </div>
@@ -138,7 +163,7 @@ export default function Journal(initialData) {
                           </div>
                           <div className="flex-1 lg:pl-5 relative z-10 transition-colors ease-ak duration-[400ms] lg:group-hover:text-off-white flex flex-wrap">
                             <div className="w-full mb-auto">
-                              <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[5px] md:pb-[7px] rounded-full font-mono uppercase text-[8px] md:text-[10px] leading-none ${color} mb-2 transition-colors ease-ak duration-[400ms] lg:group-hover:bg-yellow lg:group-hover:text-green`}>{e.category.title}</span>
+                              <span className={`inline-block px-[9px] md:px-[13px] pt-[7px] md:pt-[9px] pb-[7px] md:pb-[9px] rounded-full font-sans font-bold tracking-wider uppercase text-[8px] md:text-[10px] leading-none ${color} mb-2 transition-colors ease-ak duration-[400ms] lg:group-hover:bg-yellow lg:group-hover:text-green`}>{e.category.title}</span>
                             </div>
                             <div className="w-full mt-auto">
                               <h2 className="text-2xl md:text-3xl xl:text-4xl leading-none md:leading-none lg:leading-none mb-3 pb-0 lg:w-8/12">{e.title}</h2>

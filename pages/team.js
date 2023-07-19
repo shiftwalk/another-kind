@@ -71,12 +71,12 @@ export default function Team(initialData) {
                   <div className="w-full lg:w-1/2 order-2 lg:order-1 relative mb-[30vw] lg:mb-0">
                     <div className="flex flex-wrap justify-center lg:pt-[7.5vw] h-full lg:px-5">
                       <div className="lg:w-[80%] lg:max-w-[720px] lg:translate-x-[-5%] xl:translate-x-[-10%] relative z-10">
-                        <span className="font-mono text-center uppercase tracking-[11.5px] block w-[110px] lg:w-[140px] text-[47px] mb-6 lg:mb-10 translate-x-[-8%] mx-auto lg:mx-0 relative">
+                        <span className="font-mono text-center uppercase tracking-[11.5px] block w-[110px] lg:w-[140px] text-[50px] mb-6 lg:mb-10 translate-x-[-8%] mx-auto lg:mx-0 relative">
                           <m.div variants={revealLtr} className="bg-off-white absolute inset-0"></m.div>
                           <svg className="w-full" viewBox="0 0 500 140">
                             <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                             <text>
-                              <textPath href="#curve">
+                              <textPath className="font-sans font-bold" href="#curve">
                                 Our People
                               </textPath>
                             </text>
@@ -121,9 +121,11 @@ export default function Team(initialData) {
 
                   <div className="w-full lg:w-1/2 mb-16 lg:mb-0 relative order-1 lg:order-2">
                     <m.div variants={scale} transition={{ delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }} className="absolute bottom-[-55px] left-5 lg:bottom-auto lg:top-[10%] lg:left-[-10%] z-10">
-                      <m.div style={{ rotateZ: rotate }} className="w-[115px] xl:w-[170px] rotate-12 aspect-square rounded-full bg-yellow text-green p-3">
-                        <SunnyIcon className="w-[100%] aspect-square" />
-                      </m.div>
+                      <div className="animate-spin-slower">
+                        <m.div style={{ rotateZ: rotate }} className="w-[115px] xl:w-[170px] rotate-12 aspect-square rounded-full bg-yellow text-green p-3">
+                          <SunnyIcon className="w-[100%] aspect-square" />
+                        </m.div>
+                      </div>
                     </m.div>
                     <div className="w-full relative overflow-hidden rounded-xl">
                       <div className="aspect-[10/9] lg:aspect-[10/11]">
@@ -168,7 +170,7 @@ export default function Team(initialData) {
                           <div className="absolute inset-0 text-yellow z-[10] p-8 items-center justify-center text-center opacity-0 lg:group-hover:opacity-100 transition-opacity ease-ak duration-[600ms] rounded-full hidden lg:flex">
 
                             <div className="w-full">
-                              <div className="w-[42px] mb-4 mx-auto">
+                              <div className="w-[33px] lg:w-[55px] mx-auto mb-0">
                                 <SunnyNoRaysIcon className="w-full aspect-square mb-2 transition-transform ease-ak duration-[650ms] scale-0 lg:group-hover:scale-[1] lg:group-hover:rotate-[360deg]" />
                               </div>
 
@@ -287,7 +289,7 @@ export default function Team(initialData) {
                     <Link scroll={false} href="/contact" className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
                       <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
                       <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
-                        <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
+                        <SunnyNoRaysIcon className="w-[33px] lg:w-[45px] mx-auto mb-0 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
                         <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">Let&rsquo;s Talk!</span>
                       </div>
                     </Link>

@@ -52,12 +52,12 @@ export default function Projects(initialData) {
               <div className="relative bg-off-white">
                 <Container>
                   <div className="flex flex-wrap justify-center pt-[100px] pb-[25vw] lg:pt-[12.5vw] lg:pb-[10vw]">
-                    <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[47px] mb-3 lg:mb-6 relative">
+                    <span className="font-sans text-center uppercase tracking-widest block w-[110px] lg:w-[160px] mx-auto text-[50px] mb-3 lg:mb-6 relative">
                       <m.div variants={revealLtr} className="bg-off-white absolute inset-0"></m.div>
                       <svg className="w-full" viewBox="0 0 500 140">
                         <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                         <text>
-                          <textPath href="#curve">
+                          <textPath className="font-sans font-bold" href="#curve">
                             Our Projects
                           </textPath>
                         </text>
@@ -80,9 +80,11 @@ export default function Projects(initialData) {
 
                   <ul className="grid grid-cols-2 lg:px-[6vw] gap-[12vw] lg:gap-[5vw] lg:gap-y-[6.5vw] mb-[10vw] lg:mb-[3vw] relative">
                     <m.div variants={scale} transition={{ delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }} className="absolute top-[-50px] lg:top-[-70px] left-[10%] lg:left-[9%] z-[20]">
-                      <m.div style={{ rotateZ: rotateBadge }} className="w-[120px] xl:w-[170px] p-3 z-[20] bg-orange text-yellow rounded-full">                      
-                        <SunnyIcon className="w-full aspect-square" />
-                      </m.div>
+                      <div className="animate-spin-slower">
+                        <m.div style={{ rotateZ: rotateBadge }} className="w-[120px] xl:w-[170px] p-3 z-[20] bg-orange text-yellow rounded-full">                      
+                          <SunnyIcon className="w-full aspect-square" />
+                        </m.div>
+                      </div>
                     </m.div>
                     {projectsLanding.projects.map((e, i) => {
                       let color = colors[colors.length * Math.random() | 0]
@@ -104,7 +106,7 @@ export default function Projects(initialData) {
                                 <div className="absolute inset-0 z-10 items-center justify-center hidden lg:flex lg:group-hover:scale-[1] scale-0 transition-transform ease-ak duration-[650ms]">
                                   <div className={`w-[140px] xl:w-[180px] aspect-square rounded-full flex items-center justify-center ${color} scale-[0] lg:group-hover:scale-[1] transition-transform ease-ak duration-[500ms]`}>
                                     <div className={`w-full text-center -mt-3 lg:-mt-5`}>
-                                      <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2" />
+                                      <SunnyNoRaysIcon className="w-[33px] lg:w-[45px] mx-auto mb-0" />
                                       <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">See More!</span>
                                     </div>
                                   </div>
@@ -157,7 +159,7 @@ export default function Projects(initialData) {
                         <Link scroll={false} href="/contact" className="w-[140px] xl:w-[180px] aspect-square bg-green text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
                           <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
                           <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
-                            <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
+                            <SunnyNoRaysIcon className="w-[33px] lg:w-[45px] mx-auto mb-0 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
                             <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">Let&rsquo;s Talk!</span>
                           </div>
                         </Link>

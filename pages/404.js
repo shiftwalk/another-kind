@@ -21,7 +21,7 @@ export default function Error() {
             <m.article variants={fade}>
               <div className="w-[100vw] relative bg-orange text-yellow h-screen flex items-center justify-center overflow-hidden">
                 <div className={`w-full absolute inset-0 flex items-center justify-center`}>
-                  <m.div variants={scale} className="w-[80%] lg:w-[50%] max-w-[800px]">
+                  <m.div variants={scale} className="w-[80%] lg:w-[50%] max-w-[800px]  animate-spin-slower">
                     <SunnyIcon className="w-full text-yellow opacity-[9%] aspect-square" />
                   </m.div>
                 </div>
@@ -29,11 +29,11 @@ export default function Error() {
                 <div className="w-full relative z-10">
                   <Container>
                     <div className="flex flex-wrap justify-center">
-                      <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[120px] mx-auto text-[72px] mb-4">
+                      <span className="font-mono text-center uppercase tracking-widest block w-[110px] lg:w-[120px] mx-auto text-[80px] mb-4">
                         <svg className="w-full" viewBox="0 0 500 140">
                           <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent" />
                           <text>
-                            <textPath href="#curve" fill="currentColor">
+                            <textPath className="font-sans font-bold" href="#curve" fill="currentColor">
                               Whoops!
                             </textPath>
                           </text>

@@ -6,7 +6,7 @@ import SunnyIcon from "@/icons/sunny.svg";
 import Header from '@/components/header';
 import SEO from '@/helpers/seo.config';
 import { Lenis as ReactLenis } from '@studio-freight/react-lenis'
-import { PPEditorialNewItalic, Sohne, VCGaramondCondensed, Verlag } from '@/helpers/fonts';
+import { PPEditorialNewItalic, Sohne, VCGaramondCondensed } from '@/helpers/fonts';
 import { IntroContext } from '@/context/intro'
 import { useEffect, useState } from 'react';
 import Div100vh from 'react-div-100vh';
@@ -57,7 +57,7 @@ export default function App({ Component, pageProps }) {
   return (
     <ReactLenis root options={{ lerp: 0.125 }}>
       <IntroContext.Provider value={[introContext, setIntroContext]}>
-        <div id="app" className={`${Sohne.variable} ${PPEditorialNewItalic.variable} ${Verlag.variable} ${VCGaramondCondensed.variable} font-sans`}>
+        <div id="app" className={`${Sohne.variable} ${PPEditorialNewItalic.variable} ${VCGaramondCondensed.variable} font-sans`}>
 
           <LazyMotion features={domAnimation}>
             { !introContext && router.asPath == '/' && (

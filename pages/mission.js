@@ -79,7 +79,9 @@ export default function Mission(initialData) {
                 className="fixed w-[140px] lg:w-[160px] 2xl:w-[180px] bottom-5 right-5 z-[100] hidden lg:block outline-none border-none"
               >
                 <m.div variants={scale} transition={{ delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }}>
-                  <ManifestoBadgeIcon className="w-full" />
+                  <div className="animate-spin-slower">
+                    <ManifestoBadgeIcon className="w-full" />
+                  </div>
                 </m.div>
               </m.button>
               
@@ -106,7 +108,9 @@ export default function Mission(initialData) {
                     className="absolute z-[100] lg:hidden outline-none border-none w-full h-full inset-0 flex items-center justify-center"
                   >
                     <m.div style={{ rotateZ: rotateBadge}} className="w-[140px] xl:w-[180px]">
-                      <ManifestoBadgeIcon className="w-full" />
+                      <div className="animate-spin-slower">
+                        <ManifestoBadgeIcon className="w-full" />
+                      </div>
                     </m.div>
                   </m.button>
 
@@ -157,7 +161,7 @@ export default function Mission(initialData) {
                           <Link scroll={false} href="/projects" className="w-[140px] xl:w-[180px] aspect-square bg-yellow text-green hover:text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
                             <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
                             <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
-                              <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
+                              <SunnyNoRaysIcon className="w-[33px] lg:w-[45px] mx-auto mb-0 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
                               <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">See Work!</span>
                             </div>
                           </Link>
@@ -241,7 +245,7 @@ export default function Mission(initialData) {
                           <Link scroll={false} href="/projects" className="w-[140px] xl:w-[180px] aspect-square bg-yellow text-green hover:text-yellow rounded-full flex items-center justify-center transition-translate ease-ak duration-[500ms] hover:scale-[1.2] relative overflow-hidden group">
                             <div className="absolute inset-0 bg-orange transition-transform ease-ak duration-[500ms] translate-y-full group-hover:translate-y-0 group-hover:rotate-[-80deg] group-hover:scale-[1.3] rounded-[50%]"></div>
                             <div className="w-full text-center -mt-3 lg:-mt-5 relative z-1">
-                              <SunnyNoRaysIcon className="w-[25px] lg:w-[33px] mx-auto mb-1 lg:mb-2 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
+                              <SunnyNoRaysIcon className="w-[33px] lg:w-[45px] mx-auto mb-0 transition-transform ease-ak duration-[500ms] group-hover:rotate-[360deg]" />
                               <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">See Work!</span>
                             </div>
                           </Link>
@@ -281,7 +285,9 @@ export default function Mission(initialData) {
                           <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={mission.servicesWeSupplyImage} />
                         </div>
                         <m.div style={{ rotateZ: rotate }} className="absolute bottom-[-60px] xl:bottom-[-100px] left-auto right-[3%] xl:right-auto xl:left-[25%] w-[130px] xl:w-[175px] rotate-12">
-                          <BadgeLightningIcon className="w-full" />
+                          <div className="animate-spin-slower">
+                            <BadgeLightningIcon className="w-full" />
+                          </div>
                         </m.div>
                       </div>
 

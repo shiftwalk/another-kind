@@ -17,6 +17,7 @@ module.exports = {
     extend: {
       animation: {
         'spin-slow': 'spin 3s linear infinite',
+        'spin-slower': 'spin 9s linear infinite',
         marquee: 'marquee 20s linear infinite',
         marquee2: 'marquee2 20s linear infinite',
         marqueeSlow: 'marquee 55s linear infinite',
@@ -50,8 +51,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-Sohne)', ...fontFamily.sans],
         display: ['var(--font-VCGaramondCondensed)', ...fontFamily.serif],
-        displayItalic: ['var(--font-PPEditorialNewItalic)', ...fontFamily.serif],
-        mono: ['var(--font-Verlag)', ...fontFamily.mono],
+        displayItalic: ['var(--font-PPEditorialNewItalic)', ...fontFamily.serif]
       },
     },
   },

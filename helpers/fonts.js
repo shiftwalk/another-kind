@@ -17,18 +17,6 @@ export const Sohne = localFont({
   variable: '--font-Sohne',
 })
 
-export const Verlag = localFont({
-  src: [
-    {
-      path: '../public/fonts/Verlag-Black.woff2',
-      weight: '800',
-      style: 'normal',
-    }
-  ],
-  subsets: ['latin'],
-  variable: '--font-Verlag',
-})
-
 export const VCGaramondCondensed = localFont({
   src: [
     {

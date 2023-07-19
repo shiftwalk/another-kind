@@ -80,24 +80,26 @@ export default function MissionManifesto( {manifestoOpen, closeManifesto, items}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 0.6, ease: [0.71,0,0.17,1] }}}
               exit={{ opacity: 0, transition: { duration: 0.6, ease: [0.71,0,0.17,1] }}}
-              className="fixed lg:absolute top-5 right-5 w-[70px] h-[70px] bg-orange text-white rounded-full z-[1000] outline-none border-none items-center justify-center hidden lg:flex"
+              className="fixed lg:absolute top-5 right-5 w-[70px] h-[70px] bg-orange text-white rounded-full z-[1000] outline-none border-none items-center justify-center hidden lg:flex overflow-hidden group"
               key="manifestobg"
               onClick={closeManifesto}
             >
-              <svg className="w-[50%] block" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-[50%] block z-10 relative transition-transform ease-ak duration-[400ms] group-hover:rotate-[180deg]" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="0.707107" y1="1.29289" x2="30.7071" y2="31.2929" stroke="currentColor" stroke-width="2"/>
                 <line x1="30.7071" y1="2.70711" x2="0.707107" y2="32.7071" stroke="currentColor" stroke-width="2"/>
               </svg>
+
+              <div className="bg-black absolute inset-0 w-full transition-ak transition-transform duration-[400ms] translate-y-full group-hover:translate-y-0"></div>
             </m.button>
 
             <span className="font-display block w-full text-[12.5vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-[8vh]">What we believe in.</span>
             
-            <button onClick={scrollNext} className={`w-[60px] lg:w-[75px] h-[60px] lg:h-[75px] transition-colors ease-ak duration-[350ms] bg-black text-white p-[10px] flex items-center justify-center rounded-full border border-white overflow-hidden outline-none lg:hover:outline-none lg:focus:outline-none group absolute top-[55%] 2xl:top-[55%] right-[22%] lg:right-[9.2%] 2xl:right-[15.2%] z-[50]`}>
-              <div className="absolute z-[10] inset-0 transition-transform ease-ak duration-[400ms] bg-orange text-yellow translate-x-[-100%] lg:group-hover:translate-x-0 flex items-center justify-center p-[10px]">
-                <ArrowIcon className="w-[80%]" />
+            <button onClick={scrollNext} className={`w-[60px] lg:w-[75px] h-[60px] lg:h-[75px] transition-colors ease-ak duration-[350ms] bg-black text-white p-[10px] flex items-center justify-center rounded-full overflow-hidden outline-none lg:hover:outline-none lg:focus:outline-none group absolute top-[55%] 2xl:top-[55%] right-[22%] lg:right-[9.2%] 2xl:right-[15.2%] z-[50]`}>
+              <div className="absolute z-[10] inset-0 transition-transform ease-ak duration-[400ms] text-off-white flex items-center justify-center p-[10px]">
+                <ArrowIcon className="w-[80%] transition-transform ease-ak duration-[400ms] group-hover:rotate-[360deg]" />
               </div>
 
-              <ArrowIcon className="w-[80%] transition-translate ease-ak duration-[400ms] lg:group-hover:translate-x-[150%]" />
+              <div className="bg-orange absolute inset-0 w-full transition-ak transition-transform duration-[400ms] translate-y-full group-hover:translate-y-0"></div>
             </button>
 
             <div className="embla" ref={emblaRef}>
