@@ -86,7 +86,7 @@ export default function Mission(initialData) {
               </m.button>
               
               {/* Fake */}
-              <div className="top-0 left-0 w-full h-[300dvh] fixed inset-0 z-[10] bg-none pointer-events-none" ref={ref}></div>
+              <div className="top-0 left-0 w-full h-[300dvh] fixed inset-0 z-[10] bg-none pointer-events-none hidden lg:block" ref={ref}></div>
 
               <div className="hidden lg:block">
                 <HeroMission headingLine1={mission.heroHeadingLine1} headingLine2={mission.heroHeadingLine2} image={mission.heroImage} />
@@ -95,7 +95,7 @@ export default function Mission(initialData) {
               <div className="block lg:hidden">
                 <Container>
                   <div className="pt-[85px] mb-12 lg:mb-16 text-center">
-                    <h1 className="text-[15vw] mb-0 pb-0 leading-[0.9]">
+                    <h1 className="text-[14vw] mb-0 pb-0 leading-[0.9]">
                       <PortableText content={mission.heroHeadingLine1} />
                       <PortableText content={mission.heroHeadingLine2} />
                     </h1>
@@ -279,12 +279,12 @@ export default function Mission(initialData) {
                       </div>
                     )}
 
-                    <div className="flex flex-wrap items-start">
+                    <div className="flex flex-wrap items-start overflow-hidden">
                       <div className="w-full lg:w-[55%] mb-6 lg:mb-0 relative" ref={badgeRef}>
                         <div className="overflow-hidden rounded-xl relative aspect-[13/10] lg:aspect-[15.5/10]">
                           <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={mission.servicesWeSupplyImage} />
                         </div>
-                        <m.div style={{ rotateZ: rotate }} className="absolute bottom-[-60px] xl:bottom-[-100px] left-auto right-[3%] xl:right-auto xl:left-[25%] w-[130px] xl:w-[175px] rotate-12">
+                        <m.div style={{ rotateZ: rotate }} className="absolute bottom-[-60px] xl:bottom-[-100px] left-auto right-[10%] xl:right-auto xl:left-[25%] w-[130px] xl:w-[175px] rotate-12">
                           <div className="animate-spin-slower">
                             <BadgeLightningIcon className="w-full" />
                           </div>
