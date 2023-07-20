@@ -3,12 +3,12 @@ import localFont from 'next/font/local'
 export const Sohne = localFont({
   src: [
     {
-      path: '../public/fonts/Sohne-Buch.woff2',
+      path: '../public/fonts/soehne-buch.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../public/fonts/Sohne-Kraftig.woff2',
+      path: '../public/fonts/soehne-kraftig.woff2',
       weight: '500',
       style: 'normal',
     }
@@ -32,7 +32,7 @@ export const VCGaramondCondensed = localFont({
 export const PPEditorialNewItalic = localFont({
   src: [
     {
-      path: '../public/fonts/EditorialNew-Lightitalic.woff2',
+      path: '../public/fonts/PPEditorialNew-LightItalic.woff2',
       weight: '300',
       style: 'normal',
     }
