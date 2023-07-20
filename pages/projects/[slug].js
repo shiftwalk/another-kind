@@ -38,11 +38,9 @@ export default function ProjectSlug(initialData) {
         >
           <m.main className="">
             <m.article variants={fade}>
-              <div className="relative overflow-hidden">
-                <HeroProject heading={project.title} image={project.heroImage} />
-              </div>
+              <HeroProject heading={project.title} image={project.heroImage} />
 
-              <div className="relative bg-off-white lg:mt-[100dvh] z-10">
+              <div className="relative bg-off-white mt-[100vh] z-10">
                 <Container>
                   {project.overview && (
                     <div className="flex flex-wrap justify-center pt-[17vw] lg:pt-[10.5vw]">

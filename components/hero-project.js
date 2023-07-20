@@ -14,7 +14,7 @@ export default function HeroProject({ image, heading }) {
   const move = useTransform(scrollYProgress,[0, 1],['0', '100%'],{ clamp: true })
   
   return (
-    <Div100vh className="w-full h-[100dvh] lg:fixed inset-0 z-[10] bg-off-white" ref={ref}>
+    <Div100vh className="w-full h-[100vh] fixed inset-0 z-[10] bg-off-white" ref={ref}>
       <m.div style={{ scale: scale  }} className={`w-full h-full absolute inset-0`}>
         { image ? (
         <SanityImageScale p fill sizes="(max-width: 1024px) 100vw, 100vw"   image={image} />
