@@ -92,17 +92,20 @@ export default function MissionManifesto( {manifestoOpen, closeManifesto, items}
               <div className="bg-black absolute inset-0 w-full transition-ak transition-transform duration-[400ms] translate-y-full group-hover:translate-y-0"></div>
             </m.button>
 
-            <span className="font-display block w-full text-[12.5vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-[8vh]">What we believe in.</span>
+            <span className="font-display block w-full text-[12.5vw] md:text-[10vw] lg:text-[8vw] leading-[0.9] md:leading-[0.9] lg:leading-[0.9] mb-[6.5vh]">Our manifesto.</span>
             
-            <button onClick={scrollNext} className={`w-[60px] lg:w-[75px] h-[60px] lg:h-[75px] transition-colors ease-ak duration-[350ms] bg-black text-white p-[10px] flex items-center justify-center rounded-full overflow-hidden outline-none lg:hover:outline-none lg:focus:outline-none group absolute top-[55%] 2xl:top-[55%] right-[22%] lg:right-[9.2%] 2xl:right-[15.2%] z-[50]`}>
+            {/* <button onClick={scrollNext} className={`w-[60px] lg:w-[75px] h-[60px] lg:h-[75px] transition-colors ease-ak duration-[350ms] bg-black text-white p-[10px] flex items-center justify-center rounded-full overflow-hidden outline-none lg:hover:outline-none lg:focus:outline-none group absolute top-[55%] 2xl:top-[55%] right-[22%] lg:right-[9.2%] 2xl:right-[15.2%] z-[50]`}>
               <div className="absolute z-[10] inset-0 transition-transform ease-ak duration-[400ms] text-off-white flex items-center justify-center p-[10px]">
                 <ArrowIcon className="w-[80%] transition-transform ease-ak duration-[400ms] group-hover:rotate-[360deg]" />
               </div>
 
               <div className="bg-orange absolute inset-0 w-full transition-ak transition-transform duration-[400ms] translate-y-full group-hover:translate-y-0"></div>
-            </button>
+            </button> */}
 
-            <div className="embla" ref={emblaRef}>
+            <div className="bg-orange text-off-white w-full rounded-2xl p-4">
+              <p className="mb-0 pb-0 font-display leading-[0.95] text-[32px] lg:text-[3.7vw] xl:text-[3vw] lg:leading-[0.95] xl:leading-[0.95]"><span className="text-yellow">The old way isn't our way.</span> Work first, welfare second. Big on ego. Heavy on profit. Light on life. We say there's a better way. Anotherkind of way. You can't find place by avoiding life. So let's let life lead the way. Preserve it. Protect it. Encourage it. Enrich it. See it flourish. Make it last. Let's make life healthier. Easier. Better balanced. For the people that work, live and play in the spaces we shape into life-affirming places. For our clients. For our people. For the future. Powered by progress. Led by life. We are Anotherkind. <span className="text-yellow">Let's make great places, designed for life.</span></p>
+            </div>
+            {/* <div className="embla" ref={emblaRef}>
               <div className="embla__container">
                 {items.map((e, i) => {
                   let color = ''
@@ -133,7 +136,7 @@ export default function MissionManifesto( {manifestoOpen, closeManifesto, items}
                   )
                 })}
               </div>
-            </div>
+            </div> */}
           </m.div>
         </div>
       )}
