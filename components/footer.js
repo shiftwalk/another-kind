@@ -24,7 +24,7 @@ export default function Footer({ image, noLerp }) {
         <Container>
           <div className="flex flex-wrap items-end relative z-10">
             <div className="w-full lg:w-auto mr-auto order-3 lg:order-1 text-center lg:text-left text-xs lg:text-base 2xl:text-xl 2xl:leading-none">
-              <span className="block">© 2023 Anotherkind Architects Limited, C/N - 2345623</span>
+              <span className="block">© 2023 Anotherkind Architects Ltd, C/N: 10593943</span>
             </div>
 
             <FooterLockupIcon className="w-[125px] lg:w-[180px] xl:w-[250px] mx-auto order-1 lg:order-2 mb-4 lg:mb-0 translate-x-[4px] lg:translate-x-[1px] xl:translate-x-[25px] 2xl:translate-x-[15px]" />
@@ -34,7 +34,7 @@ export default function Footer({ image, noLerp }) {
               <SunIcon className="w-5 mt-[2px]" />
               <FancyLink destination="/journal" a11yText="Navigate to the journal page" label="Journal" />
               <SunIcon className="w-5 mt-[2px]" />
-              <a href="https://www.instagram.com/anotherkind_architects/?hl=en" target="_blank" rel="noopener noreferrer" className="relative group">
+              <a href="https://www.instagram.com/anotherkindarchitects/?hl=en" target="_blank" rel="noopener noreferrer" className="relative group">
                 <span className="block relative z-10">
                   Instagram
                 </span>
