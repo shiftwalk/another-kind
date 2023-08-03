@@ -27,7 +27,7 @@ export default function Footer({ image, noLerp }) {
               <span className="block">© 2023 Anotherkind Architects Limited, C/N - 2345623</span>
             </div>
 
-            <FooterLockupIcon className="w-[125px] lg:w-[180px] xl:w-[250px] mx-auto order-1 lg:order-2 mb-4 lg:mb-0 translate-x-[4px] lg:translate-x-[-19px] xl:translate-x-[-23px]" />
+            <FooterLockupIcon className="w-[125px] lg:w-[180px] xl:w-[250px] mx-auto order-1 lg:order-2 mb-4 lg:mb-0 translate-x-[4px] lg:translate-x-[1px] xl:translate-x-[25px] 2xl:translate-x-[15px]" />
 
             <nav className="ml-auto flex space-x-1 xl:space-x-3 w-full text-sm lg:text-base 2xl:text-xl 2xl:leading-none lg:w-auto order-2 lg:order-3 justify-center lg:justify-end mb-1 lg:mb-0">
               <FancyLink destination="/privacy" a11yText="Navigate to the privacy page" label="Privacy" />
