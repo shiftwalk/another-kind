@@ -5,11 +5,11 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://another-kind.vercel.app/',
+    url: 'https://akind-a.com',
     site_name: 'AnotherKind Architects',
     images: [
       {
-        url: 'https://another-kind.vercel.app/images/social.jpg',
+        url: 'https://akind-a.com/images/social.jpg',
         width: 1200,
         height: 630,
         alt: `Another Kind Logo`,
