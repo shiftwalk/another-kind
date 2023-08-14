@@ -85,7 +85,7 @@ export default function Header({ sunny }) {
             </div>
           </div>
 
-          <Link scroll={false} href="/menu" className={`w-[46px] lg:hidden bg-yellow rounded-full flex items-center justify-center`}>
+          <Link scroll={false} href="/menu" className={`w-[46px] lg:hidden bg-yellow rounded-full flex items-center justify-center`} aria-label="Open Site Navigation Menu">
             <div className="w-[55%] flex flex-wrap justify-center">
               <span className="block w-[65%] mb-[3px] h-[2px] rounded-full bg-orange"></span>
               <span className="block w-full mb-[3px] h-[2px] rounded-full bg-orange"></span>
