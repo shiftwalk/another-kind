@@ -134,6 +134,21 @@ export default function Contact(initialData) {
                             </span>
                           </div>
                         </div>
+                        
+                        {contact.address && (
+                          <div className="border-b border-black lg:border-none">
+                            <div className="py-5">
+                              <div className="mb-2 lg:mb-3">
+                                <span className="block text-base leading-none lg:text-xl lg:leading-none">Address</span>
+                              </div>
+
+                              <p className="w-[90%] max-w-[500px]">{contact.address}{contact.directionsUrl && (<> - <a target="_blank" rel="noopener noreferrer" href={contact.directionsUrl} className="relative group font-medium">
+                                  <span className="relative z-10">Get Directions</span>
+                                  <span className={`w-0 lg:group-hover:w-full opacity-100 rotate-0 transition-ak ease-in-out duration-[350ms] z-[0] h-[7px] bg-orange rounded-full absolute bottom-[0px] left-0 right-0`}></span>
+                                </a></>)}</p>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>

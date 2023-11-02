@@ -223,6 +223,8 @@ export const contactQuery = `{
     heroText,
     emailAddress,
     telephone,
+    address,
+    directionsUrl,
     socials[] {
       name,
       url
