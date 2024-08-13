@@ -401,6 +401,8 @@ export const missionQuery = `{
 export const projectQuery = `{
   "project": *[_type == "projects" && slug.current == $slug][0]{
     title,
+    footerCtaTitle,
+    footerCtaText,
     heroImage {
       asset-> {
         ...

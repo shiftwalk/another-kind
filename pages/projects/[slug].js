@@ -165,10 +165,10 @@ export default function ProjectSlug(initialData) {
 
                   <div className="flex flex-wrap justify-center pt-[20vw] lg:pt-[10vw] pb-[20vw] lg:pb-[10vw]">
                     <span className="block mb-8 overflow-hidden relative w-full text-center">
-                      <m.span variants={reveal} className="block text-sm leading-none lg:text-xl lg:leading-none">Need a hand?</m.span>
+                      <m.span variants={reveal} className="block text-sm leading-none lg:text-xl lg:leading-none">{project.footerCtaTitle ? project.footerCtaTitle : 'Need a hand?' }</m.span>
                     </span>
 
-                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[1] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">Need help transforming a residential property into a beautiful, <em>lasting</em> home? We&rsquo;d love to talk!</span>
+                    <span className="font-display block w-full md:w-[90%] lg:w-[85%] text-center text-[8vw] md:text-[6vw] lg:text-[4.2vw] leading-[1] md:leading-[0.9] lg:leading-[0.9] mb-10 lg:mb-16">{project.footerCtaText?.length > 0 ? <><PortableText content={project.footerCtaText} /></> : <>Need help transforming a <em>property</em>? We&rsquo;d love to talk!</> }</span>
                     
                     <MouseParallax lerpEase={0.5} strength={-0.017} enableOnTouchDevice={false}>
                       <div className="w-full flex justify-center">
