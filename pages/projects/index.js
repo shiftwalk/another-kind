@@ -20,7 +20,7 @@ const pageService = new SanityPageService(projectsLandingQuery)
 
 export default function Projects(initialData) {
   const { data: { projectsLanding }  } = pageService.getPreviewHook(initialData)()
-  let colors = ['border-orange bg-orange text-yellow', 'border-yellow bg-yellow text-orange', 'border-blue bg-blue text-green', 'border-green bg-green text-blue']
+  let colors = ['border-orange bg-orange text-yellow', 'border-yellow bg-yellow text-orange', 'border-blue bg-blue text-green', 'border-green bg-green text-blue', 'border-orange bg-orange text-yellow', 'border-yellow bg-yellow text-orange', 'border-blue bg-blue text-green', 'border-green bg-green text-blue', 'border-orange bg-orange text-yellow', 'border-yellow bg-yellow text-orange', 'border-blue bg-blue text-green', 'border-green bg-green text-blue', 'border-orange bg-orange text-yellow', 'border-yellow bg-yellow text-orange', 'border-blue bg-blue text-green', 'border-green bg-green text-blue']
   const [introContext, setIntroContext] = useContext(IntroContext);
 
   const ref = useRef(null)
@@ -82,7 +82,7 @@ export default function Projects(initialData) {
 
                   <ul className="grid grid-cols-2 lg:px-[6vw] gap-[12vw] lg:gap-[5vw] lg:gap-y-[6.5vw] mb-[10vw] lg:mb-[3vw] relative">
                     <m.div variants={scale} transition={{ delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }} className="absolute top-[-50px] lg:top-[-70px] left-[10%] lg:left-[9%] z-[20]">
-                      <div className="animate-spin-slower">
+                      <div className="motion-safe:animate-spin-slower">
                         <m.div style={{ rotateZ: rotateBadge }} className="w-[120px] xl:w-[170px] p-3 z-[20] bg-orange text-yellow rounded-full">                      
                           <SunnyIcon className="w-full aspect-square" />
                         </m.div>
@@ -100,13 +100,13 @@ export default function Projects(initialData) {
                         <li className="col-span-2 lg:col-span-1" key={i}>
                           <Link scroll={false} href={`/projects/${e.slug.current}`} className="group">
                             <div className="relative">
-                              <div className={`absolute inset-0 ${color} z-[8] h-[100%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] lg:group-hover:delay-[0ms] ${rotation}`}></div>
+                              <div className={`absolute inset-0 ${colors[i]} z-[8] h-[100%] transition-transition ease-ak duration-[750ms] rounded-2xl delay-[100ms] lg:group-hover:delay-[0ms] ${rotation}`}></div>
 
                               <div className="relative overflow-hidden mb-4 lg:mb-6 rounded-2xl z-10">
                                 <div className={`absolute pointer-events-none inset-0 z-10 rounded-2xl transition-all ease-ak duration-[500ms]`} style={{ background: 'transparent'}}></div>
 
                                 <div className="absolute inset-0 z-10 items-center justify-center hidden lg:flex lg:group-hover:scale-[1] scale-0 transition-transform ease-ak duration-[650ms]">
-                                  <div className={`w-[140px] xl:w-[180px] aspect-square rounded-full flex items-center justify-center ${color} scale-[0] lg:group-hover:scale-[1] transition-transform ease-ak duration-[500ms]`}>
+                                  <div className={`w-[140px] xl:w-[180px] aspect-square rounded-full flex items-center justify-center ${colors[i]} scale-[0] lg:group-hover:scale-[1] transition-transform ease-ak duration-[500ms]`}>
                                     <div className={`w-full text-center -mt-3 lg:-mt-5`}>
                                       <SunnyNoRaysIcon className="w-[33px] lg:w-[45px] mx-auto mb-0" />
                                       <span className="block font-display text-3xl xl:text-4xl leading-none lg:leading-none">See More!</span>

@@ -1,8 +1,11 @@
+import { useReducedMotion } from "framer-motion"
+
+
 export const fade = {
 	initial: { opacity: 1 },
   enter: { 
     opacity: 1,
-    transition: { delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }
+    transition: { delay: useReducedMotion ? 0 : 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }
   },
 	exit: {
     opacity: 1
@@ -13,7 +16,7 @@ export const reveal = {
 	initial: { y: '-100%' },
   enter: { 
     y: 0,
-    transition: { delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }
+    transition: { delay: useReducedMotion ? 0 : 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }
   },
 	exit: {
     y: 0
@@ -24,7 +27,7 @@ export const revealTtb = {
 	initial: { y: 0 },
   enter: { 
     y: '100%',
-    transition: { delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }
+    transition: { delay: useReducedMotion ? 0 : 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }
   },
 	exit: {
     y: '100%'
@@ -35,7 +38,7 @@ export const revealLtr = {
 	initial: { x: 0 },
   enter: { 
     x: '100%',
-    transition: { delay: 0.3, duration: 0.75, ease: [0.71,0,0.17,1] }
+    transition: { delay: useReducedMotion ? 0 : 0.3, duration: 0.75, ease: [0.71,0,0.17,1] }
   },
 	exit: {
     x: '100%'

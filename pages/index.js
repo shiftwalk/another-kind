@@ -54,7 +54,11 @@ export default function Home(initialData) {
             <m.article variants={fade}>
               <Container>
                 <div className="w-full mb-6 overflow-hidden">
-                  <m.div variants={revealNoTransition} transition={{ delay: introContext ? 0.25 : 2.1, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
+                  <m.div variants={revealNoTransition} transition={{ 
+                    delay: introContext ? 0.25 : shouldReduceMotion ? 0 : 2.1,
+                    duration: 0.6,
+                    ease: [0.83, 0, 0.17, 1] 
+                  }}>
                     <LogoIcon className="w-full" />
                   </m.div>
                 </div>
@@ -66,8 +70,11 @@ export default function Home(initialData) {
                     </div>
             
                     <m.div style={{ rotateZ: rotateBadge, y: lerpBadge }} className="absolute top-auto bottom-0 lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[33%] max-w-[220px] will-change-transform hidden lg:block">
-                      <m.div variants={scale} transition={{ delay: introContext ? 0.25 : 2.1, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
-                        <div className="animate-spin-slower">
+                      <m.div
+                        variants={scale}
+                        transition={{ delay: introContext ? 0.25 : shouldReduceMotion ? 0 : 2.1, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}
+                      >
+                        <div className="motion-safe:animate-spin-slower">
                           <BadgeIcon className="w-full" />
                         </div>
                       </m.div>
@@ -75,7 +82,7 @@ export default function Home(initialData) {
 
                     <m.div style={{ rotateZ: rotateBadge  }} className="absolute top-auto bottom-[-70px] lg:bottom-auto lg:top-[-12%] left-0 lg:left-auto lg:right-[-15%] w-[50%] max-w-[155px] will-change-transform block lg:hidden">
                       <div variants={scale} transition={{ delay: introContext ? 0 : 2.1, duration: 0.6, ease: [0.83, 0, 0.17, 1] }}>
-                        <div className="animate-spin-slower">
+                        <div className="motion-safe:animate-spin-slower">
                           <BadgeIcon className="w-full" />
                         </div>
                       </div>

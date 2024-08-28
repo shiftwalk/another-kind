@@ -10,11 +10,13 @@ import { PPEditorialNewItalic, Sohne, VCGaramondCondensed } from '@/helpers/font
 import { IntroContext } from '@/context/intro'
 import { useEffect, useState } from 'react';
 import Div100vh from 'react-div-100vh';
+import { useReducedMotion } from "framer-motion"
 
 // import FPSStats from "react-fps-stats";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
+  const shouldReduceMotion = useReducedMotion()
   const [introContext, setIntroContext] = useState(false);
 
   const introEnd = {

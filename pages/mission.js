@@ -79,7 +79,7 @@ export default function Mission(initialData) {
                 className="fixed w-[140px] lg:w-[160px] 2xl:w-[180px] bottom-5 right-5 z-[100] hidden lg:block outline-none border-none"
               >
                 <m.div variants={scale} transition={{ delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }}>
-                  <div className="animate-spin-slower">
+                  <div className="motion-safe:animate-spin-slower">
                     <ManifestoBadgeIcon className="w-full" />
                   </div>
                 </m.div>
@@ -108,7 +108,7 @@ export default function Mission(initialData) {
                     className="absolute z-[100] lg:hidden outline-none border-none w-full h-full inset-0 flex items-center justify-center"
                   >
                     <m.div style={{ rotateZ: rotateBadge}} className="w-[140px] xl:w-[180px]">
-                      <div className="animate-spin-slower">
+                      <div className="motion-safe:animate-spin-slower">
                         <ManifestoBadgeIcon className="w-full" />
                       </div>
                     </m.div>
@@ -285,7 +285,7 @@ export default function Mission(initialData) {
                           <SanityImageScale fill sizes="(max-width: 1024px) 100vw, 50vw" image={mission.servicesWeSupplyImage} />
                         </div>
                         <m.div style={{ rotateZ: rotate }} className="absolute bottom-[-60px] xl:bottom-[-100px] left-auto right-[10%] xl:right-auto xl:left-[25%] w-[130px] xl:w-[175px] rotate-12">
-                          <div className="animate-spin-slower">
+                          <div className="motion-safe:animate-spin-slower">
                             <BadgeLightningIcon className="w-full" />
                           </div>
                         </m.div>

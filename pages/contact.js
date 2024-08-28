@@ -38,7 +38,7 @@ export default function Contact(initialData) {
                 <div className="flex flex-wrap max-w-[1920px] mx-auto">
                   <div className="w-full lg:w-1/2 mb-[60px] lg:mb-0 relative">
                     <m.div variants={scale} transition={{ delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }} className="absolute bottom-[-50px] left-5 lg:bottom-auto lg:left-auto lg:top-[10%] lg:right-[-10%] z-10">
-                      <div className="animate-spin-slower">
+                      <div className="motion-safe:animate-spin-slower">
                         <m.div style={{ rotateZ: rotate }} className="w-[120px] xl:w-[170px]  rounded-full bg-yellow text-green p-3 rotate-12">
                           <SunnyIcon className="w-[100%] aspect-square" />
                         </m.div>

@@ -125,7 +125,7 @@ export default function Team(initialData) {
 
                   <div className="w-full lg:w-1/2 mb-16 lg:mb-0 relative order-1 lg:order-2">
                     <m.div variants={scale} transition={{ delay: 0.25, duration: 0.6, ease: [0.71,0,0.17,1] }} className="absolute bottom-[-55px] left-5 lg:bottom-auto lg:top-[10%] lg:left-[-10%] z-10">
-                      <div className="animate-spin-slower">
+                      <div className="motion-safe:animate-spin-slower">
                         <m.div style={{ rotateZ: rotate }} className="w-[115px] xl:w-[170px] rotate-12 aspect-square rounded-full bg-yellow text-green p-3">
                           <SunnyIcon className="w-[100%] aspect-square" />
                         </m.div>
